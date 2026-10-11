@@ -1,0 +1,4186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#102e39"><title>Suomi A2 • Interactive HAMK Exam Trainer</title>
+<style>
+:root{--ink:#183342;--muted:#667e88;--green:#087f72;--green2:#0d5f5a;--teal:#e3f6f1;--gold:#dbad51;--paper:#f7f7f0;--white:#fff;--line:#dbe5df;--rose:#a83338;--warn:#fff6e2;--radius:19px;--shadow:0 8px 28px rgba(19,54,57,.07)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{padding:0;margin:0;background:var(--paper);color:var(--ink);font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif}button,textarea,input,select{font:inherit}button{cursor:pointer}a{color:var(--green2)}.wrap{max-width:1080px;margin:auto;padding:0 16px 100px}.mast{background:#102f3c;color:#fff;position:relative;overflow:hidden}.mast:after{content:"";position:absolute;right:-75px;top:-115px;width:310px;height:310px;border:60px solid rgba(107,213,183,.09);border-radius:50%;pointer-events:none}.mastin{max-width:1080px;margin:auto;padding:23px 20px 26px;position:relative;z-index:1}.brand{font-size:13px;text-transform:uppercase;letter-spacing:.18em;color:#a8e2d3;font-weight:800}.mast h1{font-size:clamp(29px,6vw,49px);line-height:1.06;letter-spacing:-.035em;margin:9px 0 10px}.mast p{color:#d1e4e5;margin:0;max-width:690px;font-size:15px}.pills{margin-top:18px;display:flex;gap:8px;flex-wrap:wrap}.pill{border:1px solid #49727a;border-radius:40px;padding:5px 12px;font-size:12px;color:#e8f7f4;background:#204752}.tabs{position:sticky;top:0;z-index:20;background:rgba(247,247,240,.96);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}.tabin{max-width:1080px;margin:auto;display:flex;overflow-x:auto;scrollbar-width:none;gap:3px;padding:8px 13px}.tabin::-webkit-scrollbar{display:none}.tab{white-space:nowrap;flex:0 0 auto;padding:11px 13px;border:0;background:transparent;border-radius:12px;font-weight:700;color:#56717a;font-size:14px}.tab.active{background:var(--ink);color:#fff}.card{border:1px solid var(--line);border-radius:var(--radius);background:var(--white);box-shadow:var(--shadow);padding:21px;margin:16px 0}.card.soft{background:#ecf6f1;box-shadow:none;border-color:#d1e8df}.card.gold{background:#fff9e7;border-color:#eddca9;box-shadow:none}.heading{font-weight:850;font-size:27px;letter-spacing:-.025em;margin:27px 0 8px;line-height:1.15}.sub{color:var(--muted);font-size:14px;margin:0 0 15px}.eyebrow{font-weight:850;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--green)}.card h2{font-size:21px;letter-spacing:-.02em;margin:4px 0 10px;line-height:1.25}.card h3{font-size:17px;margin:14px 0 8px}.twocol,.fourcol{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}.fourcol{grid-template-columns:repeat(4,minmax(0,1fr))}.stat{border:1px solid var(--line);border-radius:16px;padding:16px;background:#fff}.stat b{display:block;font-size:26px;letter-spacing:-.03em}.stat small{color:var(--muted);font-size:12px}.small{font-size:13px;color:var(--muted)}.muted{color:var(--muted)}.btn{min-height:44px;display:inline-flex;align-items:center;justify-content:center;gap:7px;background:var(--green);color:#fff;border:1px solid var(--green);border-radius:12px;padding:10px 15px;font-size:14px;font-weight:800;text-decoration:none;transition:.15s}.btn:active{transform:scale(.97)}.btn.outline{background:#fff;color:var(--ink);border-color:var(--line)}.btn.secondary{background:#234656;border-color:#234656}.btn.ghost{background:transparent;color:var(--green2);border-color:#a7d4c9}.btn.wide{width:100%}.btn.warn{background:#fff7e8;color:#7d5620;border-color:#efd8aa}.btn.negative{color:var(--rose);border-color:#e6b7b7;background:#fff}.btn.sm{min-height:38px;font-size:12px;padding:8px 11px}.actions{display:flex;gap:9px;flex-wrap:wrap;margin:14px 0}.choice{display:flex;align-items:center;gap:10px;padding:12px;border:1px solid #d7e3de;border-radius:12px;margin:7px 0;min-height:48px;background:#fff;cursor:pointer}.choice:has(input:checked){background:#e4f7f2;border-color:#58b5a2}.choice input{accent-color:var(--green);width:18px;height:18px;flex-shrink:0}.lesson{font-size:16px;line-height:1.72;white-space:pre-line;background:#f1f7f4;border-left:4px solid #48a895;padding:18px;border-radius:4px 14px 14px 4px;margin:13px 0 18px}.qcard{border:1px solid var(--line);border-radius:15px;padding:16px;margin:12px 0;background:#fff}.qcard h4{font-size:15px;margin:0 0 10px;line-height:1.5}.counter{background:#eff5f1;border-radius:18px;padding:3px 9px;font-size:12px;color:#54716e;vertical-align:middle;margin-right:5px}.answer{width:100%;border:1px solid #c9d8d3;background:#fff;border-radius:11px;padding:12px;font-size:16px;color:var(--ink);min-height:48px;outline-color:#6cac9d}.answer.big{min-height:175px;resize:vertical}.answer.sm{min-height:70px;resize:vertical}.feedback{padding:12px;border-radius:12px;margin-top:11px;font-size:13px;background:#f2f6f4;border:1px solid #dfe6e0}.feedback.good{background:#e4f7ed;border-color:#bbdfc8;color:#115a3d}.feedback.bad{background:#fff0ee;border-color:#f1c4c3}.feedback.review{background:#fff8e8;border-color:#ecd99c}.selectlabel{font-size:13px;display:block;font-weight:800;color:var(--muted);margin:12px 0 6px}select{width:100%;padding:13px 12px;border:1px solid #d1dfda;border-radius:12px;background:#fff;color:var(--ink);font-size:15px;min-height:48px}.stack{display:flex;flex-wrap:wrap;gap:8px}.strip{display:flex;gap:8px;overflow-x:auto;padding:7px 2px;scrollbar-width:none}.chip{flex:0 0 auto;background:#fff;color:var(--ink);border:1px solid var(--line);border-radius:40px;font-size:12px;padding:8px 12px;min-height:37px}.chip.on{background:#e3f7ee;border-color:#52a891;font-weight:800}.meta{display:flex;gap:12px;flex-wrap:wrap;font-size:12px;color:var(--muted)}.progress{width:100%;background:#e6eeeb;height:10px;border-radius:999px;overflow:hidden;margin:10px 0}.progress>i{display:block;height:100%;background:linear-gradient(90deg,#0c8879,#7bc6a8);border-radius:999px}.sectionHead{display:flex;align-items:center;justify-content:space-between;gap:10px}.sectionHead>h2{margin:0}.badge2{font-size:12px;background:#ebf5f2;border-radius:30px;color:#177368;font-weight:800;padding:5px 9px;white-space:nowrap}.transcript{padding:14px 16px;margin:15px 0;border:1px dashed #91b8b1;border-radius:15px;background:#f7fcf8;white-space:pre-line}.notice{font-size:13px;color:#5f6c64;background:#f3f7ec;padding:12px;border-radius:13px;border:1px solid #e2eace}.rubric{display:grid;grid-template-columns:minmax(0,1fr) 145px;align-items:center;gap:10px;border-bottom:1px solid var(--line);padding:10px 0}.rubric:last-child{border:0}.rubric select{min-height:39px;padding:5px}.model{white-space:pre-line;background:#f2f7f5;border-radius:13px;padding:15px;margin-top:11px;font-size:15px;border:1px solid #ddeae4}.floatbox{border-radius:20px;min-height:190px;display:flex;align-items:center;justify-content:center;text-align:center;padding:27px;flex-direction:column;background:linear-gradient(145deg,#123c46,#197b71);color:#fff;user-select:none;touch-action:pan-y}.floatbox .fi{font-size:clamp(28px,6.4vw,45px);font-weight:850;letter-spacing:-.02em}.floatbox .en{font-size:18px;color:#c9f5e9;margin-top:14px}.floatbox .mini{font-size:12px;color:#bedbd7;letter-spacing:.04em}.timer{font-size:36px;font-variant-numeric:tabular-nums;letter-spacing:-.03em;font-weight:850;color:var(--green2)}.source{font-size:12px;color:#748d89;margin-top:11px}.footnote{font-size:12px;color:#59727b}.result{font-size:34px;font-weight:900;letter-spacing:-.04em}.result.good{color:#08735f}.result.bad{color:#a64e30}.sep{border:0;border-top:1px solid var(--line);margin:20px 0}.notegrid{display:grid;gap:9px}.notegrid>p{margin:0}.studylist{margin:0;padding-left:22px}.studylist li{margin:8px 0}.modalhint{background:var(--warn);padding:12px;border-radius:12px;font-size:13px}.floatsave{position:fixed;right:16px;bottom:16px;background:#173b44;color:white;border-radius:12px;padding:8px 14px;font-size:12px;box-shadow:var(--shadow);z-index:30;opacity:0;pointer-events:none;transition:.25s}.floatsave.show{opacity:1}input[type=file]{max-width:100%;font-size:13px}.textareasub{margin:6px 0 9px}.ticklist{padding-left:20px}.ticklist li{margin:7px 0}.tinyline{font-size:12px;color:#71827d}.compacttable{width:100%;border-collapse:collapse;font-size:14px}.compacttable th,.compacttable td{border-bottom:1px solid var(--line);padding:9px;text-align:left}.compacttable tr:last-child td{border-bottom:0}.dark{--paper:#10242c;--white:#19343a;--ink:#e3f1ed;--muted:#aac4c3;--line:#32565b;--teal:#183b3b;--green:#147d74;--green2:#9bdecf;--shadow:none}.dark .card.soft,.dark .stat,.dark .choice,.dark .answer,.dark select,.dark .btn.outline,.dark .qcard,.dark .chip{background:#1a383f;color:#e3f1ed}.dark .lesson,.dark .feedback,.dark .model,.dark .transcript{background:#224750;color:#eff9f4}.dark .tab{color:#d1e8e4}.dark .tab.active{background:#34776f}.dark .tabs{background:#10242c}.dark .stat{border:1px solid #32565b}
+@media(max-width:720px){.wrap{padding:0 12px 92px}.mastin{padding:22px 16px 24px}.card{padding:17px;margin:11px 0}.heading{font-size:24px;margin-top:22px}.fourcol{grid-template-columns:repeat(2,1fr)}.twocol{grid-template-columns:1fr}.rubric{grid-template-columns:1fr 135px}.tabs{top:0}.tab{padding:10px 12px}.lesson{font-size:15px;padding:15px}.qcard{padding:14px}.result{font-size:29px}}
+@media print{.mast,.tabs,.actions,.btn,nav{display:none!important}.wrap{padding:0}.card{box-shadow:none;border:1px solid #aaa;break-inside:avoid}body{background:#fff}}
+</style>
+</head>
+<body>
+<header class="mast"><div class="mastin"><div class="brand">SUOMI A2 · HAMK EXAM PREPARATION</div><h1>Opi. Harjoittele.<br>Onnistu.</h1><p>Read, listen, write, and speak in Finnish. Bite-sized, offline-capable training made for your iPhone.</p><div class="pills"><span class="pill">37 reading texts</span><span class="pill">12 listening lessons</span><span class="pill">240 flashcards</span><span class="pill">2 mock exams</span></div></div></header>
+<nav class="tabs" aria-label="Study sections"><div class="tabin" id="tabs"></div></nav>
+<main class="wrap" id="main"><div class="card">Loading the study lessons…</div></main>
+<div id="toast" class="floatsave" role="status"></div>
+<script type="application/json" id="dataset">{
+  "reading": [
+    {
+      "id": "R1",
+      "unit": "Workbook • Library notice",
+      "title": "Library notice",
+      "text": "Kirjasto on tällä viikolla avoinna maanantaista torstaihin kello 9–19. Perjantaina kirjasto suljetaan jo kello 15 henkilökunnan koulutuksen vuoksi. Lauantaina kirjasto on avoinna kello 10–14. Sunnuntaina kirjasto on suljettu. Kirjoja voi palauttaa ulkona olevaan palautuslaatikkoon myös kirjaston ollessa suljettu.",
+      "questions": [
+        {
+          "t": "Mihin aikaan kirjasto suljetaan perjantaina?",
+          "type": "mc",
+          "options": [
+            "14.00",
+            "15.00",
+            "19.00"
+          ],
+          "answer": "B",
+          "aliases": [
+            "15.00"
+          ],
+          "explain": "The exception on Friday is 15:00."
+        },
+        {
+          "t": "Miksi perjantain aukioloaika on lyhyempi?",
+          "type": "open",
+          "options": [],
+          "answer": "Henkilökunnan koulutuksen vuoksi",
+          "aliases": [
+            "koulutuksen vuoksi"
+          ],
+          "explain": "Because staff have training."
+        },
+        {
+          "t": "Kirjoja voi palauttaa sunnuntaina palautuslaatikkoon.",
+          "type": "tf",
+          "options": [],
+          "answer": "O",
+          "aliases": [
+            "oikein"
+          ],
+          "explain": "The outdoor return box can be used on Sunday."
+        }
+      ],
+      "source": "HAMK Finnish A2 Study Pack • Reading"
+    },
+    {
+      "id": "R2",
+      "unit": "Workbook • A class message",
+      "title": "A class message",
+      "text": "Hei opiskelijat! Huomisen suomen tunti alkaa kello 10, ei kello 9. Tapaamme luokassa B204. Ota mukaan oppikirja ja kuulokkeet. Kotitehtävä pitää palauttaa tänään kello 18 mennessä. Jos olet sairas, lähetä minulle viesti. Terveisin opettaja Leena",
+      "questions": [
+        {
+          "t": "Milloin huomisen tunti alkaa?",
+          "type": "open",
+          "options": [],
+          "answer": "Kello 10",
+          "aliases": [
+            "10"
+          ],
+          "explain": "The lesson starts at 10, not 9."
+        },
+        {
+          "t": "Mitkä kaksi tavaraa pitää ottaa mukaan?",
+          "type": "open",
+          "options": [],
+          "answer": "Oppikirja ja kuulokkeet",
+          "aliases": [
+            "oppikirjan ja kuulokkeet"
+          ],
+          "explain": "Bring both textbook and headphones."
+        },
+        {
+          "t": "Kotitehtävä palautetaan huomenna tunnilla.",
+          "type": "tf",
+          "options": [],
+          "answer": "V",
+          "aliases": [
+            "väärin"
+          ],
+          "explain": "Homework is due today by 18:00."
+        }
+      ],
+      "source": "HAMK Finnish A2 Study Pack • Reading"
+    },
+    {
+      "id": "R3",
+      "unit": "Workbook • Apartment advertisement",
+      "title": "Apartment advertisement",
+      "text": "Vuokrataan valoisa yksiö keskustan läheltä. Vuokra 620 euroa kuukaudessa. Vesi maksaa 20 euroa kuukaudessa. Sähkö ei sisälly vuokraan. Asunnossa on pieni parveke. Talossa ei ole hissiä. Asunto on vapaa 1. marraskuuta. Näyttö sunnuntaina kello 13–14. Ilmoittaudu näyttöön sähköpostilla.",
+      "questions": [
+        {
+          "t": "Paljonko vuokra ja vesi maksavat yhteensä kuukaudessa?",
+          "type": "open",
+          "options": [],
+          "answer": "640 euroa",
+          "aliases": [
+            "640"
+          ],
+          "explain": "620 + 20 = 640 euros; electricity is separate."
+        },
+        {
+          "t": "Talossa on hissi.",
+          "type": "tf",
+          "options": [],
+          "answer": "V",
+          "aliases": [
+            "väärin"
+          ],
+          "explain": "The building has no lift."
+        },
+        {
+          "t": "Miten ilmoittaudut näyttöön?",
+          "type": "open",
+          "options": [],
+          "answer": "Sähköpostilla",
+          "aliases": [
+            "sähköpostitse"
+          ],
+          "explain": "Registration is by email."
+        }
+      ],
+      "source": "HAMK Finnish A2 Study Pack • Reading"
+    },
+    {
+      "id": "R4",
+      "unit": "Workbook • Buy a used table",
+      "title": "Buy a used table",
+      "text": "Myydään puinen ruokapöytä, 40 euroa. Pöytä on hyvässä kunnossa, mutta pinnassa on pieni naarmu. Pituus 120 cm ja leveys 80 cm. Nouto myyjän kotoa lauantaina tai sunnuntaina. Kuljetusta ei ole. Tuolit eivät kuulu hintaan. Lähetä viesti, jos olet kiinnostunut.",
+      "questions": [
+        {
+          "t": "Mikä vika pöydässä on?",
+          "type": "open",
+          "options": [],
+          "answer": "Pinnassa on pieni naarmu",
+          "aliases": [
+            "naarmu"
+          ],
+          "explain": "The surface has a small scratch."
+        },
+        {
+          "t": "Mitä ostajan täytyy tehdä?",
+          "type": "mc",
+          "options": [
+            "odottaa toimitusta",
+            "hakea pöytä",
+            "ostaa tuolit"
+          ],
+          "answer": "B",
+          "aliases": [
+            "hakea pöytä"
+          ],
+          "explain": "Buyer collects the table."
+        },
+        {
+          "t": "Neljä tuolia sisältyy hintaan.",
+          "type": "tf",
+          "options": [],
+          "answer": "V",
+          "aliases": [
+            "väärin"
+          ],
+          "explain": "Chairs are not included."
+        }
+      ],
+      "source": "HAMK Finnish A2 Study Pack • Reading"
+    },
+    {
+      "id": "R5",
+      "unit": "Workbook • A changed meeting",
+      "title": "A changed meeting",
+      "text": "Moi! En pääse tänään uimahalliin, koska työvuoroni loppuu vasta seitsemältä. Voitaisiinko mennä huomenna? Pääsen huomenna jo neljältä. Tavataan uimahallin ovella puoli kuusi. Lähetä viesti, jos aika ei sovi. Terveisin Mira",
+      "questions": [
+        {
+          "t": "Miksi Mira ei voi mennä tänään?",
+          "type": "open",
+          "options": [],
+          "answer": "Työvuoro loppuu vasta seitsemältä",
+          "aliases": [
+            "työvuoro loppuu kello 19"
+          ],
+          "explain": "Her shift ends at 19:00."
+        },
+        {
+          "t": "Mihin aikaan Mira ehdottaa tapaamista?",
+          "type": "mc",
+          "options": [
+            "16.00",
+            "17.30",
+            "18.30"
+          ],
+          "answer": "B",
+          "aliases": [
+            "17.30"
+          ],
+          "explain": "Puoli kuusi is 17:30."
+        },
+        {
+          "t": "Missä tavataan?",
+          "type": "open",
+          "options": [],
+          "answer": "Uimahallin ovella",
+          "aliases": [
+            "ovella"
+          ],
+          "explain": "Meet at the swimming hall entrance."
+        }
+      ],
+      "source": "HAMK Finnish A2 Study Pack • Reading"
+    },
+    {
+      "id": "R6",
+      "unit": "Workbook • Lunch menu",
+      "title": "Lunch menu",
+      "text": "Lounas maanantaina kello 11–14. Kanakeitto 8,50 euroa. Kasvispasta 9 euroa. Opiskelijat saavat yhden euron alennuksen opiskelijakortilla. Lounaaseen kuuluu leipä ja vesi. Kahvi maksaa erikseen 2 euroa. Kasvispasta sisältää maitoa.",
+      "questions": [
+        {
+          "t": "Paljonko kasvispasta maksaa opiskelijakortilla?",
+          "type": "open",
+          "options": [],
+          "answer": "8 euroa",
+          "aliases": [
+            "8"
+          ],
+          "explain": "9 − 1 = 8 euros."
+        },
+        {
+          "t": "Kahvi sisältyy lounaaseen.",
+          "type": "tf",
+          "options": [],
+          "answer": "V",
+          "aliases": [
+            "väärin"
+          ],
+          "explain": "Coffee costs extra."
+        },
+        {
+          "t": "Onko kasvispasta maidoton?",
+          "type": "open",
+          "options": [],
+          "answer": "Ei",
+          "aliases": [
+            "ei ole"
+          ],
+          "explain": "Vegetarian pasta contains milk."
+        }
+      ],
+      "source": "HAMK Finnish A2 Study Pack • Reading"
+    },
+    {
+      "id": "R7",
+      "unit": "Workbook • Work shift",
+      "title": "Work shift",
+      "text": "Hei! Torstain työvuoro alkaa poikkeuksellisesti kello 7.30. Tule henkilökunnan ovesta, koska pääovi aukeaa vasta yhdeksältä. Työvuoro loppuu kello 14. Jos sairastut, soita esihenkilölle ennen työvuoron alkua. Pelkkä sähköposti ei riitä. Terveisin Sanna",
+      "questions": [
+        {
+          "t": "Mitä ovea työntekijän pitää käyttää?",
+          "type": "open",
+          "options": [],
+          "answer": "Henkilökunnan ovea",
+          "aliases": [
+            "henkilökunnan ovesta"
+          ],
+          "explain": "Use the staff entrance."
+        },
+        {
+          "t": "Työvuoro alkaa tavalliseen aikaan.",
+          "type": "tf",
+          "options": [],
+          "answer": "V",
+          "aliases": [
+            "väärin"
+          ],
+          "explain": "Poikkeuksellisesti means exceptionally."
+        },
+        {
+          "t": "Mitä pitää tehdä sairaana ja milloin?",
+          "type": "open",
+          "options": [],
+          "answer": "Soittaa esihenkilölle ennen työvuoron alkua",
+          "aliases": [
+            "soittaa ennen työvuoroa"
+          ],
+          "explain": "Call supervisor before start, not just email."
+        }
+      ],
+      "source": "HAMK Finnish A2 Study Pack • Reading"
+    },
+    {
+      "id": "R8",
+      "unit": "Workbook • Building notice",
+      "title": "Building notice",
+      "text": "Vesikatko tiistaina kello 9–12. Katkon aikana asunnoissa ei ole vettä. Ota tarvitsemasi juomavesi talteen ennen kello yhdeksää. Pesutupaa ei voi käyttää katkon aikana. Jos vettä ei tule vielä kello 12 jälkeen, ota yhteyttä huoltoon. Pahoittelemme haittaa.",
+      "questions": [
+        {
+          "t": "Kuinka kauan ilmoitettu vesikatko kestää?",
+          "type": "open",
+          "options": [],
+          "answer": "Kolme tuntia",
+          "aliases": [
+            "3 tuntia"
+          ],
+          "explain": "09:00–12:00 = 3 hours."
+        },
+        {
+          "t": "Mitä asukkaan pitää tehdä ennen katkoa?",
+          "type": "open",
+          "options": [],
+          "answer": "Ottaa juomavettä talteen",
+          "aliases": [
+            "vettä talteen"
+          ],
+          "explain": "Store drinking water beforehand."
+        },
+        {
+          "t": "Pesutupaa voi käyttää kello 10.",
+          "type": "tf",
+          "options": [],
+          "answer": "V",
+          "aliases": [
+            "väärin"
+          ],
+          "explain": "No laundry room during outage."
+        }
+      ],
+      "source": "HAMK Finnish A2 Study Pack • Reading"
+    },
+    {
+      "id": "R9",
+      "unit": "Workbook • A beginner swimming course",
+      "title": "A beginner swimming course",
+      "text": "Aikuisten uimakurssi alkaa 6. lokakuuta. Kurssi on tiistaisin kello 18–19, yhteensä viisi kertaa. Kurssi on tarkoitettu aloittelijoille. Hinta on 45 euroa. Ilmoittaudu viimeistään 29. syyskuuta. Ota mukaan uimapuku ja pyyhe. Kurssille mahtuu 12 osallistujaa.",
+      "questions": [
+        {
+          "t": "Kenelle kurssi on tarkoitettu?",
+          "type": "open",
+          "options": [],
+          "answer": "Aloittelijoille",
+          "aliases": [
+            "aloittelijat"
+          ],
+          "explain": "For beginners."
+        },
+        {
+          "t": "Mikä on viimeinen ilmoittautumispäivä?",
+          "type": "open",
+          "options": [],
+          "answer": "29. syyskuuta",
+          "aliases": [
+            "29.9."
+          ],
+          "explain": "Registration deadline is September 29."
+        },
+        {
+          "t": "Kuinka monta opetuskertaa on?",
+          "type": "open",
+          "options": [],
+          "answer": "Viisi",
+          "aliases": [
+            "5"
+          ],
+          "explain": "Five classes total."
+        }
+      ],
+      "source": "HAMK Finnish A2 Study Pack • Reading"
+    },
+    {
+      "id": "R10",
+      "unit": "Workbook • A personal email",
+      "title": "A personal email",
+      "text": "Moi Ali! Muutin viime kuussa uuteen asuntoon. Vanha asunto oli lähellä työtä, mutta siellä oli paljon melua. Uusi koti on kauempana, joten menen nyt töihin junalla. Matka kestää 35 minuuttia. Pidän uudesta kodista, koska täällä on rauhallista ja metsä on lähellä. Tule käymään ensi viikonloppuna! Terveisin Olli",
+      "questions": [
+        {
+          "t": "Miksi Olli halusi vaihtaa asuntoa?",
+          "type": "open",
+          "options": [],
+          "answer": "Vanhassa asunnossa oli melua",
+          "aliases": [
+            "melua"
+          ],
+          "explain": "The old home was noisy."
+        },
+        {
+          "t": "Uusi asunto on lähempänä työpaikkaa.",
+          "type": "tf",
+          "options": [],
+          "answer": "V",
+          "aliases": [
+            "väärin"
+          ],
+          "explain": "The new apartment is farther away."
+        },
+        {
+          "t": "Mitä Olli pyytää Alia tekemään?",
+          "type": "open",
+          "options": [],
+          "answer": "Kylään ensi viikonloppuna",
+          "aliases": [
+            "tulemaan kylään"
+          ],
+          "explain": "Invitation to visit next weekend."
+        }
+      ],
+      "source": "HAMK Finnish A2 Study Pack • Reading"
+    },
+    {
+      "id": "U1A",
+      "unit": "Notices",
+      "title": "Library entrance • Kirjaston sisäänkäynti",
+      "text": "KIRJASTON ASIAKKAILLE\nPääovi on suljettu tiistaina 12.5. oven korjauksen vuoksi. Kirjasto on kuitenkin avoinna normaalisti kello 9–19. Tulkaa sisään pihan puolelta. Lasten tapahtuma alkaa alakerrassa kello 16. Henkilökunta auttaa tarvittaessa.",
+      "questions": [
+        {
+          "t": "Kirjasto on suljettu koko tiistain.",
+          "type": "tf",
+          "options": [],
+          "answer": "Väärin",
+          "aliases": [],
+          "explain": "Kuitenkin avoinna normaalisti: the library stays open."
+        },
+        {
+          "t": "Mistä asiakkaat pääsevät sisään?",
+          "type": "open",
+          "options": [],
+          "answer": "Pihan puolelta",
+          "aliases": [
+            "pihalta"
+          ],
+          "explain": "Temporary entrance is from the yard."
+        },
+        {
+          "t": "Milloin lasten tapahtuma alkaa?",
+          "type": "mc",
+          "options": [
+            "Kello 9",
+            "Kello 16",
+            "Kello 19"
+          ],
+          "answer": "B",
+          "aliases": [],
+          "explain": "The event begins at 16."
+        }
+      ],
+      "source": "02_reading.pdf • source exercise"
+    },
+    {
+      "id": "U1B",
+      "unit": "Notices",
+      "title": "Water interruption • Vesikatko",
+      "text": "VESIKATKO TORSTAINA\nTalossa ei tule vettä torstaina kello 10–12, koska kellarin putkia korjataan. Ota juomavettä valmiiksi ennen kello kymmentä. Pesutupaa voi käyttää vasta kello 13. Jos vettä ei tule vielä kello 12.30, soita huoltoon numeroon 010 555 0140.",
+      "questions": [
+        {
+          "t": "Miksi vettä ei tule?",
+          "type": "open",
+          "options": [],
+          "answer": "Koska kellarin putkia korjataan",
+          "aliases": [
+            "kellarin putkia korjataan"
+          ],
+          "explain": "Reason: pipe repairs in the basement."
+        },
+        {
+          "t": "Pesutupaa voi käyttää heti kello 12.",
+          "type": "tf",
+          "options": [],
+          "answer": "Väärin",
+          "aliases": [],
+          "explain": "Vasta kello 13 = only from 13."
+        },
+        {
+          "t": "Milloin asukkaan pitää soittaa huoltoon?",
+          "type": "mc",
+          "options": [
+            "Jos katko alkaa kymmeneltä",
+            "Jos vettä ei tule puoli yhdeltä",
+            "Aina ennen torstaita"
+          ],
+          "answer": "B",
+          "aliases": [],
+          "explain": "Call if water is still unavailable at 12:30."
+        }
+      ],
+      "source": "02_reading.pdf • source exercise"
+    },
+    {
+      "id": "U1C",
+      "unit": "Notices",
+      "title": "Community room • Kerhohuone",
+      "text": "TALOYHTIÖN KERHOHUONE\nKerhohuoneen siivous siirtyy perjantaista lauantaille. Perjantaina huone on siis asukkaiden käytössä. Lauantaina huone on suljettu kello 8–14. Sunnuntain kahvitilaisuus järjestetään normaalisti kello 15. Tuo oma muki. Kahvi ja tee ovat maksuttomia.",
+      "questions": [
+        {
+          "t": "Minä päivänä huone siivotaan?",
+          "type": "open",
+          "options": [],
+          "answer": "Lauantaina",
+          "aliases": [],
+          "explain": "Siirtyy perjantaista lauantaille = moved to Saturday."
+        },
+        {
+          "t": "Mitä sunnuntain tilaisuuteen pitää tuoda?",
+          "type": "open",
+          "options": [],
+          "answer": "Oma muki",
+          "aliases": [
+            "oma muki mukaan"
+          ],
+          "explain": "Bring your own mug."
+        },
+        {
+          "t": "Sunnuntaina teestä pitää maksaa.",
+          "type": "tf",
+          "options": [],
+          "answer": "Väärin",
+          "aliases": [],
+          "explain": "Maksuttomia = free."
+        }
+      ],
+      "source": "02_reading.pdf • source exercise"
+    },
+    {
+      "id": "U2A",
+      "unit": "Advertisements",
+      "title": "Swimming course • Uimakurssi",
+      "text": "AIKUISTEN UINTIKURSSI\nHaluatko oppia uimaan? Kurssi alkaa 3.6. ja kokoontuu neljä kertaa keskiviikkoisin kello 18–19. Hinta on 48 euroa. Hintaan sisältyvät opetus ja uimahallin pääsymaksu. Ota mukaan uimapuku ja pyyhe. Ilmoittaudu viimeistään 28.5. Kurssille mahtuu kymmenen osallistujaa.",
+      "questions": [
+        {
+          "t": "Milloin kurssi alkaa?",
+          "type": "open",
+          "options": [],
+          "answer": "3.6.",
+          "aliases": [
+            "3. kesäkuuta"
+          ],
+          "explain": "Starting date 3 June, not registration deadline."
+        },
+        {
+          "t": "Pääsymaksu maksetaan erikseen.",
+          "type": "tf",
+          "options": [],
+          "answer": "Väärin",
+          "aliases": [],
+          "explain": "Entrance fee included."
+        },
+        {
+          "t": "Mitkä kaksi tavaraa osallistuja ottaa mukaan?",
+          "type": "open",
+          "options": [],
+          "answer": "Uimapuku ja pyyhe",
+          "aliases": [
+            "uimapuvun ja pyyhkeen"
+          ],
+          "explain": "Both items are required."
+        }
+      ],
+      "source": "02_reading.pdf • source exercise"
+    },
+    {
+      "id": "U2B",
+      "unit": "Advertisements",
+      "title": "Used bicycle • Polkupyörä",
+      "text": "MYYDÄÄN NAISTEN POLKUPYÖRÄ\nPunainen, kolme vuotta vanha pyörä. Uudet renkaat, hyvät jarrut. Etuvalo ei toimi. Hinta 85 euroa, lukko kuuluu hintaan. Pyörää voi kokeilla lauantaina kello 11–14 Hämeenlinnassa. En kuljeta pyörää ostajalle. Ota yhteyttä viestillä, sillä en voi vastata puheluihin työpäivän aikana.",
+      "questions": [
+        {
+          "t": "Mikä pyörässä on rikki?",
+          "type": "open",
+          "options": [],
+          "answer": "Etuvalo",
+          "aliases": [],
+          "explain": "The front light does not work."
+        },
+        {
+          "t": "Miten myyjään kannattaa ottaa yhteyttä?",
+          "type": "mc",
+          "options": [
+            "Puhelulla työpäivän aikana",
+            "Viestillä",
+            "Kirjeellä"
+          ],
+          "answer": "B",
+          "aliases": [],
+          "explain": "Seller requests a text message."
+        },
+        {
+          "t": "Myyjä tuo pyörän ostajan kotiin.",
+          "type": "tf",
+          "options": [],
+          "answer": "Väärin",
+          "aliases": [],
+          "explain": "En kuljeta = I do not deliver."
+        }
+      ],
+      "source": "02_reading.pdf • source exercise"
+    },
+    {
+      "id": "U2C",
+      "unit": "Advertisements",
+      "title": "Rental flat • Vuokra-asunto",
+      "text": "VUOKRATAAN PIENI KAKSIO\nRauhallinen asunto lähellä keskustaa. Vuokra 690 €/kk. Vesi 22 €/henkilö/kk. Sähkö ei sisälly vuokraan. Talossa on yhteinen sauna. Asunto vapautuu 1.8. Lemmikit sallittu, tupakointi kielletty. Asuntoa voi katsoa tiistaina kello 17. Varaa oma esittelyaika etukäteen.",
+      "questions": [
+        {
+          "t": "Kuinka paljon yksi henkilö maksaa vuokraa ja vesimaksua yhteensä kuukaudessa?",
+          "type": "open",
+          "options": [],
+          "answer": "712 euroa",
+          "aliases": [
+            "712"
+          ],
+          "explain": "690 + 22 = 712; electricity excluded."
+        },
+        {
+          "t": "Asuntoon saa ottaa kissan.",
+          "type": "tf",
+          "options": [],
+          "answer": "Oikein",
+          "aliases": [],
+          "explain": "Lemmikit sallittu = pets permitted."
+        },
+        {
+          "t": "Mitä pitää tehdä ennen asunnon katsomista?",
+          "type": "mc",
+          "options": [
+            "Ostaa sähkö",
+            "Varata esittelyaika",
+            "Muuttaa asuntoon"
+          ],
+          "answer": "B",
+          "aliases": [],
+          "explain": "Book a viewing in advance."
+        }
+      ],
+      "source": "02_reading.pdf • source exercise"
+    },
+    {
+      "id": "U3C",
+      "unit": "Emails",
+      "title": "Borrowed computer • Lainattu tietokone",
+      "text": "Aihe: Lainattu tietokone\nHei,\nLainasit koulun kannettavan viime viikolla. Laina-aika päättyy torstaina, mutta voit jatkaa sitä maanantaihin asti, jos tarvitset konetta viikonlopun projektissa. Lähetä jatkopyyntö keskiviikkona. Palauta kone ja laturi palvelupisteeseen. Hiirtä ei tarvitse palauttaa, koska se on sinun oma.\nTerveisin, IT-palvelut",
+      "questions": [
+        {
+          "t": "Minä päivänä tavallinen laina-aika päättyy?",
+          "type": "open",
+          "options": [],
+          "answer": "Torstaina",
+          "aliases": [],
+          "explain": "Ordinary return deadline is Thursday."
+        },
+        {
+          "t": "Mitä pitää tehdä, jos hän haluaa pitää koneen viikonlopun?",
+          "type": "open",
+          "options": [],
+          "answer": "Lähettää jatkopyyntö keskiviikkona",
+          "aliases": [
+            "jatkopyyntö keskiviikkona"
+          ],
+          "explain": "Extension request must be sent Wednesday."
+        },
+        {
+          "t": "Mitkä kaksi tavaraa palautetaan?",
+          "type": "open",
+          "options": [],
+          "answer": "Tietokone ja laturi",
+          "aliases": [
+            "kone ja laturi"
+          ],
+          "explain": "Mouse is the student’s own."
+        }
+      ],
+      "source": "02_reading.pdf • source exercise"
+    },
+    {
+      "id": "U4C",
+      "unit": "Short messages",
+      "title": "Project chat • Ryhmäprojekti",
+      "text": "Ravi: Voidaanko tehdä projekti tänään koululla kello 15?\nAino: Olen töissä neljään asti. Pääsen verkkoon kello 17, mutta en koululle.\nRavi: Tehdään niin. Lähetän linkin ennen viittä.\nAino: Hyvä! Kirjoitan tekstin. Voitko sinä tehdä kuvat?\nRavi: Joo, teen kuvat. Palautetaan työ yhdessä huomenna.",
+      "questions": [
+        {
+          "t": "Missä ja milloin ryhmä työskentelee?",
+          "type": "open",
+          "options": [],
+          "answer": "Verkossa kello 17",
+          "aliases": [
+            "verkossa viideltä"
+          ],
+          "explain": "Final agreed time and place: online at 17."
+        },
+        {
+          "t": "Kuka tekee kuvat?",
+          "type": "open",
+          "options": [],
+          "answer": "Ravi",
+          "aliases": [],
+          "explain": "Ravi agrees to make images."
+        },
+        {
+          "t": "He palauttavat työn tänään.",
+          "type": "tf",
+          "options": [],
+          "answer": "Väärin",
+          "aliases": [],
+          "explain": "Submission is tomorrow."
+        }
+      ],
+      "source": "02_reading.pdf • source exercise"
+    },
+    {
+      "id": "U5C",
+      "unit": "Workplace texts",
+      "title": "Care workplace • Työpaikka",
+      "text": "HENKILÖKUNNALLE\nTiistain kahvitauko pidetään pienessä taukohuoneessa, koska isossa huoneessa on koulutus. Lähihoitaja Elina näyttää uusille opiskelijoille, missä puhtaat työvaatteet ovat. Opiskelijat eivät käytä uusia laitteita yksin. Jos et osaa käyttää laitetta, pyydä ohjaaja paikalle. Koulutuksen jälkeen iso taukohuone on taas käytössä.",
+      "questions": [
+        {
+          "t": "Miksi kahvitauko on pienessä huoneessa?",
+          "type": "open",
+          "options": [],
+          "answer": "Koska isossa huoneessa on koulutus",
+          "aliases": [
+            "isossa huoneessa on koulutus"
+          ],
+          "explain": "Large room is being used for training."
+        },
+        {
+          "t": "Mitä Elina näyttää opiskelijoille?",
+          "type": "open",
+          "options": [],
+          "answer": "Missä puhtaat työvaatteet ovat",
+          "aliases": [
+            "puhtaat työvaatteet"
+          ],
+          "explain": "She shows where clean work clothes are."
+        },
+        {
+          "t": "Mitä opiskelija tekee, jos hän ei osaa käyttää laitetta?",
+          "type": "open",
+          "options": [],
+          "answer": "Pyytää ohjaajan paikalle",
+          "aliases": [
+            "pyytää apua ohjaajalta"
+          ],
+          "explain": "Ask for supervisor, do not use device alone."
+        }
+      ],
+      "source": "02_reading.pdf • source exercise"
+    },
+    {
+      "id": "U6C",
+      "unit": "Schedules",
+      "title": "Service hours • Aukioloajat",
+      "text": "PALVELUPISTEEN AIKATAULU\nPalvelupiste on maanantaista torstaihin kello 9–16. Perjantaina se sulkeutuu jo kello 14. Suuret näytöt palautetaan aina henkilökunnalle. Pienet laitteet voi palauttaa perjantaina palautuslaatikkoon kello 20 asti. Lounastauko alkaa perjantaina kello 13.",
+      "questions": [
+        {
+          "t": "Voiko suuren näytön palauttaa henkilökunnalle perjantaina kello 15?",
+          "type": "open",
+          "options": [],
+          "answer": "Ei",
+          "aliases": [],
+          "explain": "Closes at 14; large monitor must be handed to staff."
+        },
+        {
+          "t": "Milloin perjantain lounastauko alkaa?",
+          "type": "open",
+          "options": [],
+          "answer": "Kello 13",
+          "aliases": [
+            "13"
+          ],
+          "explain": "At 13."
+        },
+        {
+          "t": "Minne pienen laitteen voi palauttaa kello 18?",
+          "type": "open",
+          "options": [],
+          "answer": "Palautuslaatikkoon",
+          "aliases": [],
+          "explain": "The return box works until 20."
+        }
+      ],
+      "source": "02_reading.pdf • adapted service hours example"
+    },
+    {
+      "id": "U7C",
+      "unit": "Instructions",
+      "title": "Course sign-up • Ilmoittautuminen",
+      "text": "ILMOITTAUTUMISOHJE\nValitse kurssi ja paina Ilmoittaudu. Täytä nimesi, sähköpostiosoitteesi ja puhelinnumerosi. Tarkista tiedot ennen lähettämistä. Saat vahvistuksen sähköpostiin. Jos viestiä ei tule saman päivän aikana, tarkista roskapostikansio. Älä täytä lomaketta heti uudelleen. Jos vahvistusta ei löydy, ota yhteyttä toimistoon seuraavana arkipäivänä.",
+      "questions": [
+        {
+          "t": "Mitkä kolme yhteystietoa lomakkeeseen kirjoitetaan?",
+          "type": "open",
+          "options": [],
+          "answer": "Nimi, sähköpostiosoite ja puhelinnumero",
+          "aliases": [],
+          "explain": "All three contact fields."
+        },
+        {
+          "t": "Mitä tarkistetaan, jos vahvistus ei tule?",
+          "type": "open",
+          "options": [],
+          "answer": "Roskapostikansio",
+          "aliases": [],
+          "explain": "Check spam folder."
+        },
+        {
+          "t": "Mitä pitää tehdä, jos vahvistusta ei löydy?",
+          "type": "open",
+          "options": [],
+          "answer": "Ota yhteyttä toimistoon seuraavana arkipäivänä",
+          "aliases": [
+            "ottaa yhteyttä toimistoon"
+          ],
+          "explain": "Contact office next workday."
+        }
+      ],
+      "source": "02_reading.pdf • source exercise"
+    },
+    {
+      "id": "U8C",
+      "unit": "News and information",
+      "title": "AI language trial • Kieliohjelma",
+      "text": "KOULU KOKEILEE UUTTA OHJELMAA\nRantakoulun aikuisopiskelijat kokeilevat uutta kieliohjelmaa kolmen viikon ajan. Ohjelmassa voi kuunnella lyhyitä keskusteluja ja harjoitella sanoja. Opettaja tarkistaa tehtävät yhdessä opiskelijoiden kanssa. Ohjelma käyttää tekoälyä, mutta se voi tehdä virheitä. Kokeilun lopussa opiskelijat kertovat, mikä auttoi oppimista ja mikä oli vaikeaa. Ohjelmaa ei käytetä tämän kurssin loppukokeessa.",
+      "questions": [
+        {
+          "t": "Kuinka kauan kokeilu kestää?",
+          "type": "open",
+          "options": [],
+          "answer": "Kolme viikkoa",
+          "aliases": [
+            "3 viikkoa"
+          ],
+          "explain": "Trial lasts three weeks."
+        },
+        {
+          "t": "Mainitse kaksi asiaa, joita ohjelmassa voi tehdä.",
+          "type": "open",
+          "options": [],
+          "answer": "Kuunnella keskusteluja ja harjoitella sanoja",
+          "aliases": [],
+          "explain": "Both listening and vocabulary."
+        },
+        {
+          "t": "Ohjelma on käytössä loppukokeessa.",
+          "type": "tf",
+          "options": [],
+          "answer": "Väärin",
+          "aliases": [],
+          "explain": "Not used in final exam."
+        }
+      ],
+      "source": "02_reading.pdf • source exercise"
+    },
+    {
+      "id": "U9C",
+      "unit": "Forms",
+      "title": "Library card form • Kirjastokortti",
+      "text": "KIRJASTOKORTTIHAKEMUS\nPakolliset tiedot: nimi, syntymäaika ja osoite. Puhelinnumero tai sähköpostiosoite tarvitaan ilmoituksia varten; voit antaa myös molemmat. Alle 15-vuotias tarvitsee huoltajan allekirjoituksen. Ensimmäinen kortti on maksuton. Kadonneen kortin tilalle tehtävä uusi kortti maksaa kolme euroa. Kortti noudetaan kirjastosta henkilöllisyystodistuksen kanssa.",
+      "questions": [
+        {
+          "t": "Pitääkö aikuisen antaa sekä puhelinnumero että sähköpostiosoite?",
+          "type": "open",
+          "options": [],
+          "answer": "Ei",
+          "aliases": [],
+          "explain": "Either phone OR email is enough."
+        },
+        {
+          "t": "Kenen allekirjoituksen 12-vuotias tarvitsee?",
+          "type": "open",
+          "options": [],
+          "answer": "Huoltajan",
+          "aliases": [
+            "huoltajan allekirjoituksen"
+          ],
+          "explain": "Parent/guardian signs for under 15."
+        },
+        {
+          "t": "Mitä ensimmäinen kortti maksaa, ja mistä sen saa?",
+          "type": "open",
+          "options": [],
+          "answer": "Maksuton, kirjastosta",
+          "aliases": [],
+          "explain": "Free, collected at library."
+        }
+      ],
+      "source": "02_reading.pdf • source exercise"
+    },
+    {
+      "id": "U10C",
+      "unit": "Signs",
+      "title": "Outside signs • Ulkokyltit",
+      "text": "Kyltti A: ASIAKASPYSÄKÖINTI 2 H. KÄYTÄ PYSÄKÖINTIKIEKKOA.\nKyltti B: POLKUPYÖRÄT TÄHÄN. ÄLÄ JÄTÄ PYÖRÄÄ OVEN ETEEN.\nKyltti C: PIHA SULJETTU HUOLTOTYÖN AJAKSI. KULKU RANTAKADUN KAUTTA.",
+      "questions": [
+        {
+          "t": "Kuinka kauan asiakas voi pysäköidä?",
+          "type": "open",
+          "options": [],
+          "answer": "Kaksi tuntia",
+          "aliases": [
+            "2 tuntia"
+          ],
+          "explain": "2H stands for two hours."
+        },
+        {
+          "t": "Mihin pyörää ei saa jättää?",
+          "type": "open",
+          "options": [],
+          "answer": "Oven eteen",
+          "aliases": [],
+          "explain": "Not in front of entrance."
+        },
+        {
+          "t": "Mistä pihalle pitää nyt kulkea?",
+          "type": "open",
+          "options": [],
+          "answer": "Rantakadun kautta",
+          "aliases": [],
+          "explain": "Maintenance redirects access."
+        }
+      ],
+      "source": "02_reading.pdf • source exercise"
+    },
+    {
+      "id": "U11C",
+      "unit": "Everyday services",
+      "title": "Shop exchanges • Vaihto-ohje",
+      "text": "KAARIKAUPAN VAIHTO-OHJE\nTässä kampanjassa käyttämättömän paidan voi vaihtaa toiseen kokoon 14 päivän aikana. Ota kuitti mukaan. Tuotteessa pitää olla hintalappu paikallaan. Verkkokaupasta ostetun paidan voi vaihtaa myös tässä myymälässä. Jos oikeaa kokoa ei ole, myyjä tarkistaa toisen myymälän varaston. Tämä ohje koskee koon vaihtamista.",
+      "questions": [
+        {
+          "t": "Voiko asiakas vaihtaa käytettyä paitaa?",
+          "type": "open",
+          "options": [],
+          "answer": "Ei",
+          "aliases": [],
+          "explain": "Only unused shirts."
+        },
+        {
+          "t": "Mitkä kaksi asiaa tarvitaan paidan lisäksi?",
+          "type": "open",
+          "options": [],
+          "answer": "Kuitti ja hintalappu",
+          "aliases": [],
+          "explain": "Receipt and attached price tag."
+        },
+        {
+          "t": "Mitä myyjä tekee, jos oikeaa kokoa ei ole?",
+          "type": "open",
+          "options": [],
+          "answer": "Tarkistaa toisen myymälän varaston",
+          "aliases": [],
+          "explain": "Checks stock at another store."
+        }
+      ],
+      "source": "02_reading.pdf • source exercise"
+    },
+    {
+      "id": "X1",
+      "unit": "Extra exam-style",
+      "title": "Hospital message",
+      "text": "TERVEYSASEMA\nAjanvaraus on avoinna arkisin kello 8–15. Vastaanotto keskiviikkona kello 11 on peruttu lääkärin sairastumisen vuoksi. Soita ja varaa uusi aika. Älä tule paikalle ilman uutta ajanvarausta.",
+      "questions": [
+        {
+          "t": "Mikä tapaaminen on peruttu?",
+          "type": "open",
+          "options": [],
+          "answer": "Keskiviikkona kello 11",
+          "aliases": [],
+          "explain": "Wednesday 11 appointment."
+        },
+        {
+          "t": "Miksi aika peruuntui?",
+          "type": "open",
+          "options": [],
+          "answer": "Lääkäri on sairas",
+          "aliases": [],
+          "explain": "Doctor ill."
+        },
+        {
+          "t": "Voiko tulla ilman uutta aikaa?",
+          "type": "tf",
+          "options": [],
+          "answer": "Väärin",
+          "aliases": [],
+          "explain": "New appointment required."
+        }
+      ],
+      "source": "New original transfer practice"
+    },
+    {
+      "id": "X2",
+      "unit": "Extra exam-style",
+      "title": "Library booking",
+      "text": "KIRJASTON TYÖHUONE\nTyöhuoneen voi varata korkeintaan kahdeksi tunniksi. Varaus tehdään verkossa viimeistään edellisenä päivänä. Ruokaa ei saa syödä huoneessa. Juomapullo on sallittu.",
+      "questions": [
+        {
+          "t": "Kuinka pitkä varaus voi olla?",
+          "type": "open",
+          "options": [],
+          "answer": "Kaksi tuntia",
+          "aliases": [
+            "2 tuntia"
+          ],
+          "explain": "Maximum two hours."
+        },
+        {
+          "t": "Milloin varaus pitää tehdä?",
+          "type": "open",
+          "options": [],
+          "answer": "Edellisenä päivänä",
+          "aliases": [],
+          "explain": "No later than day before."
+        },
+        {
+          "t": "Huoneessa saa syödä ruokaa.",
+          "type": "tf",
+          "options": [],
+          "answer": "Väärin",
+          "aliases": [],
+          "explain": "Eating prohibited."
+        }
+      ],
+      "source": "New original transfer practice"
+    },
+    {
+      "id": "X3",
+      "unit": "Extra exam-style",
+      "title": "Work shift exchange",
+      "text": "TYÖVUOROVIESTI\nHei Arto, vaihdatko kanssani sunnuntain työvuoron? Olen silloin matkalla. Minä voin tehdä sinun keskiviikon aamuvuorosi. Kysy ensin esihenkilöltä lupa. Tarvitsemme vastauksen viimeistään torstaina.",
+      "questions": [
+        {
+          "t": "Minkä päivän vuoro halutaan vaihtaa?",
+          "type": "open",
+          "options": [],
+          "answer": "Sunnuntain",
+          "aliases": [],
+          "explain": "Sunday."
+        },
+        {
+          "t": "Kenen lupa tarvitaan?",
+          "type": "open",
+          "options": [],
+          "answer": "Esihenkilön",
+          "aliases": [],
+          "explain": "Supervisor approval."
+        },
+        {
+          "t": "Mihin mennessä pitää vastata?",
+          "type": "open",
+          "options": [],
+          "answer": "Torstaina",
+          "aliases": [],
+          "explain": "Deadline Thursday."
+        }
+      ],
+      "source": "New original transfer practice"
+    },
+    {
+      "id": "X4",
+      "unit": "Extra exam-style",
+      "title": "Bus service notice",
+      "text": "BUSSILINJA 4\nLauantaina linja 4 kulkee poikkeusreittiä kello 12–18. Bussi ei pysähdy keskustan torilla, mutta pysähtyy kirjaston edessä. Arkisin reitti pysyy normaalina.",
+      "questions": [
+        {
+          "t": "Milloin poikkeusreitti on käytössä?",
+          "type": "open",
+          "options": [],
+          "answer": "Lauantaina kello 12–18",
+          "aliases": [],
+          "explain": "Saturday noon to six."
+        },
+        {
+          "t": "Pysähtyykö bussi torilla?",
+          "type": "open",
+          "options": [],
+          "answer": "Ei",
+          "aliases": [],
+          "explain": "Not at market square."
+        },
+        {
+          "t": "Missä se pysähtyy?",
+          "type": "open",
+          "options": [],
+          "answer": "Kirjaston edessä",
+          "aliases": [],
+          "explain": "In front of library."
+        }
+      ],
+      "source": "New original transfer practice"
+    },
+    {
+      "id": "X5",
+      "unit": "Extra exam-style",
+      "title": "School computer",
+      "text": "TIETOKONEEN PÄIVITYS\nKoulun tietokoneet päivitetään maanantaina aamulla. Käyttäjät eivät voi kirjautua sisään kello 8–9. Tallenna työsi jo sunnuntai-iltana. Jos ongelma jatkuu yhdeksän jälkeen, kirjoita IT-tuelle.",
+      "questions": [
+        {
+          "t": "Miksi kirjautuminen ei toimi?",
+          "type": "open",
+          "options": [],
+          "answer": "Tietokoneet päivitetään",
+          "aliases": [],
+          "explain": "Software update."
+        },
+        {
+          "t": "Milloin kirjautuminen onnistuu normaalisti?",
+          "type": "open",
+          "options": [],
+          "answer": "Kello 9 jälkeen",
+          "aliases": [],
+          "explain": "Service resumes after 9."
+        },
+        {
+          "t": "Kenelle ilmoitetaan ongelmasta?",
+          "type": "open",
+          "options": [],
+          "answer": "IT-tuelle",
+          "aliases": [],
+          "explain": "IT support."
+        }
+      ],
+      "source": "New original transfer practice"
+    },
+    {
+      "id": "X6",
+      "unit": "Extra exam-style",
+      "title": "Course deadline",
+      "text": "KURSSIN PALAUTUS\nProjektin ensimmäinen osa palautetaan perjantaina kello 16. Lopullinen raportti palautetaan viikon kuluttua seuraavana perjantaina. Opettaja tarkistaa ensimmäisen osan ennen lopullista raporttia.",
+      "questions": [
+        {
+          "t": "Milloin ensimmäinen osa palautetaan?",
+          "type": "open",
+          "options": [],
+          "answer": "Perjantaina kello 16",
+          "aliases": [],
+          "explain": "First deadline."
+        },
+        {
+          "t": "Milloin lopullinen raportti palautetaan?",
+          "type": "open",
+          "options": [],
+          "answer": "Seuraavana perjantaina",
+          "aliases": [],
+          "explain": "One week later."
+        },
+        {
+          "t": "Mikä palautetaan ensin?",
+          "type": "open",
+          "options": [],
+          "answer": "Projektin ensimmäinen osa",
+          "aliases": [],
+          "explain": "First part comes before final report."
+        }
+      ],
+      "source": "New original transfer practice"
+    },
+    {
+      "id": "X7",
+      "unit": "Extra exam-style",
+      "title": "Store hours",
+      "text": "LÄHIKAUPAN AIKATAULU\nKauppa on avoinna ma–pe 7–22 ja lauantaina 8–21. Sunnuntaina kauppa avataan kello 10 ja suljetaan kello 18. Apteekki kaupan vieressä suljetaan sunnuntaina kello 16.",
+      "questions": [
+        {
+          "t": "Milloin kauppa avataan sunnuntaina?",
+          "type": "open",
+          "options": [],
+          "answer": "Kello 10",
+          "aliases": [],
+          "explain": "Shop opens at ten."
+        },
+        {
+          "t": "Mihin aikaan apteekki suljetaan sunnuntaina?",
+          "type": "open",
+          "options": [],
+          "answer": "Kello 16",
+          "aliases": [],
+          "explain": "Pharmacy closes at 16."
+        },
+        {
+          "t": "Kauppa suljetaan sunnuntaina kello 21.",
+          "type": "tf",
+          "options": [],
+          "answer": "Väärin",
+          "aliases": [],
+          "explain": "Sunday shop closes at 18."
+        }
+      ],
+      "source": "New original transfer practice"
+    },
+    {
+      "id": "X8",
+      "unit": "Extra exam-style",
+      "title": "Sports registration",
+      "text": "KUNTOSALIN KURSSI\nJoogatunti järjestetään maanantaisin 17–18. Ensimmäinen tutustumiskerta on maksuton, sen jälkeen maksu on 8 euroa kerralta. Ota oma matto mukaan. Ilmoittautuminen tehdään verkkosivulla.",
+      "questions": [
+        {
+          "t": "Milloin joogatunti alkaa?",
+          "type": "open",
+          "options": [],
+          "answer": "Maanantaina kello 17",
+          "aliases": [],
+          "explain": "Monday 17:00."
+        },
+        {
+          "t": "Paljonko ensimmäinen tunti maksaa?",
+          "type": "open",
+          "options": [],
+          "answer": "0 euroa",
+          "aliases": [
+            "maksuton"
+          ],
+          "explain": "First session free."
+        },
+        {
+          "t": "Mitä pitää ottaa mukaan?",
+          "type": "open",
+          "options": [],
+          "answer": "Oma matto",
+          "aliases": [],
+          "explain": "Bring a mat."
+        }
+      ],
+      "source": "New original transfer practice"
+    },
+    {
+      "id": "X9",
+      "unit": "Extra exam-style",
+      "title": "Package pickup",
+      "text": "PAKETIN NOUTO\nPakettisi on noudettavissa postista keskiviikosta alkaen. Ota mukaan henkilöllisyystodistus ja noutokoodi. Paketti säilytetään seitsemän päivää. Sunnuntaina palvelupiste on suljettu.",
+      "questions": [
+        {
+          "t": "Mistä paketti noudetaan?",
+          "type": "open",
+          "options": [],
+          "answer": "Postista",
+          "aliases": [],
+          "explain": "From post office."
+        },
+        {
+          "t": "Mitkä kaksi asiaa tarvitaan?",
+          "type": "open",
+          "options": [],
+          "answer": "Henkilöllisyystodistus ja noutokoodi",
+          "aliases": [],
+          "explain": "Both ID and pickup code."
+        },
+        {
+          "t": "Voiko paketin hakea sunnuntaina?",
+          "type": "open",
+          "options": [],
+          "answer": "Ei",
+          "aliases": [],
+          "explain": "Counter closed Sunday."
+        }
+      ],
+      "source": "New original transfer practice"
+    },
+    {
+      "id": "X10",
+      "unit": "Extra exam-style",
+      "title": "Lost keys",
+      "text": "KADONNEET AVAIMET\nLöysin avainnipun koulun pihalta tiistaina iltapäivällä. Avaimissa on sininen avaimenperä. Vein ne heti vastaanottoon. Kysy vastaanotosta ennen kello neljää, jos avaimet ovat sinun.",
+      "questions": [
+        {
+          "t": "Mistä avaimet löytyivät?",
+          "type": "open",
+          "options": [],
+          "answer": "Koulun pihalta",
+          "aliases": [],
+          "explain": "School courtyard."
+        },
+        {
+          "t": "Minkä värinen avaimenperä on?",
+          "type": "open",
+          "options": [],
+          "answer": "Sininen",
+          "aliases": [],
+          "explain": "Blue."
+        },
+        {
+          "t": "Mistä avaimet voi kysyä?",
+          "type": "open",
+          "options": [],
+          "answer": "Vastaanotosta",
+          "aliases": [],
+          "explain": "At reception."
+        }
+      ],
+      "source": "New original transfer practice"
+    },
+    {
+      "id": "X11",
+      "unit": "Extra exam-style",
+      "title": "Energy notice",
+      "text": "SÄHKÖKATKO\nRakennuksessa on sähkökatko keskiviikkona kello 13–14. Hissit eivät ole käytössä katkon aikana. Käytä portaita. Tietokoneet pitää sammuttaa ennen kello yhtä.",
+      "questions": [
+        {
+          "t": "Milloin sähkökatko alkaa?",
+          "type": "open",
+          "options": [],
+          "answer": "Kello 13",
+          "aliases": [],
+          "explain": "Starts at 13."
+        },
+        {
+          "t": "Voiko hissiä käyttää?",
+          "type": "open",
+          "options": [],
+          "answer": "Ei",
+          "aliases": [],
+          "explain": "Lifts unavailable."
+        },
+        {
+          "t": "Mitä tehdään tietokoneille etukäteen?",
+          "type": "open",
+          "options": [],
+          "answer": "Sammutetaan",
+          "aliases": [],
+          "explain": "Shut computers down."
+        }
+      ],
+      "source": "New original transfer practice"
+    },
+    {
+      "id": "X12",
+      "unit": "Extra exam-style",
+      "title": "Neighbourhood event",
+      "text": "KIELIKAHVILA\nKielikahvila on nuorisotalossa torstaisin kello 17–18.30. Tilaisuus on ilmainen aikuisille. Kahvi maksaa yhden euron. Ilmoittautumista ei tarvita. Tapaamisia ei ole syyslomaviikolla.",
+      "questions": [
+        {
+          "t": "Kenelle tilaisuus on tarkoitettu?",
+          "type": "open",
+          "options": [],
+          "answer": "Aikuisille",
+          "aliases": [],
+          "explain": "For adults."
+        },
+        {
+          "t": "Mitä osallistuminen maksaa?",
+          "type": "open",
+          "options": [],
+          "answer": "0 euroa",
+          "aliases": [
+            "maksuton"
+          ],
+          "explain": "Participating is free, coffee is not."
+        },
+        {
+          "t": "Tarvitseeko ilmoittautua?",
+          "type": "open",
+          "options": [],
+          "answer": "Ei",
+          "aliases": [],
+          "explain": "No registration needed."
+        }
+      ],
+      "source": "New original transfer practice"
+    }
+  ],
+  "listening": [
+    {
+      "id": "L1",
+      "title": "An appointment change",
+      "unit": "An appointment change",
+      "script": "Hei! Soitan hammashoitolasta. Sinulla oli aika tiistaina kello yhdeksän, mutta meidän täytyy siirtää sitä. Uusi aika on keskiviikkona kello puoli kymmenen. Vastaanotto on samassa paikassa kuin ennen. Jos uusi aika ei sovi sinulle, soita meille tänään ennen kello neljää. Kiitos!",
+      "questions": [
+        {
+          "t": "Mille päivälle aika siirtyy?",
+          "type": "open",
+          "options": [],
+          "answer": "Keskiviikolle",
+          "aliases": [
+            "keskiviikkona"
+          ],
+          "explain": "The moved appointment is Wednesday."
+        },
+        {
+          "t": "Mihin aikaan uusi aika on?",
+          "type": "mc",
+          "options": [
+            "9.00",
+            "9.30",
+            "10.30"
+          ],
+          "answer": "B",
+          "aliases": [
+            "9.30"
+          ],
+          "explain": "Puoli kymmenen = 09:30."
+        },
+        {
+          "t": "Mitä pitää tehdä, jos uusi aika ei sovi?",
+          "type": "open",
+          "options": [],
+          "answer": "Soita tänään ennen kello 16",
+          "aliases": [
+            "soita ennen kello neljää"
+          ],
+          "explain": "Call before 16:00 today."
+        }
+      ],
+      "source": "HAMK Finnish A2 Study Pack • Listening"
+    },
+    {
+      "id": "L2",
+      "title": "At the railway station",
+      "unit": "At the railway station",
+      "script": "Huomio matkustajat. Juna Tampereelle on noin viisitoista minuuttia myöhässä. Juna lähtee tänään laiturilta neljä, ei laiturilta kaksi. Pahoittelemme viivästystä. Tarkista junan uusi lähtöaika aseman näytöltä.",
+      "questions": [
+        {
+          "t": "Mihin kaupunkiin juna menee?",
+          "type": "open",
+          "options": [],
+          "answer": "Tampereelle",
+          "aliases": [
+            "tampere"
+          ],
+          "explain": "Destination Tampere."
+        },
+        {
+          "t": "Kuinka paljon juna on myöhässä?",
+          "type": "open",
+          "options": [],
+          "answer": "15 minuuttia",
+          "aliases": [
+            "viisitoista minuuttia"
+          ],
+          "explain": "Delay fifteen minutes."
+        },
+        {
+          "t": "Miltä laiturilta juna lähtee nyt?",
+          "type": "open",
+          "options": [],
+          "answer": "Laiturilta neljä",
+          "aliases": [
+            "4"
+          ],
+          "explain": "Not platform two."
+        }
+      ],
+      "source": "HAMK Finnish A2 Study Pack • Listening"
+    },
+    {
+      "id": "L3",
+      "title": "A phone message",
+      "unit": "A phone message",
+      "script": "Moi! Voitko käydä kaupassa kotimatkalla? Tarvitsemme leipää ja kananmunia. Maitoa ei tarvitse ostaa, sitä on vielä jääkaapissa. Minä tulen kotiin noin kuudelta. Teen sitten meille ruokaa. Nähdään illalla!",
+      "questions": [
+        {
+          "t": "Mitä ystävä pyytää ostamaan? Mainitse kaksi asiaa.",
+          "type": "open",
+          "options": [],
+          "answer": "Leipää ja kananmunia",
+          "aliases": [
+            "leipää kananmunia"
+          ],
+          "explain": "Both items needed."
+        },
+        {
+          "t": "Pitääkö ostaa maitoa?",
+          "type": "tf",
+          "options": [],
+          "answer": "V",
+          "aliases": [
+            "väärin"
+          ],
+          "explain": "Milk is already in the fridge."
+        },
+        {
+          "t": "Milloin ystävä tulee kotiin?",
+          "type": "open",
+          "options": [],
+          "answer": "Kello 18",
+          "aliases": [
+            "kuudelta"
+          ],
+          "explain": "Around six in the evening."
+        }
+      ],
+      "source": "HAMK Finnish A2 Study Pack • Listening"
+    },
+    {
+      "id": "L4",
+      "title": "A lesson moves",
+      "unit": "A lesson moves",
+      "script": "Hyvää huomenta! Suomen tunti on tänään kirjaston toisessa kerroksessa. Tavallisessa luokassa tehdään remonttia. Tunti alkaa kymmeneltä kuten aina. Ota mukaan vihko ja kynä. Oppikirjaa ei tänään tarvita, koska opettaja antaa teille tekstit.",
+      "questions": [
+        {
+          "t": "Missä tunti on tänään?",
+          "type": "open",
+          "options": [],
+          "answer": "Kirjaston toisessa kerroksessa",
+          "aliases": [
+            "kirjastossa toisessa kerroksessa"
+          ],
+          "explain": "Library second floor."
+        },
+        {
+          "t": "Miksi tavallista luokkaa ei käytetä?",
+          "type": "open",
+          "options": [],
+          "answer": "Luokassa tehdään remonttia",
+          "aliases": [
+            "remontti"
+          ],
+          "explain": "The ordinary classroom is under renovation."
+        },
+        {
+          "t": "Mihin aikaan tunti alkaa?",
+          "type": "open",
+          "options": [],
+          "answer": "Kello 10",
+          "aliases": [
+            "10"
+          ],
+          "explain": "The time remains ten."
+        }
+      ],
+      "source": "HAMK Finnish A2 Study Pack • Listening"
+    },
+    {
+      "id": "L5",
+      "title": "A weekend plan",
+      "unit": "A weekend plan",
+      "script": "Hei Sami! Ajattelin, että voisimme mennä lauantaina museoon. Sääennusteen mukaan silloin sataa, joten puisto ei ehkä ole hyvä idea. Museo avautuu kahdeltatoista. Tavataanko sen ovella puoli yksi? Liput maksavat opiskelijoille viisi euroa. Ota opiskelijakortti mukaan.",
+      "questions": [
+        {
+          "t": "Miksi puhuja ei halua mennä puistoon lauantaina?",
+          "type": "open",
+          "options": [],
+          "answer": "Koska sataa",
+          "aliases": [
+            "sataa"
+          ],
+          "explain": "Rain forecast, not temperature."
+        },
+        {
+          "t": "Mihin hän ehdottaa menemistä?",
+          "type": "open",
+          "options": [],
+          "answer": "Museoon",
+          "aliases": [
+            "museo"
+          ],
+          "explain": "Suggested museum."
+        },
+        {
+          "t": "Mikä tapaamisaika on?",
+          "type": "mc",
+          "options": [
+            "12.30",
+            "13.30",
+            "14.30"
+          ],
+          "answer": "A",
+          "aliases": [
+            "12.30"
+          ],
+          "explain": "Puoli yksi = 12:30."
+        }
+      ],
+      "source": "HAMK Finnish A2 Study Pack • Listening"
+    },
+    {
+      "id": "L6",
+      "title": "A short interview",
+      "unit": "A short interview",
+      "script": "Minä olen Aino. Olen töissä pienessä kahvilassa. Työpäiväni alkaa aamulla kahdeksalta ja loppuu iltapäivällä kolmelta. Tiistaisin ja torstaisin menen työn jälkeen suomen kurssille. Haluan oppia suomea, koska haluan puhua paremmin asiakkaiden kanssa. Viikonloppuna lepään ja tapaan ystäviä.",
+      "questions": [
+        {
+          "t": "Missä Aino työskentelee?",
+          "type": "open",
+          "options": [],
+          "answer": "Kahvilassa",
+          "aliases": [
+            "kahvila"
+          ],
+          "explain": "Aino works in a café."
+        },
+        {
+          "t": "Milloin hän opiskelee suomea?",
+          "type": "open",
+          "options": [],
+          "answer": "Tiistaisin ja torstaisin",
+          "aliases": [
+            "tiistai ja torstai"
+          ],
+          "explain": "On Tuesdays and Thursdays after work."
+        },
+        {
+          "t": "Miksi hän haluaa oppia suomea?",
+          "type": "open",
+          "options": [],
+          "answer": "Puhua asiakkaiden kanssa",
+          "aliases": [
+            "asiakkaiden kanssa"
+          ],
+          "explain": "She wants to serve customers better."
+        }
+      ],
+      "source": "HAMK Finnish A2 Study Pack • Listening"
+    },
+    {
+      "id": "L7",
+      "title": "The wrong purchase",
+      "unit": "The wrong purchase",
+      "script": "Hei! Ostin tämän paidan eilen, mutta se on liian pieni. Väri on hyvä, ja pidän tästä mallista. Haluaisin vaihtaa sen suurempaan kokoon. Minulla on kuitti mukana. Onko teillä samaa paitaa koossa L?",
+      "questions": [
+        {
+          "t": "Mikä ongelma paidassa on?",
+          "type": "open",
+          "options": [],
+          "answer": "Liian pieni",
+          "aliases": [
+            "pieni"
+          ],
+          "explain": "The shirt is too small."
+        },
+        {
+          "t": "Milloin asiakas osti paidan?",
+          "type": "open",
+          "options": [],
+          "answer": "Eilen",
+          "aliases": [
+            "yesterday"
+          ],
+          "explain": "She bought it yesterday."
+        },
+        {
+          "t": "Mitä asiakas haluaa tehdä?",
+          "type": "open",
+          "options": [],
+          "answer": "Vaihtaa suurempaan kokoon",
+          "aliases": [
+            "vaihtaa kokoon L"
+          ],
+          "explain": "Exchange for a bigger shirt."
+        }
+      ],
+      "source": "HAMK Finnish A2 Study Pack • Listening"
+    },
+    {
+      "id": "L8",
+      "title": "Weather",
+      "unit": "Weather",
+      "script": "Huomenna aamulla on aurinkoista ja melko viileää. Lämpötila on noin kahdeksan astetta. Iltapäivällä sää lämpenee, ja lämpötila nousee neljääntoista asteeseen. Sade alkaa vasta illalla. Jos lähdet illaksi ulos, ota sateenvarjo mukaan.",
+      "questions": [
+        {
+          "t": "Millainen sää on aamulla?",
+          "type": "open",
+          "options": [],
+          "answer": "Aurinkoista ja viileää",
+          "aliases": [
+            "aurinkoista"
+          ],
+          "explain": "Sunny and cool."
+        },
+        {
+          "t": "Milloin sade alkaa?",
+          "type": "open",
+          "options": [],
+          "answer": "Illalla",
+          "aliases": [
+            "ilta"
+          ],
+          "explain": "Rain begins in evening."
+        },
+        {
+          "t": "Kuinka lämmintä iltapäivällä on?",
+          "type": "open",
+          "options": [],
+          "answer": "14 astetta",
+          "aliases": [
+            "neljätoista astetta"
+          ],
+          "explain": "About 14°C afternoon."
+        }
+      ],
+      "source": "HAMK Finnish A2 Study Pack • Listening"
+    },
+    {
+      "id": "L9",
+      "title": "A café meeting in spoken Finnish",
+      "unit": "A café meeting in spoken Finnish",
+      "script": "Moi! Mä oon vähän myöhässä, koska bussi ei tullut ajoissa. Mä oon siellä noin kymmenen minuutin päästä. Sun ei tarvitse odottaa ulkona. Mene vaan sisälle kahvilaan ja ota pöytä. Mä tuun sinne heti, kun pääsen.",
+      "questions": [
+        {
+          "t": "Miksi puhuja on myöhässä?",
+          "type": "open",
+          "options": [],
+          "answer": "Bussi ei tullut ajoissa",
+          "aliases": [
+            "bussi myöhässä"
+          ],
+          "explain": "Bus was late."
+        },
+        {
+          "t": "Kuinka kauan hänellä vielä kestää?",
+          "type": "open",
+          "options": [],
+          "answer": "10 minuuttia",
+          "aliases": [
+            "kymmenen minuuttia"
+          ],
+          "explain": "About ten more minutes."
+        },
+        {
+          "t": "Missä vastaanottaja voi odottaa?",
+          "type": "open",
+          "options": [],
+          "answer": "Kahvilan sisällä",
+          "aliases": [
+            "kahvilassa"
+          ],
+          "explain": "Wait inside the café."
+        }
+      ],
+      "source": "HAMK Finnish A2 Study Pack • Listening"
+    },
+    {
+      "id": "L10",
+      "title": "Opening hours",
+      "unit": "Opening hours",
+      "script": "Tervetuloa opiskelijapalveluihin. Toimistomme on avoinna maanantaisin, keskiviikkoisin ja perjantaisin kello kymmenestä kahteen. Voit tulla ilman ajanvarausta. Muina päivinä voit lähettää meille sähköpostia. Vastaamme viesteihin yleensä kahden arkipäivän kuluessa.",
+      "questions": [
+        {
+          "t": "Minä päivinä toimisto on avoinna?",
+          "type": "open",
+          "options": [],
+          "answer": "Maanantai keskiviikko perjantai",
+          "aliases": [
+            "maanantaisin keskiviikkoisin perjantaisin"
+          ],
+          "explain": "All three days."
+        },
+        {
+          "t": "Mihin aikaan toimisto aukeaa?",
+          "type": "open",
+          "options": [],
+          "answer": "Kello 10",
+          "aliases": [
+            "10"
+          ],
+          "explain": "Opens at 10."
+        },
+        {
+          "t": "Voiko toimistoon tulla ilman ajanvarausta?",
+          "type": "tf",
+          "options": [],
+          "answer": "O",
+          "aliases": [
+            "oikein"
+          ],
+          "explain": "Walk-in visits allowed."
+        }
+      ],
+      "source": "HAMK Finnish A2 Study Pack • Listening"
+    },
+    {
+      "id": "L11",
+      "title": "A repair visit",
+      "unit": "A repair visit",
+      "script": "Hei, tässä on huoltomies. Tulen huomenna torstaina aamulla kahdeksan ja yhdeksän välillä korjaamaan keittiön hanaa. Työ kestää noin puoli tuntia. Jos et ole silloin kotona, soita minulle, niin sovimme toisen ajan. Kiitos ja huomiseen.",
+      "questions": [
+        {
+          "t": "Milloin huoltomies tulee?",
+          "type": "open",
+          "options": [],
+          "answer": "Torstaina kello 8–9",
+          "aliases": [
+            "huomenna torstaina"
+          ],
+          "explain": "Tomorrow Thursday 08:00–09:00."
+        },
+        {
+          "t": "Mitä hän korjaa?",
+          "type": "open",
+          "options": [],
+          "answer": "Keittiön hanaa",
+          "aliases": [
+            "hanaa"
+          ],
+          "explain": "Kitchen tap."
+        },
+        {
+          "t": "Mitä asukkaan pitää tehdä, jos aika ei sovi?",
+          "type": "open",
+          "options": [],
+          "answer": "Soittaa huoltomiehelle",
+          "aliases": [
+            "soittaa ja sopia toinen aika"
+          ],
+          "explain": "Call to arrange another time."
+        }
+      ],
+      "source": "HAMK Finnish A2 Study Pack • Listening"
+    },
+    {
+      "id": "L12",
+      "title": "Two plans and a change",
+      "unit": "Two plans and a change",
+      "script": "Meidän piti mennä tänään uimaan, mutta uimahalli on kiinni. Ajattelimme ensin mennä elokuviin. Liput olivat kuitenkin liian kalliita. Päätimme lopulta mennä ystävän kotiin ja tehdä ruokaa yhdessä. Menemme uimaan ensi viikolla.",
+      "questions": [
+        {
+          "t": "Mihin puhujat aluksi aikoivat mennä?",
+          "type": "open",
+          "options": [],
+          "answer": "Uimaan",
+          "aliases": [
+            "uinti"
+          ],
+          "explain": "Originally swimming."
+        },
+        {
+          "t": "Miksi suunnitelma muuttui?",
+          "type": "open",
+          "options": [],
+          "answer": "Uimahalli on kiinni",
+          "aliases": [
+            "uimahalli suljettu"
+          ],
+          "explain": "Pool closed."
+        },
+        {
+          "t": "Mitä he tekevät lopulta?",
+          "type": "open",
+          "options": [],
+          "answer": "Ystävän kotiin tekemään ruokaa",
+          "aliases": [
+            "tekevät ruokaa yhdessä"
+          ],
+          "explain": "Ultimately cook at a friend’s home."
+        }
+      ],
+      "source": "HAMK Finnish A2 Study Pack • Listening"
+    }
+  ],
+  "writing": [
+    {
+      "id": "W1",
+      "title": "Absence from class",
+      "task": "Olet sairas. Kirjoita opettajalle viesti. Kerro, miksi olet poissa, kuinka kauan olet poissa ja kysy kotitehtävistä.",
+      "model": "Hei! En pääse tänään suomen tunnille, koska olen sairas. Minulla on kuumetta ja päänsärkyä. Olen poissa tänään ja huomenna. Voisitko lähettää minulle kotitehtävät? Teen ne, kun voin paremmin. Kiitos avusta! Terveisin Islam",
+      "check": "Illness explained; absence length given; homework requested. Change the illness and absence length, then write again without the model.",
+      "source": "Study Pack • Writing"
+    },
+    {
+      "id": "W2",
+      "title": "Cancel and rearrange a meeting",
+      "task": "Et voi tavata ystävääsi tänään. Pyydä anteeksi, kerro syy ja ehdota uutta aikaa ja paikkaa.",
+      "model": "Moi Sami! Anteeksi, en voi tulla tänään kahvilaan. Minun täytyy tehdä ryhmätyö valmiiksi. Voimmeko tavata huomenna kello viisi? Tavataan kirjaston edessä ja mennään sitten kahville. Kerro, sopiiko aika sinulle. Olisi mukava nähdä! Terveisin Islam",
+      "check": "Apology, study reason, tomorrow at five, library entrance and confirmation question.",
+      "source": "Study Pack • Writing"
+    },
+    {
+      "id": "W3",
+      "title": "Invite someone",
+      "task": "Kutsu ystävä kotiisi syömään. Kerro päivä, aika, osoite ja mitä teette. Kysy, voiko hän tulla.",
+      "model": "Moi Sami! Haluaisin kutsua sinut meille syömään lauantaina kello kuusi. Osoite on Mallikatu 8, asunto 12. Teen riisiä ja kasvisruokaa. Voimme syödä ja katsoa sen jälkeen elokuvan. Pääsetkö tulemaan? Kerro myös, jos et voi syödä jotakin ruokaa. Nähdään! Islam",
+      "check": "Saturday at six, address, meal and film, availability question. The address is fictional.",
+      "source": "Study Pack • Writing"
+    },
+    {
+      "id": "W4",
+      "title": "Ask about a course",
+      "task": "Haluat suomen kurssille. Kerro kielitaidostasi. Kysy, milloin kurssi alkaa, mitä se maksaa ja miten ilmoittaudut.",
+      "model": "Hei! Haluaisin tulla suomen kurssille. Osaan jo vähän suomea ja haluan harjoitella puhumista. Milloin seuraava kurssi alkaa? Kuinka paljon kurssi maksaa? Haluaisin myös tietää, miten voin ilmoittautua. Minulle sopivat parhaiten iltakurssit. Kiitos vastauksesta! Ystävällisin terveisin Islam",
+      "check": "Current level, start date, cost and registration method are all included.",
+      "source": "Study Pack • Writing"
+    },
+    {
+      "id": "W5",
+      "title": "Report a broken appliance",
+      "task": "Asuntosi jääkaappi ei toimi. Kirjoita huoltoon. Kerro ongelma, milloin huomasit sen, osoite ja milloin olet kotona.",
+      "model": "Hei! Asun osoitteessa Mallikatu 8, asunto 12. Jääkaappi ei toimi. Huomasin ongelman tänä aamuna, ja jääkaappi on lämmin. Voitteko tulla korjaamaan sen mahdollisimman pian? Olen kotona tänään kello neljän jälkeen ja huomenna aamulla. Kiitos avusta! Terveisin Islam",
+      "check": "Fault, discovery time, address, repair request and availability.",
+      "source": "Study Pack • Writing"
+    },
+    {
+      "id": "W6",
+      "title": "A lost bag",
+      "task": "Unohdit laukun bussiin. Kerro milloin ja missä, kuvaile laukku ja kysy, onko se löytynyt.",
+      "model": "Hei! Unohdin laukkuni bussiin numero 12 eilen noin kello neljä. Jäin pois keskustan pysäkillä. Laukku on pieni ja musta. Sen sisällä on kirja ja vesipullo. Onko laukku löytynyt? Voitteko vastata tähän viestiin, jos löydätte sen? Kiitos avusta! Terveisin Islam",
+      "check": "Bus and time, stop, appearance, contents and contact method.",
+      "source": "Study Pack • Writing"
+    },
+    {
+      "id": "W7",
+      "title": "Complain about a product",
+      "task": "Ostit kuulokkeet, mutta ne eivät toimi. Kerro ostoaika, ongelma ja toivomasi ratkaisu.",
+      "model": "Hei! Ostin kaupasta kuulokkeet maanantaina. Ne eivät toimi kunnolla. Vasemmalta puolelta ei kuulu ääntä. Kokeilin kuulokkeita myös toisella puhelimella, mutta ongelma on sama. Minulla on kuitti. Haluaisin vaihtaa ne toimiviin kuulokkeisiin. Miten voin hoitaa asian? Ystävällisin terveisin Islam",
+      "check": "Purchase date, specific fault, attempted check, receipt and requested replacement.",
+      "source": "Study Pack • Writing"
+    },
+    {
+      "id": "W8",
+      "title": "Describe your neighbourhood to a friend",
+      "task": "Ystäväsi etsii asuntoa. Kerro alueesi palveluista, liikkumisesta ja yhdestä huonosta puolesta.",
+      "model": "Moi Sami! Minun alueellani on mukava asua. Lähellä on ruokakauppa, kirjasto ja puisto. Bussipysäkki on aivan talon vieressä, joten keskustaan on helppo mennä. Käyn usein kävelyllä puistossa. Huono puoli on se, että vuokrat ovat melko kalliita. Tule joskus katsomaan aluetta! Terveisin Islam",
+      "check": "Services, transport and high rent as a disadvantage.",
+      "source": "Study Pack • Writing"
+    },
+    {
+      "id": "W9",
+      "title": "Give feedback about a shop",
+      "task": "Kerro kolme hyvää ja kolme huonoa asiaa lähikaupasta. Selitä miksi ja ehdota yhtä parannusta.",
+      "model": "Lähikaupassani on paljon hyvää. Se on lähellä kotia, joten voin kävellä sinne. Myyjät ovat ystävällisiä ja auttavat minua. Kauppa on myös siisti, joten siellä on mukava käydä. Joissakin asioissa on ongelmia. Hinnat ovat korkeita, joten ostokset maksavat paljon. Illalla on pitkät jonot, ja joudun odottamaan. Leipää on joskus liian vähän, joten en löydä haluamaani tuotetta. Toivon, että illalla olisi enemmän kassoja auki. Kiitos hyvästä palvelusta!",
+      "check": "Good: location, helpful staff, cleanliness. Bad: prices, queues, bread availability. Each has an effect or reason. Suggested improvement: more evening checkouts. This is an original response to the broad feedback task type shown on the YKI page.",
+      "source": "Study Pack • Writing"
+    },
+    {
+      "id": "W10",
+      "title": "Describe a past day",
+      "task": "Kerro viime sunnuntaista. Mitä teit aamulla, päivällä ja illalla? Millainen päivä oli?",
+      "model": "Viime sunnuntai oli rauhallinen. Heräsin kello yhdeksän ja söin aamupalaa. Aamulla siivosin keittiön. Päivällä menin ystävän kanssa puistoon. Kävelimme tunnin ja joimme kahvia. Illalla olin kotona. Tein ruokaa ja opiskelin vähän suomea. Menin aikaisin nukkumaan. Päivä oli mukava, koska minulla ei ollut kiire.",
+      "check": "Morning, daytime and evening activities, past tense and an overall comment with a reason.",
+      "source": "Study Pack • Writing"
+    },
+    {
+      "id": "W11",
+      "title": "Give an opinion about language learning",
+      "task": "Onko suomen opiskelu tärkeää? Kerro mielipiteesi, kaksi syytä ja oma esimerkki.",
+      "model": "Minusta suomen opiskelu on tärkeää. Ensiksi arjen asiat ovat helpompia, kun ymmärtää suomea. Esimerkiksi kaupassa voi kysyä apua. Toiseksi suomen taito voi auttaa työssä, koska monet asiakkaat puhuvat suomea. Itse harjoittelen joka päivä vähän. Eilen kysyin kaupassa tuotteen hintaa suomeksi. Olin iloinen, koska ymmärsin vastauksen. Haluan jatkaa harjoittelua.",
+      "check": "Opinion, two reasons, personal example. You can write a different opinion if it is relevant and explained.",
+      "source": "Study Pack • Writing"
+    },
+    {
+      "id": "W12",
+      "title": "Ask for extra time",
+      "task": "Et ehdi palauttaa tehtävää ajoissa. Kirjoita opettajalle, selitä miksi ja ehdota uutta palautuspäivää.",
+      "model": "Hei! En ehdi palauttaa tehtävää tänään, koska tietokoneeni meni rikki eilen. Olen tehnyt jo osan tehtävästä, mutta tarvitsen vielä aikaa. Voinko palauttaa sen perjantaina? Käytän huomenna kirjaston tietokonetta ja jatkan työtä siellä. Anteeksi myöhästyminen. Kiitos ymmärryksestä! Terveisin Islam",
+      "check": "Reason, proposed deadline, practical plan and apology.",
+      "source": "Study Pack • Writing"
+    }
+  ],
+  "speaking": [
+    {
+      "id": "S1",
+      "title": "Introduce yourself",
+      "prompt": "Kerro itsestäsi. — Introduce yourself: name, origin, home, studies and interests.",
+      "model": "Hei! Minun nimeni on Islam. Olen kotoisin Bangladeshista. Asun Suomessa. Opiskelen tietotekniikkaa HAMKissa. Puhun bengalia, englantia ja vähän suomea. Vapaa-ajalla kuuntelen musiikkia ja kävelen. Haluan oppia suomea, koska haluan käyttää sitä arjessa ja työssä.",
+      "meaning": "Hello, my name is Islam. I am from Bangladesh and live in Finland. I study ICT at HAMK. I speak Bengali, English and some Finnish. I listen to music and walk in my free time. I want to learn Finnish for everyday life and work.",
+      "followups": "Mitä opiskelet? — Opiskelen tietotekniikkaa. Miksi valitsit tämän alan? — Koska pidän tietokoneista ja haluan oppia uusia asioita. Change practice: Add your actual town, age and length of residence. Do not memorize an invented age or arrival date.",
+      "source": "Study Pack • Speaking"
+    },
+    {
+      "id": "S2",
+      "title": "Family",
+      "prompt": "Kerro perheestäsi. Keitä perheeseesi kuuluu? — Describe your family and who is in it.",
+      "model": "Perheeni on minulle tärkeä. Perheeseeni kuuluvat vanhempani ja siskoni. Vanhempani asuvat Bangladeshissa. Soitan heille usein illalla. Puhumme päivän asioista. Kun olemme yhdessä, laitamme ruokaa ja syömme yhdessä. Ikävöin perhettäni, koska asumme kaukana toisistamme.",
+      "meaning": "My family is important to me. It includes my parents and sister. My parents live in Bangladesh. I call them often in the evening. We talk about our day. We cook and eat together when we meet. I miss my family because we live far apart.",
+      "followups": "Kuinka usein soitat perheellesi? — Soitan kolme kertaa viikossa. Onko sinulla lapsia? — Minulla ei ole lapsia. / Minulla on yksi lapsi. Change practice: Replace the family members with your real family. You can say Asun yksin or Asun puolisoni kanssa if appropriate.",
+      "source": "Study Pack • Speaking"
+    },
+    {
+      "id": "S3",
+      "title": "A good friend",
+      "prompt": "Millainen on hyvä ystävä? Kerro ystävästäsi. — What is a good friend like? Describe a friend.",
+      "model": "Hyvä ystävä on ystävällinen ja rehellinen. Hän kuuntelee ja auttaa. Minulla on hyvä ystävä, jonka nimi on Sami. Tapasimme koulussa. Hän on rauhallinen ja hauska. Käymme joskus kahvilla ja puhumme opinnoista. Pidän hänestä, koska hänen kanssaan on helppo puhua.",
+      "meaning": "A good friend is kind and honest, listens and helps. My friend Sami and I met at school. He is calm and funny. We sometimes have coffee and talk about studies. He is easy to talk to.",
+      "followups": "Mitä teitte viimeksi yhdessä? — Kävimme kahvilassa viime lauantaina. Miten autat ystävää? — Kuuntelen häntä ja autan tehtävissä.",
+      "source": "Study Pack • Speaking"
+    },
+    {
+      "id": "S4",
+      "title": "Home",
+      "prompt": "Millaisessa asunnossa asut? — Describe your home.",
+      "model": "Asun pienessä kerrostaloasunnossa. Asunnossa on olohuone, makuuhuone, keittiö ja kylpyhuone. Olohuoneessa on sohva ja pöytä. Pidän kodistani, koska se on valoisa ja rauhallinen. Kauppa ja bussipysäkki ovat lähellä. Vuokra on melko kallis. Haluaisin joskus asunnon, jossa on parveke.",
+      "meaning": "I live in a small apartment with a living room, bedroom, kitchen and bathroom. It has a sofa and table. I like its light and quietness. Shops and transport are nearby, but the rent is fairly expensive. I would like a balcony in a future home.",
+      "followups": "Mikä on kodin paras paikka? — Olohuone, koska voin levätä siellä. Mitä haluaisit muuttaa? — Haluaisin enemmän tilaa.",
+      "source": "Study Pack • Speaking"
+    },
+    {
+      "id": "S5",
+      "title": "Your local area",
+      "prompt": "Kerro asuinalueestasi. — Describe your neighbourhood.",
+      "model": "Asuinalueeni on rauhallinen. Lähellä on kauppa, kirjasto ja puisto. Menen usein puistoon kävelemään. Bussilla pääsee keskustaan. Pidän alueesta, koska palvelut ovat lähellä. Illalla kadulla on joskus melua. Haluaisin alueelle lisää pyöräteitä.",
+      "meaning": "My area is quiet with a shop, library and park nearby. I walk in the park and can take a bus to the centre. Services are convenient. There is occasional evening noise, and I would like more cycle paths.",
+      "followups": "Onko siellä hyvä asua? — Kyllä, koska siellä on turvallista ja palvelut ovat lähellä. Miten menet keskustaan? — Menen bussilla.",
+      "source": "Study Pack • Speaking"
+    },
+    {
+      "id": "S6",
+      "title": "A normal weekday",
+      "prompt": "Mitä teet tavallisena arkipäivänä? — Describe a normal weekday.",
+      "model": "Herään yleensä kello seitsemän. Ensin pesen hampaat ja syön aamupalaa. Sitten lähden kouluun. Opiskelen aamulla ja iltapäivällä. Syön lounasta koulun ravintolassa. Koulun jälkeen teen tehtäviä kotona. Illalla laitan ruokaa ja kävelen vähän. Menen nukkumaan noin kello yksitoista.",
+      "meaning": "I wake at seven, wash my teeth, eat breakfast and go to school. I study during the day and eat lunch at school. Afterwards I do assignments, cook, walk and go to bed around eleven.",
+      "followups": "Mihin aikaan heräät viikonloppuna? — Herään yleensä yhdeksältä. Mitä teet koulun jälkeen? — Teen tehtäviä ja lepään.",
+      "source": "Study Pack • Speaking"
+    },
+    {
+      "id": "S7",
+      "title": "Yesterday or last weekend",
+      "prompt": "Mitä teit viime viikonloppuna? — What did you do last weekend?",
+      "model": "Viime lauantaina heräsin melko myöhään. Söin aamupalaa ja siivosin asunnon. Sen jälkeen kävin kaupassa. Iltapäivällä tapasin ystävän kahvilassa. Puhuimme ja joimme teetä. Sunnuntaina opiskelin suomea kotona. En mennyt ulos, koska satoi. Viikonloppu oli rauhallinen.",
+      "meaning": "I woke late on Saturday, ate, cleaned and shopped. I met a friend for tea. On Sunday I studied Finnish at home and stayed inside because it rained. It was a quiet weekend.",
+      "followups": "Kenen kanssa olit? — Olin ystäväni kanssa. Millainen sää oli? — Lauantaina oli aurinkoista, mutta sunnuntaina satoi.",
+      "source": "Study Pack • Speaking"
+    },
+    {
+      "id": "S8",
+      "title": "Studies at HAMK",
+      "prompt": "Kerro opinnoistasi. — Describe your studies.",
+      "model": "Opiskelen tietotekniikkaa HAMKissa. Opiskelen esimerkiksi ohjelmointia ja tietoverkkoja. Käytän tietokonetta joka päivä. Teemme tehtäviä yksin ja ryhmässä. Pidän ryhmätöistä, koska voin oppia muilta. Joskus tehtävät ovat vaikeita. Silloin kysyn opettajalta apua. Tulevaisuudessa haluan työskennellä IT-alalla.",
+      "meaning": "I study ICT, including programming and networks, at HAMK. I use a computer daily and work independently and in groups. I learn from other people. I ask the teacher for help when work is difficult and hope to work in IT.",
+      "followups": "Mikä on vaikeaa? — Uudet sanat ja jotkut tehtävät ovat vaikeita. Miten opiskelet kotona? — Luen ohjeet ja teen harjoituksia.",
+      "source": "Study Pack • Speaking"
+    },
+    {
+      "id": "S9",
+      "title": "Work and practical training",
+      "prompt": "Millaista työtä haluaisit tehdä? — What work would you like to do?",
+      "model": "Haluaisin työskennellä IT-tuessa. Pidän tietokoneista ja ihmisten auttamisesta. Osaan käyttää tavallisia tietokoneohjelmia. Haluan oppia lisää työssä. Etsin harjoittelupaikkaa. Hyvässä työpaikassa on mukavat työkaverit ja selkeät ohjeet. Suomen kieli on tärkeä, koska asiakkaat voivat puhua suomea.",
+      "meaning": "I would like to work in IT support. I like computers and helping people, can use ordinary programs and want to learn through practical training. Clear instructions and kind colleagues matter. Finnish helps when customers speak it.",
+      "followups": "Mitä osaat tehdä? — Osaan käyttää tietokonetta ja auttaa tavallisissa ongelmissa. Oletko nyt töissä? — Olen nyt opiskelija. / Olen töissä osa-aikaisesti.",
+      "source": "Study Pack • Speaking"
+    },
+    {
+      "id": "S10",
+      "title": "Learning Finnish",
+      "prompt": "Miten opiskelet suomea? — How do you study Finnish?",
+      "model": "Opiskelen suomea joka päivä. Luen lyhyitä tekstejä ja kirjoitan uusia sanoja vihkoon. Kuuntelen suomea ja toistan lauseita ääneen. Puhun suomea kaupassa, kun voin. Puhuminen on joskus vaikeaa, koska en muista kaikkia sanoja. Yritän kuitenkin puhua rauhallisesti. Haluan ymmärtää ihmisiä paremmin.",
+      "meaning": "I study daily by reading, writing vocabulary, listening and repeating sentences. I practise in shops. Speaking is sometimes hard because I forget words, but I keep speaking calmly. I want to understand people better.",
+      "followups": "Mikä auttaa sinua oppimaan? — Toistaminen ja lyhyet harjoitukset auttavat. Miksi tarvitset suomea? — Tarvitsen sitä arjessa, opinnoissa ja työssä.",
+      "source": "Study Pack • Speaking"
+    },
+    {
+      "id": "S11",
+      "title": "Food and cooking",
+      "prompt": "Millaisesta ruoasta pidät? — What food do you like?",
+      "model": "Pidän riisistä, kanasta ja vihanneksista. Teen usein ruokaa kotona, koska se on halvempi vaihtoehto. Syön aamulla leipää ja kananmunan. Päivällä syön lounasta koulussa. Illalla teen lämpimän ruoan. Viikonloppuna kokeilen joskus uutta reseptiä. Minusta yhdessä syöminen on mukavaa.",
+      "meaning": "I like rice, chicken and vegetables. Cooking at home is cheaper. I eat bread and an egg for breakfast, lunch at school and a warm evening meal. I sometimes try a new recipe and enjoy eating with others.",
+      "followups": "Osaatko laittaa ruokaa? — Kyllä, osaan tehdä muutamia ruokia. Kuinka usein käyt ravintolassa? — Käyn ravintolassa noin kerran kuukaudessa.",
+      "source": "Study Pack • Speaking"
+    },
+    {
+      "id": "S12",
+      "title": "Shopping and clothes",
+      "prompt": "Miten ostat ruokaa tai vaatteita? — How do you shop for food or clothes?",
+      "model": "Käyn ruokakaupassa yleensä kaksi kertaa viikossa. Teen ensin ostoslistan. Vertaan hintoja ja ostan usein tarjoustuotteita. Maksan yleensä kortilla. Vaatteita ostan harvemmin. Haluan, että vaatteet ovat mukavat ja sopivan kokoiset. Jos tuote on rikki, otan yhteyttä kauppaan.",
+      "meaning": "I shop for food twice a week, make a list, compare prices and often buy special offers. I pay by card. I buy clothes less often and choose comfort and a good fit. I contact the shop about broken goods.",
+      "followups": "Ostatko verkosta? — Joskus, mutta haluan yleensä nähdä tuotteen ensin. Millaisia vaatteita käytät talvella? — Käytän lämmintä takkia, pipoa ja hanskoja.",
+      "source": "Study Pack • Speaking"
+    },
+    {
+      "id": "S13",
+      "title": "Free time and exercise",
+      "prompt": "Kerro harrastuksestasi. — Describe a hobby.",
+      "model": "Harrastan kävelyä. Kävelen yleensä puistossa lähellä kotia. Menen ulos kolme tai neljä kertaa viikossa. Joskus ystävä tulee mukaan. Pidän kävelystä, koska se on helppoa eikä maksa mitään. Kävelyn jälkeen minulla on hyvä olo. Talvella käytän lämpimiä vaatteita.",
+      "meaning": "Walking is my hobby. I go to a local park three or four times a week, sometimes with a friend. It is easy and free, makes me feel good and requires warm clothes in winter.",
+      "followups": "Kuinka kauan kävelet? — Kävelen yleensä puoli tuntia. Haluaisitko aloittaa uuden harrastuksen? — Haluaisin aloittaa uinnin.",
+      "source": "Study Pack • Speaking"
+    },
+    {
+      "id": "S14",
+      "title": "Health and a recent illness",
+      "prompt": "Miten pidät huolta itsestäsi? Milloin olit viimeksi sairas? — How do you look after yourself? When were you last ill?",
+      "model": "Yritän nukkua tarpeeksi ja syödä säännöllisesti. Kävelen usein ja pidän taukoja opiskelusta. Viime kuussa olin sairas. Minulla oli kuumetta ja kurkku kipeä. Olin kotona kaksi päivää ja lepäsin. Ilmoitin opettajalle, että en pääse tunnille. Nyt voin hyvin.",
+      "meaning": "I try to sleep enough, eat regularly, walk and take study breaks. Last month I had a fever and sore throat, stayed home for two days and informed the teacher. I am well now.",
+      "followups": "Mitä sanot ajanvarauksessa? — Haluaisin varata ajan lääkärille. Mitä teit, kun olit sairaana? — Lepäsin kotona.",
+      "source": "Study Pack • Speaking"
+    },
+    {
+      "id": "S15",
+      "title": "Travel and holidays",
+      "prompt": "Kerro lomamatkasta tai suunnittele matka. — Describe or plan a holiday.",
+      "model": "Haluaisin matkustaa kesällä Tampereelle. Menen sinne junalla ystävän kanssa. Haluamme olla siellä kaksi päivää. Käymme museossa ja kävelemme keskustassa. Yövymme hotellissa. Etsin ensin sopivat liput ja vertaan hintoja. Pidän lyhyistä matkoista, koska ne on helppo suunnitella.",
+      "meaning": "I would like a two-day summer trip to Tampere by train with a friend. We would visit a museum, walk in the centre and stay in a hotel. I would compare ticket prices. Short trips are easy to plan.",
+      "followups": "Miksi matkustat junalla? — Koska junassa voi levätä. Mitä otat mukaan? — Otan vaatteita, puhelimen ja laturin.",
+      "source": "Study Pack • Speaking"
+    },
+    {
+      "id": "S16",
+      "title": "Weather and seasons",
+      "prompt": "Mikä vuodenaika on paras? — Which season is best?",
+      "model": "Pidän eniten kesästä. Kesällä on lämmintä ja valoisaa. Voin kävellä ja viettää aikaa ulkona. Pidän myös keväästä, koska päivät ovat pidempiä. Talvella on joskus liian kylmä. Silloin pukeudun lämpimästi. Tänään on pilvistä, mutta ei sada.",
+      "meaning": "I like summer best because it is warm and light. I can spend time outdoors. I also enjoy longer spring days. Winter can be too cold, so I dress warmly. Today is cloudy but dry.",
+      "followups": "Mitä teet, jos sataa? — Olen kotona tai menen kirjastoon. Millainen sää kotimaassasi on? — Siellä on usein lämmintä.",
+      "source": "Study Pack • Speaking"
+    },
+    {
+      "id": "S17",
+      "title": "Nature and recycling",
+      "prompt": "Mitä teet luonnossa? Miten kierrätät? — What do you do in nature? How do you recycle?",
+      "model": "Pidän luonnosta, koska siellä on rauhallista. Kävelen metsässä ja istun joskus järven lähellä. En jätä roskia luontoon. Kotona lajittelen paperin, kartongin ja biojätteen. Palautan tyhjät pullot kauppaan. Minusta pienet teot ovat tärkeitä. Jokainen voi pitää oman ympäristön siistinä.",
+      "meaning": "Nature is peaceful. I walk in forests and sit near a lake without leaving rubbish. I sort household waste and return bottles. Small actions help keep our surroundings clean.",
+      "followups": "Mihin laitat tyhjät pullot? — Palautan ne kaupan automaattiin. Miksi pidät metsästä? — Koska siellä on hiljaista.",
+      "source": "Study Pack • Speaking"
+    },
+    {
+      "id": "S18",
+      "title": "Phone and internet",
+      "prompt": "Mihin käytät puhelinta? — What do you use your phone for?",
+      "model": "Käytän puhelinta joka päivä. Lähetän viestejä ja soitan perheelle. Katson myös aikatauluja ja luen uutisia. Puhelin on hyödyllinen, koska voin hoitaa asioita nopeasti. Joskus käytän sitä liian paljon. Siksi laitan puhelimen pois, kun opiskelen. En halua katsoa näyttöä koko iltaa.",
+      "meaning": "I use my phone for messages, family calls, timetables and news. It is useful but can take too much time, so I put it away while studying.",
+      "followups": "Mitä teet, jos netti ei toimi? — Tarkistan yhteyden ja kysyn apua. Onko puhelin tärkeä? — On, mutta en tarvitse sitä koko ajan.",
+      "source": "Study Pack • Speaking"
+    },
+    {
+      "id": "S19",
+      "title": "Celebration and culture",
+      "prompt": "Kerro juhlapäivästä tai tapahtumasta. — Describe a celebration or event.",
+      "model": "Vietin viime vuonna syntymäpäivää kotona. Kutsuin muutaman ystävän kylään. Teimme ruokaa ja söimme kakkua. Kuuntelimme musiikkia ja puhuimme paljon. Juhlat olivat pienet, mutta mukavat. Minusta tärkeintä oli olla yhdessä. En tarvinnut kallista juhlaa.",
+      "meaning": "Last year I celebrated a birthday at home with a few friends, food, cake, music and conversation. Togetherness mattered more than an expensive celebration.",
+      "followups": "Mitä tarjoat vieraille? — Tarjoan ruokaa, teetä ja kakkua. Millaisista tapahtumista pidät? — Pidän pienistä konserteista.",
+      "source": "Study Pack • Speaking"
+    },
+    {
+      "id": "S20",
+      "title": "Future and life in Finland",
+      "prompt": "Mitä haluat tehdä tulevaisuudessa? — What do you want to do in the future?",
+      "model": "Haluan ensin valmistua. Sen jälkeen haluaisin löytää työpaikan Suomessa. Haluan myös puhua suomea paremmin. Harjoittelen vähän joka päivä. Suomessa pidän luonnosta ja rauhallisesta arjesta. Talven pimeys on joskus vaikeaa. Tulevaisuudessa haluan hyvän työn ja tavallisen, mukavan arjen.",
+      "meaning": "I want to graduate, find work in Finland and improve my Finnish through daily practice. I enjoy nature and a peaceful life, although winter darkness can be hard. I want good work and a comfortable everyday life.",
+      "followups": "Mitä teet tavoitteen eteen? — Opiskelen ja etsin harjoittelupaikkaa. Missä haluaisit asua? — Haluaisin asua lähellä työpaikkaa.",
+      "source": "Study Pack • Speaking"
+    }
+  ],
+  "vocabulary": [
+    {
+      "fi": "nimi",
+      "en": "name",
+      "group": "People and personal details"
+    },
+    {
+      "fi": "etunimi",
+      "en": "first name",
+      "group": "People and personal details"
+    },
+    {
+      "fi": "sukunimi",
+      "en": "family name",
+      "group": "People and personal details"
+    },
+    {
+      "fi": "ikä",
+      "en": "age",
+      "group": "People and personal details"
+    },
+    {
+      "fi": "osoite",
+      "en": "address",
+      "group": "People and personal details"
+    },
+    {
+      "fi": "puhelinnumero",
+      "en": "phone number",
+      "group": "People and personal details"
+    },
+    {
+      "fi": "sähköposti",
+      "en": "email",
+      "group": "People and personal details"
+    },
+    {
+      "fi": "kotimaa",
+      "en": "home country",
+      "group": "People and personal details"
+    },
+    {
+      "fi": "äidinkieli",
+      "en": "native language",
+      "group": "People and personal details"
+    },
+    {
+      "fi": "kansalaisuus",
+      "en": "nationality",
+      "group": "People and personal details"
+    },
+    {
+      "fi": "perhe",
+      "en": "family",
+      "group": "People and personal details"
+    },
+    {
+      "fi": "vanhemmat",
+      "en": "parents",
+      "group": "People and personal details"
+    },
+    {
+      "fi": "äiti",
+      "en": "mother",
+      "group": "People and personal details"
+    },
+    {
+      "fi": "isä",
+      "en": "father",
+      "group": "People and personal details"
+    },
+    {
+      "fi": "lapsi",
+      "en": "child",
+      "group": "People and personal details"
+    },
+    {
+      "fi": "veli",
+      "en": "brother",
+      "group": "People and personal details"
+    },
+    {
+      "fi": "sisko",
+      "en": "sister",
+      "group": "People and personal details"
+    },
+    {
+      "fi": "puoliso",
+      "en": "spouse",
+      "group": "People and personal details"
+    },
+    {
+      "fi": "ystävä",
+      "en": "friend",
+      "group": "People and personal details"
+    },
+    {
+      "fi": "naapuri",
+      "en": "neighbour.",
+      "group": "People and personal details"
+    },
+    {
+      "fi": "koti",
+      "en": "home",
+      "group": "Home and housing"
+    },
+    {
+      "fi": "asunto",
+      "en": "apartment/home",
+      "group": "Home and housing"
+    },
+    {
+      "fi": "kerrostalo",
+      "en": "apartment building",
+      "group": "Home and housing"
+    },
+    {
+      "fi": "omakotitalo",
+      "en": "detached house",
+      "group": "Home and housing"
+    },
+    {
+      "fi": "vuokra",
+      "en": "rent",
+      "group": "Home and housing"
+    },
+    {
+      "fi": "vuokranantaja",
+      "en": "landlord",
+      "group": "Home and housing"
+    },
+    {
+      "fi": "huone",
+      "en": "room",
+      "group": "Home and housing"
+    },
+    {
+      "fi": "keittiö",
+      "en": "kitchen",
+      "group": "Home and housing"
+    },
+    {
+      "fi": "olohuone",
+      "en": "living room",
+      "group": "Home and housing"
+    },
+    {
+      "fi": "makuuhuone",
+      "en": "bedroom",
+      "group": "Home and housing"
+    },
+    {
+      "fi": "kylpyhuone",
+      "en": "bathroom",
+      "group": "Home and housing"
+    },
+    {
+      "fi": "parveke",
+      "en": "balcony",
+      "group": "Home and housing"
+    },
+    {
+      "fi": "hissi",
+      "en": "lift",
+      "group": "Home and housing"
+    },
+    {
+      "fi": "ovi",
+      "en": "door",
+      "group": "Home and housing"
+    },
+    {
+      "fi": "ikkuna",
+      "en": "window",
+      "group": "Home and housing"
+    },
+    {
+      "fi": "avain",
+      "en": "key",
+      "group": "Home and housing"
+    },
+    {
+      "fi": "jääkaappi",
+      "en": "refrigerator",
+      "group": "Home and housing"
+    },
+    {
+      "fi": "pesukone",
+      "en": "washing machine",
+      "group": "Home and housing"
+    },
+    {
+      "fi": "huolto",
+      "en": "maintenance",
+      "group": "Home and housing"
+    },
+    {
+      "fi": "rikki",
+      "en": "broken.",
+      "group": "Home and housing"
+    },
+    {
+      "fi": "opiskelija",
+      "en": "student",
+      "group": "Study and work"
+    },
+    {
+      "fi": "opettaja",
+      "en": "teacher",
+      "group": "Study and work"
+    },
+    {
+      "fi": "kurssi",
+      "en": "course",
+      "group": "Study and work"
+    },
+    {
+      "fi": "oppitunti",
+      "en": "lesson",
+      "group": "Study and work"
+    },
+    {
+      "fi": "tehtävä",
+      "en": "task",
+      "group": "Study and work"
+    },
+    {
+      "fi": "kotitehtävä",
+      "en": "homework",
+      "group": "Study and work"
+    },
+    {
+      "fi": "koe",
+      "en": "test",
+      "group": "Study and work"
+    },
+    {
+      "fi": "tentti",
+      "en": "examination",
+      "group": "Study and work"
+    },
+    {
+      "fi": "vastaus",
+      "en": "answer",
+      "group": "Study and work"
+    },
+    {
+      "fi": "kysymys",
+      "en": "question",
+      "group": "Study and work"
+    },
+    {
+      "fi": "ryhmä",
+      "en": "group",
+      "group": "Study and work"
+    },
+    {
+      "fi": "luokka",
+      "en": "classroom/class",
+      "group": "Study and work"
+    },
+    {
+      "fi": "harjoittelu",
+      "en": "practical training",
+      "group": "Study and work"
+    },
+    {
+      "fi": "ammatti",
+      "en": "profession",
+      "group": "Study and work"
+    },
+    {
+      "fi": "työpaikka",
+      "en": "workplace/job",
+      "group": "Study and work"
+    },
+    {
+      "fi": "työntekijä",
+      "en": "employee",
+      "group": "Study and work"
+    },
+    {
+      "fi": "esihenkilö",
+      "en": "supervisor",
+      "group": "Study and work"
+    },
+    {
+      "fi": "työkaveri",
+      "en": "colleague",
+      "group": "Study and work"
+    },
+    {
+      "fi": "kokous",
+      "en": "meeting",
+      "group": "Study and work"
+    },
+    {
+      "fi": "tauko",
+      "en": "break.",
+      "group": "Study and work"
+    },
+    {
+      "fi": "kauppa",
+      "en": "shop",
+      "group": "Food and shopping"
+    },
+    {
+      "fi": "myyjä",
+      "en": "salesperson",
+      "group": "Food and shopping"
+    },
+    {
+      "fi": "asiakas",
+      "en": "customer",
+      "group": "Food and shopping"
+    },
+    {
+      "fi": "hinta",
+      "en": "price",
+      "group": "Food and shopping"
+    },
+    {
+      "fi": "kuitti",
+      "en": "receipt",
+      "group": "Food and shopping"
+    },
+    {
+      "fi": "tarjous",
+      "en": "special offer",
+      "group": "Food and shopping"
+    },
+    {
+      "fi": "alennus",
+      "en": "discount",
+      "group": "Food and shopping"
+    },
+    {
+      "fi": "käteinen",
+      "en": "cash",
+      "group": "Food and shopping"
+    },
+    {
+      "fi": "kortti",
+      "en": "card",
+      "group": "Food and shopping"
+    },
+    {
+      "fi": "maito",
+      "en": "milk",
+      "group": "Food and shopping"
+    },
+    {
+      "fi": "leipä",
+      "en": "bread",
+      "group": "Food and shopping"
+    },
+    {
+      "fi": "riisi",
+      "en": "rice",
+      "group": "Food and shopping"
+    },
+    {
+      "fi": "kana",
+      "en": "chicken",
+      "group": "Food and shopping"
+    },
+    {
+      "fi": "kala",
+      "en": "fish",
+      "group": "Food and shopping"
+    },
+    {
+      "fi": "muna",
+      "en": "egg",
+      "group": "Food and shopping"
+    },
+    {
+      "fi": "vihannes",
+      "en": "vegetable",
+      "group": "Food and shopping"
+    },
+    {
+      "fi": "hedelmä",
+      "en": "fruit",
+      "group": "Food and shopping"
+    },
+    {
+      "fi": "vesi",
+      "en": "water",
+      "group": "Food and shopping"
+    },
+    {
+      "fi": "kahvi",
+      "en": "coffee",
+      "group": "Food and shopping"
+    },
+    {
+      "fi": "tee",
+      "en": "tea.",
+      "group": "Food and shopping"
+    },
+    {
+      "fi": "bussi",
+      "en": "bus",
+      "group": "Transport and travel"
+    },
+    {
+      "fi": "juna",
+      "en": "train",
+      "group": "Transport and travel"
+    },
+    {
+      "fi": "metro",
+      "en": "metro",
+      "group": "Transport and travel"
+    },
+    {
+      "fi": "raitiovaunu",
+      "en": "tram",
+      "group": "Transport and travel"
+    },
+    {
+      "fi": "pysäkki",
+      "en": "stop",
+      "group": "Transport and travel"
+    },
+    {
+      "fi": "asema",
+      "en": "station",
+      "group": "Transport and travel"
+    },
+    {
+      "fi": "laituri",
+      "en": "platform",
+      "group": "Transport and travel"
+    },
+    {
+      "fi": "lippu",
+      "en": "ticket",
+      "group": "Transport and travel"
+    },
+    {
+      "fi": "meno",
+      "en": "one-way journey",
+      "group": "Transport and travel"
+    },
+    {
+      "fi": "meno-paluu",
+      "en": "return journey",
+      "group": "Transport and travel"
+    },
+    {
+      "fi": "aikataulu",
+      "en": "timetable",
+      "group": "Transport and travel"
+    },
+    {
+      "fi": "lähtö",
+      "en": "departure",
+      "group": "Transport and travel"
+    },
+    {
+      "fi": "saapuminen",
+      "en": "arrival",
+      "group": "Transport and travel"
+    },
+    {
+      "fi": "myöhässä",
+      "en": "late",
+      "group": "Transport and travel"
+    },
+    {
+      "fi": "ajoissa",
+      "en": "on time",
+      "group": "Transport and travel"
+    },
+    {
+      "fi": "matka",
+      "en": "journey",
+      "group": "Transport and travel"
+    },
+    {
+      "fi": "hotelli",
+      "en": "hotel",
+      "group": "Transport and travel"
+    },
+    {
+      "fi": "varaus",
+      "en": "reservation",
+      "group": "Transport and travel"
+    },
+    {
+      "fi": "passi",
+      "en": "passport",
+      "group": "Transport and travel"
+    },
+    {
+      "fi": "matkalaukku",
+      "en": "suitcase.",
+      "group": "Transport and travel"
+    },
+    {
+      "fi": "terveys",
+      "en": "health",
+      "group": "Health and wellbeing"
+    },
+    {
+      "fi": "sairas",
+      "en": "ill",
+      "group": "Health and wellbeing"
+    },
+    {
+      "fi": "kipeä",
+      "en": "sore/ill",
+      "group": "Health and wellbeing"
+    },
+    {
+      "fi": "kuume",
+      "en": "fever",
+      "group": "Health and wellbeing"
+    },
+    {
+      "fi": "yskä",
+      "en": "cough",
+      "group": "Health and wellbeing"
+    },
+    {
+      "fi": "nuha",
+      "en": "runny nose/cold symptom",
+      "group": "Health and wellbeing"
+    },
+    {
+      "fi": "kipu",
+      "en": "pain",
+      "group": "Health and wellbeing"
+    },
+    {
+      "fi": "pää",
+      "en": "head",
+      "group": "Health and wellbeing"
+    },
+    {
+      "fi": "kurkku",
+      "en": "throat",
+      "group": "Health and wellbeing"
+    },
+    {
+      "fi": "vatsa",
+      "en": "stomach",
+      "group": "Health and wellbeing"
+    },
+    {
+      "fi": "selkä",
+      "en": "back",
+      "group": "Health and wellbeing"
+    },
+    {
+      "fi": "hammas",
+      "en": "tooth",
+      "group": "Health and wellbeing"
+    },
+    {
+      "fi": "lääkäri",
+      "en": "doctor",
+      "group": "Health and wellbeing"
+    },
+    {
+      "fi": "hoitaja",
+      "en": "nurse",
+      "group": "Health and wellbeing"
+    },
+    {
+      "fi": "apteekki",
+      "en": "pharmacy",
+      "group": "Health and wellbeing"
+    },
+    {
+      "fi": "lääke",
+      "en": "medicine",
+      "group": "Health and wellbeing"
+    },
+    {
+      "fi": "ajanvaraus",
+      "en": "appointment booking",
+      "group": "Health and wellbeing"
+    },
+    {
+      "fi": "levätä",
+      "en": "rest",
+      "group": "Health and wellbeing"
+    },
+    {
+      "fi": "nukkua",
+      "en": "sleep",
+      "group": "Health and wellbeing"
+    },
+    {
+      "fi": "väsynyt",
+      "en": "tired.",
+      "group": "Health and wellbeing"
+    },
+    {
+      "fi": "vapaa-aika",
+      "en": "free time",
+      "group": "Free time and nature"
+    },
+    {
+      "fi": "harrastus",
+      "en": "hobby",
+      "group": "Free time and nature"
+    },
+    {
+      "fi": "kävely",
+      "en": "walking",
+      "group": "Free time and nature"
+    },
+    {
+      "fi": "uinti",
+      "en": "swimming",
+      "group": "Free time and nature"
+    },
+    {
+      "fi": "kuntosali",
+      "en": "gym",
+      "group": "Free time and nature"
+    },
+    {
+      "fi": "musiikki",
+      "en": "music",
+      "group": "Free time and nature"
+    },
+    {
+      "fi": "elokuva",
+      "en": "film",
+      "group": "Free time and nature"
+    },
+    {
+      "fi": "kirja",
+      "en": "book",
+      "group": "Free time and nature"
+    },
+    {
+      "fi": "konsertti",
+      "en": "concert",
+      "group": "Free time and nature"
+    },
+    {
+      "fi": "museo",
+      "en": "museum",
+      "group": "Free time and nature"
+    },
+    {
+      "fi": "puisto",
+      "en": "park",
+      "group": "Free time and nature"
+    },
+    {
+      "fi": "metsä",
+      "en": "forest",
+      "group": "Free time and nature"
+    },
+    {
+      "fi": "järvi",
+      "en": "lake",
+      "group": "Free time and nature"
+    },
+    {
+      "fi": "meri",
+      "en": "sea",
+      "group": "Free time and nature"
+    },
+    {
+      "fi": "luonto",
+      "en": "nature",
+      "group": "Free time and nature"
+    },
+    {
+      "fi": "sää",
+      "en": "weather",
+      "group": "Free time and nature"
+    },
+    {
+      "fi": "sade",
+      "en": "rain",
+      "group": "Free time and nature"
+    },
+    {
+      "fi": "lumi",
+      "en": "snow",
+      "group": "Free time and nature"
+    },
+    {
+      "fi": "aurinko",
+      "en": "sun",
+      "group": "Free time and nature"
+    },
+    {
+      "fi": "tuuli",
+      "en": "wind.",
+      "group": "Free time and nature"
+    },
+    {
+      "fi": "kirjasto",
+      "en": "library",
+      "group": "Services and technology"
+    },
+    {
+      "fi": "pankki",
+      "en": "bank",
+      "group": "Services and technology"
+    },
+    {
+      "fi": "posti",
+      "en": "post/post office",
+      "group": "Services and technology"
+    },
+    {
+      "fi": "toimisto",
+      "en": "office",
+      "group": "Services and technology"
+    },
+    {
+      "fi": "lomake",
+      "en": "form",
+      "group": "Services and technology"
+    },
+    {
+      "fi": "hakemus",
+      "en": "application",
+      "group": "Services and technology"
+    },
+    {
+      "fi": "päätös",
+      "en": "decision",
+      "group": "Services and technology"
+    },
+    {
+      "fi": "liite",
+      "en": "attachment",
+      "group": "Services and technology"
+    },
+    {
+      "fi": "allekirjoitus",
+      "en": "signature",
+      "group": "Services and technology"
+    },
+    {
+      "fi": "henkilöllisyystodistus",
+      "en": "ID document",
+      "group": "Services and technology"
+    },
+    {
+      "fi": "tietokone",
+      "en": "computer",
+      "group": "Services and technology"
+    },
+    {
+      "fi": "puhelin",
+      "en": "phone",
+      "group": "Services and technology"
+    },
+    {
+      "fi": "salasana",
+      "en": "password",
+      "group": "Services and technology"
+    },
+    {
+      "fi": "käyttäjätunnus",
+      "en": "username",
+      "group": "Services and technology"
+    },
+    {
+      "fi": "verkkosivu",
+      "en": "website",
+      "group": "Services and technology"
+    },
+    {
+      "fi": "viesti",
+      "en": "message",
+      "group": "Services and technology"
+    },
+    {
+      "fi": "tulostin",
+      "en": "printer",
+      "group": "Services and technology"
+    },
+    {
+      "fi": "näyttö",
+      "en": "screen",
+      "group": "Services and technology"
+    },
+    {
+      "fi": "yhteys",
+      "en": "connection",
+      "group": "Services and technology"
+    },
+    {
+      "fi": "lasku",
+      "en": "bill.",
+      "group": "Services and technology"
+    },
+    {
+      "fi": "takki",
+      "en": "coat",
+      "group": "Clothing and appearance"
+    },
+    {
+      "fi": "paita",
+      "en": "shirt",
+      "group": "Clothing and appearance"
+    },
+    {
+      "fi": "housut",
+      "en": "trousers",
+      "group": "Clothing and appearance"
+    },
+    {
+      "fi": "kengät",
+      "en": "shoes",
+      "group": "Clothing and appearance"
+    },
+    {
+      "fi": "sukka",
+      "en": "sock",
+      "group": "Clothing and appearance"
+    },
+    {
+      "fi": "pipo",
+      "en": "winter hat",
+      "group": "Clothing and appearance"
+    },
+    {
+      "fi": "hanskat",
+      "en": "gloves",
+      "group": "Clothing and appearance"
+    },
+    {
+      "fi": "koko",
+      "en": "size",
+      "group": "Clothing and appearance"
+    },
+    {
+      "fi": "väri",
+      "en": "colour",
+      "group": "Clothing and appearance"
+    },
+    {
+      "fi": "musta",
+      "en": "black",
+      "group": "Clothing and appearance"
+    },
+    {
+      "fi": "valkoinen",
+      "en": "white",
+      "group": "Clothing and appearance"
+    },
+    {
+      "fi": "sininen",
+      "en": "blue",
+      "group": "Clothing and appearance"
+    },
+    {
+      "fi": "punainen",
+      "en": "red",
+      "group": "Clothing and appearance"
+    },
+    {
+      "fi": "vihreä",
+      "en": "green",
+      "group": "Clothing and appearance"
+    },
+    {
+      "fi": "harmaa",
+      "en": "grey",
+      "group": "Clothing and appearance"
+    },
+    {
+      "fi": "ruskea",
+      "en": "brown",
+      "group": "Clothing and appearance"
+    },
+    {
+      "fi": "hiukset",
+      "en": "hair",
+      "group": "Clothing and appearance"
+    },
+    {
+      "fi": "silmät",
+      "en": "eyes",
+      "group": "Clothing and appearance"
+    },
+    {
+      "fi": "pitkä",
+      "en": "tall/long",
+      "group": "Clothing and appearance"
+    },
+    {
+      "fi": "lyhyt",
+      "en": "short.",
+      "group": "Clothing and appearance"
+    },
+    {
+      "fi": "hyvä",
+      "en": "good",
+      "group": "Description and feelings"
+    },
+    {
+      "fi": "huono",
+      "en": "bad",
+      "group": "Description and feelings"
+    },
+    {
+      "fi": "helppo",
+      "en": "easy",
+      "group": "Description and feelings"
+    },
+    {
+      "fi": "vaikea",
+      "en": "difficult",
+      "group": "Description and feelings"
+    },
+    {
+      "fi": "halpa",
+      "en": "cheap",
+      "group": "Description and feelings"
+    },
+    {
+      "fi": "kallis",
+      "en": "expensive",
+      "group": "Description and feelings"
+    },
+    {
+      "fi": "uusi",
+      "en": "new",
+      "group": "Description and feelings"
+    },
+    {
+      "fi": "vanha",
+      "en": "old",
+      "group": "Description and feelings"
+    },
+    {
+      "fi": "pieni",
+      "en": "small",
+      "group": "Description and feelings"
+    },
+    {
+      "fi": "suuri",
+      "en": "big",
+      "group": "Description and feelings"
+    },
+    {
+      "fi": "lämmin",
+      "en": "warm",
+      "group": "Description and feelings"
+    },
+    {
+      "fi": "kylmä",
+      "en": "cold",
+      "group": "Description and feelings"
+    },
+    {
+      "fi": "rauhallinen",
+      "en": "calm",
+      "group": "Description and feelings"
+    },
+    {
+      "fi": "meluisa",
+      "en": "noisy",
+      "group": "Description and feelings"
+    },
+    {
+      "fi": "ystävällinen",
+      "en": "friendly",
+      "group": "Description and feelings"
+    },
+    {
+      "fi": "iloinen",
+      "en": "happy",
+      "group": "Description and feelings"
+    },
+    {
+      "fi": "surullinen",
+      "en": "sad",
+      "group": "Description and feelings"
+    },
+    {
+      "fi": "kiireinen",
+      "en": "busy",
+      "group": "Description and feelings"
+    },
+    {
+      "fi": "tärkeä",
+      "en": "important",
+      "group": "Description and feelings"
+    },
+    {
+      "fi": "hyödyllinen",
+      "en": "useful.",
+      "group": "Description and feelings"
+    },
+    {
+      "fi": "aloittaa",
+      "en": "start",
+      "group": "Actions to recognize immediately"
+    },
+    {
+      "fi": "lopettaa",
+      "en": "finish/stop",
+      "group": "Actions to recognize immediately"
+    },
+    {
+      "fi": "avata",
+      "en": "open",
+      "group": "Actions to recognize immediately"
+    },
+    {
+      "fi": "sulkea",
+      "en": "close",
+      "group": "Actions to recognize immediately"
+    },
+    {
+      "fi": "ostaa",
+      "en": "buy",
+      "group": "Actions to recognize immediately"
+    },
+    {
+      "fi": "maksaa",
+      "en": "pay/cost",
+      "group": "Actions to recognize immediately"
+    },
+    {
+      "fi": "varata",
+      "en": "book",
+      "group": "Actions to recognize immediately"
+    },
+    {
+      "fi": "perua",
+      "en": "cancel",
+      "group": "Actions to recognize immediately"
+    },
+    {
+      "fi": "siirtää",
+      "en": "move/reschedule",
+      "group": "Actions to recognize immediately"
+    },
+    {
+      "fi": "kysyä",
+      "en": "ask",
+      "group": "Actions to recognize immediately"
+    },
+    {
+      "fi": "vastata",
+      "en": "answer",
+      "group": "Actions to recognize immediately"
+    },
+    {
+      "fi": "auttaa",
+      "en": "help",
+      "group": "Actions to recognize immediately"
+    },
+    {
+      "fi": "odottaa",
+      "en": "wait",
+      "group": "Actions to recognize immediately"
+    },
+    {
+      "fi": "etsiä",
+      "en": "look for",
+      "group": "Actions to recognize immediately"
+    },
+    {
+      "fi": "löytää",
+      "en": "find",
+      "group": "Actions to recognize immediately"
+    },
+    {
+      "fi": "unohtaa",
+      "en": "forget",
+      "group": "Actions to recognize immediately"
+    },
+    {
+      "fi": "lähettää",
+      "en": "send",
+      "group": "Actions to recognize immediately"
+    },
+    {
+      "fi": "palauttaa",
+      "en": "return/submit",
+      "group": "Actions to recognize immediately"
+    },
+    {
+      "fi": "korjata",
+      "en": "repair",
+      "group": "Actions to recognize immediately"
+    },
+    {
+      "fi": "ilmoittaa",
+      "en": "inform.",
+      "group": "Actions to recognize immediately"
+    },
+    {
+      "fi": "avoinna",
+      "en": "open",
+      "group": "Notices and small words"
+    },
+    {
+      "fi": "suljettu",
+      "en": "closed",
+      "group": "Notices and small words"
+    },
+    {
+      "fi": "kielletty",
+      "en": "prohibited",
+      "group": "Notices and small words"
+    },
+    {
+      "fi": "sallittu",
+      "en": "allowed",
+      "group": "Notices and small words"
+    },
+    {
+      "fi": "sisään",
+      "en": "entrance/in",
+      "group": "Notices and small words"
+    },
+    {
+      "fi": "ulos",
+      "en": "exit/out",
+      "group": "Notices and small words"
+    },
+    {
+      "fi": "vapaa",
+      "en": "available/free",
+      "group": "Notices and small words"
+    },
+    {
+      "fi": "varattu",
+      "en": "reserved",
+      "group": "Notices and small words"
+    },
+    {
+      "fi": "maksuton",
+      "en": "free of charge",
+      "group": "Notices and small words"
+    },
+    {
+      "fi": "maksullinen",
+      "en": "chargeable",
+      "group": "Notices and small words"
+    },
+    {
+      "fi": "vain",
+      "en": "only",
+      "group": "Notices and small words"
+    },
+    {
+      "fi": "paitsi",
+      "en": "except",
+      "group": "Notices and small words"
+    },
+    {
+      "fi": "viimeistään",
+      "en": "at the latest",
+      "group": "Notices and small words"
+    },
+    {
+      "fi": "ennen",
+      "en": "before",
+      "group": "Notices and small words"
+    },
+    {
+      "fi": "jälkeen",
+      "en": "after",
+      "group": "Notices and small words"
+    },
+    {
+      "fi": "jo",
+      "en": "already",
+      "group": "Notices and small words"
+    },
+    {
+      "fi": "vielä",
+      "en": "still/yet",
+      "group": "Notices and small words"
+    },
+    {
+      "fi": "melkein",
+      "en": "almost",
+      "group": "Notices and small words"
+    },
+    {
+      "fi": "noin",
+      "en": "approximately",
+      "group": "Notices and small words"
+    },
+    {
+      "fi": "vähintään",
+      "en": "at least.",
+      "group": "Notices and small words"
+    }
+  ],
+  "grammar": [
+    [
+      "Minä ___ suomea joka päivä. (opiskella, present)",
+      "opiskelen"
+    ],
+    [
+      "Hän ___ Suomessa. (asua, present)",
+      "asuu"
+    ],
+    [
+      "Me ___ opiskelijoita. (olla, present)",
+      "olemme"
+    ],
+    [
+      "Minä en ___ kysymystä. (ymmärtää, present negative)",
+      "ymmärrä"
+    ],
+    [
+      "Voitko ___ minua? (auttaa)",
+      "auttaa"
+    ],
+    [
+      "Eilen minä ___ kaupassa. (käydä, past)",
+      "kävin"
+    ],
+    [
+      "Viime viikolla minä ___ ystävän. (tavata, past)",
+      "tapasin"
+    ],
+    [
+      "Eilen en ___ tunnille. (tulla, past negative)",
+      "tullut"
+    ],
+    [
+      "Huomenna minä ___ kirjastoon. (mennä, future meaning)",
+      "menen"
+    ],
+    [
+      "Minä olen ___ Suomessa kaksi vuotta. (asua, perfect)",
+      "asunut"
+    ],
+    [
+      "Asun ___. (Suomi)",
+      "Suomessa"
+    ],
+    [
+      "Olen kotoisin ___. (Bangladesh)",
+      "Bangladeshista"
+    ],
+    [
+      "Menen ___. (kauppa)",
+      "kauppaan"
+    ],
+    [
+      "Käyn ___. (kirjasto)",
+      "kirjastossa"
+    ],
+    [
+      "Tulen ___. (koulu)",
+      "koulusta"
+    ],
+    [
+      "Minulla on kaksi ___. (kirja)",
+      "kirjaa"
+    ],
+    [
+      "Minulla ei ole ___. (auto)",
+      "autoa"
+    ],
+    [
+      "Juon ___. (kahvi)",
+      "kahvia"
+    ],
+    [
+      "Pidän ___. (musiikki)",
+      "musiikista"
+    ],
+    [
+      "Menen kouluun ___. (bussi)",
+      "bussilla"
+    ],
+    [
+      "Ask: Where do you live?",
+      "Missä asut?"
+    ],
+    [
+      "Ask: Why are you studying Finnish?",
+      "Miksi opiskelet suomea?"
+    ],
+    [
+      "Ask politely: Could you repeat?",
+      "Voisitko toistaa?"
+    ],
+    [
+      "Ask: How much does this cost?",
+      "Kuinka paljon tämä maksaa?"
+    ],
+    [
+      "Correct: Minä ei puhu suomea.",
+      "Minä en puhu suomea."
+    ],
+    [
+      "Correct: Minä olen kaksi lasta.",
+      "Minulla on kaksi lasta."
+    ],
+    [
+      "Correct: Menen kaupassa.",
+      "Menen kauppaan."
+    ],
+    [
+      "Correct: Minä pidän kahvi.",
+      "Minä pidän kahvista."
+    ],
+    [
+      "Correct: Eilen menen kouluun.",
+      "Eilen menin kouluun."
+    ],
+    [
+      "Correct: Minä täytyy opiskella.",
+      "Minun täytyy opiskella."
+    ],
+    [
+      "I cannot come today because I am ill.",
+      "En voi tulla tänään, koska olen sairas."
+    ],
+    [
+      "Can we meet tomorrow at five?",
+      "Voimmeko tavata huomenna kello viisi?"
+    ],
+    [
+      "I would like to book an appointment.",
+      "Haluaisin varata ajan."
+    ],
+    [
+      "I went to the library yesterday.",
+      "Kävin eilen kirjastossa."
+    ],
+    [
+      "I have studied Finnish for one year.",
+      "Olen opiskellut suomea vuoden."
+    ],
+    [
+      "I like this course because it is useful.",
+      "Pidän tästä kurssista, koska se on hyödyllinen."
+    ],
+    [
+      "I am looking for a training placement.",
+      "Etsin harjoittelupaikkaa."
+    ],
+    [
+      "The washing machine does not work.",
+      "Pesukone ei toimi."
+    ],
+    [
+      "Please speak a little more slowly.",
+      "Voisitko puhua vähän hitaammin?"
+    ],
+    [
+      "I will submit the assignment on Friday.",
+      "Palautan tehtävän perjantaina."
+    ]
+  ],
+  "grammar_topics": [
+    [
+      "Present tense",
+      "Minä opiskelen. Hän opiskelee. Me opiskelemme.",
+      "Verb endings change with person: minä -n, hän often doubles final vowel, me -mme.",
+      "Opiskelen suomea joka päivä.",
+      "I study Finnish every day."
+    ],
+    [
+      "Negative verbs",
+      "En puhu. Et puhu. Hän ei puhu. Me emme puhu.",
+      "The negative verb conjugates; the main verb follows in its stem form.",
+      "Minä en ymmärrä kysymystä.",
+      "I do not understand the question."
+    ],
+    [
+      "Have / possess",
+      "Minulla on auto. Minulla ei ole autoa.",
+      "Finnish uses minulla on, not minä olen.",
+      "Minulla on uusi tietokone.",
+      "I have a new computer."
+    ],
+    [
+      "Where / from / to",
+      "kaupassa / kaupasta / kauppaan; kirjastossa / kirjastosta / kirjastoon.",
+      "Inside location -ssa/-stä/-Vn; some forms change their stem.",
+      "Menen kirjastoon. Olen kirjastossa.",
+      "I go to the library. I am at the library."
+    ],
+    [
+      "Partitive",
+      "kaksi kirjaa; juon kahvia; en osta autoa.",
+      "Commonly used with numbers above one, incomplete amounts and negation.",
+      "Minulla on kaksi kirjaa.",
+      "I have two books."
+    ],
+    [
+      "Past tense",
+      "menen → menin; käyn → kävin; syön → söin.",
+      "Use past tense for yesterday / last week, negative past uses en + participle.",
+      "Eilen kävin kaupassa.",
+      "Yesterday I went shopping."
+    ],
+    [
+      "Time and half-hour",
+      "puoli kuusi = 17.30; puoli yhdeksän = 8.30.",
+      "Puoli points to the NEXT hour, not the previous one.",
+      "Tavataan puoli kuusi.",
+      "Let us meet at 5:30."
+    ],
+    [
+      "Polite conditional",
+      "Voisitko auttaa? Haluaisin varata ajan.",
+      "Safe polite requests for service situations.",
+      "Voisitko puhua vähän hitaammin?",
+      "Could you speak a bit more slowly?"
+    ],
+    [
+      "Must / need not",
+      "Minun täytyy opiskella. Minun ei tarvitse mennä.",
+      "Do not mix up must not and do not need to.",
+      "Minun täytyy palauttaa tehtävä.",
+      "I must submit the assignment."
+    ],
+    [
+      "I like / am interested",
+      "Pidän musiikista. Olen kiinnostunut tietotekniikasta.",
+      "pitää + -sta/-stä, rakastaa + partitive.",
+      "Pidän tästä kurssista.",
+      "I like this course."
+    ],
+    [
+      "Present for future",
+      "Huomenna menen kouluun. Ensi viikolla tapaan ystävän.",
+      "Finnish generally uses present tense plus future time expression.",
+      "Huomenna opiskelen kotona.",
+      "Tomorrow I will study at home."
+    ],
+    [
+      "Conjunctions",
+      "ja, mutta, koska, jos, siksi, sitten, sen jälkeen.",
+      "Connect your sentences; koska introduces reasons.",
+      "En tule, koska olen sairas.",
+      "I am not coming because I am ill."
+    ]
+  ],
+  "scripts": {
+    "1": "Hei! Soitan hammashoitolasta. Sinulla oli aika tiistaina kello yhdeksän, mutta meidän täytyy siirtää sitä. Uusi aika on keskiviikkona kello puoli kymmenen. Vastaanotto on samassa paikassa kuin ennen. Jos uusi aika ei sovi sinulle, soita meille tänään ennen kello neljää. Kiitos!",
+    "2": "Huomio matkustajat. Juna Tampereelle on noin viisitoista minuuttia myöhässä. Juna lähtee tänään laiturilta neljä, ei laiturilta kaksi. Pahoittelemme viivästystä. Tarkista junan uusi lähtöaika aseman näytöltä.",
+    "3": "Moi! Voitko käydä kaupassa kotimatkalla? Tarvitsemme leipää ja kananmunia. Maitoa ei tarvitse ostaa, sitä on vielä jääkaapissa. Minä tulen kotiin noin kuudelta. Teen sitten meille ruokaa. Nähdään illalla!",
+    "4": "Hyvää huomenta! Suomen tunti on tänään kirjaston toisessa kerroksessa. Tavallisessa luokassa tehdään remonttia. Tunti alkaa kymmeneltä kuten aina. Ota mukaan vihko ja kynä. Oppikirjaa ei tänään tarvita, koska opettaja antaa teille tekstit.",
+    "5": "Hei Sami! Ajattelin, että voisimme mennä lauantaina museoon. Sääennusteen mukaan silloin sataa, joten puisto ei ehkä ole hyvä idea. Museo avautuu kahdeltatoista. Tavataanko sen ovella puoli yksi? Liput maksavat opiskelijoille viisi euroa. Ota opiskelijakortti mukaan.",
+    "6": "Minä olen Aino. Olen töissä pienessä kahvilassa. Työpäiväni alkaa aamulla kahdeksalta ja loppuu iltapäivällä kolmelta. Tiistaisin ja torstaisin menen työn jälkeen suomen kurssille. Haluan oppia suomea, koska haluan puhua paremmin asiakkaiden kanssa. Viikonloppuna lepään ja tapaan ystäviä.",
+    "7": "Hei! Ostin tämän paidan eilen, mutta se on liian pieni. Väri on hyvä, ja pidän tästä mallista. Haluaisin vaihtaa sen suurempaan kokoon. Minulla on kuitti mukana. Onko teillä samaa paitaa koossa L?",
+    "8": "Huomenna aamulla on aurinkoista ja melko viileää. Lämpötila on noin kahdeksan astetta. Iltapäivällä sää lämpenee, ja lämpötila nousee neljääntoista asteeseen. Sade alkaa vasta illalla. Jos lähdet illaksi ulos, ota sateenvarjo mukaan.",
+    "9": "Moi! Mä oon vähän myöhässä, koska bussi ei tullut ajoissa. Mä oon siellä noin kymmenen minuutin päästä. Sun ei tarvitse odottaa ulkona. Mene vaan sisälle kahvilaan ja ota pöytä. Mä tuun sinne heti, kun pääsen.",
+    "10": "Tervetuloa opiskelijapalveluihin. Toimistomme on avoinna maanantaisin, keskiviikkoisin ja perjantaisin kello kymmenestä kahteen. Voit tulla ilman ajanvarausta. Muina päivinä voit lähettää meille sähköpostia. Vastaamme viesteihin yleensä kahden arkipäivän kuluessa.",
+    "11": "Hei, tässä on huoltomies. Tulen huomenna torstaina aamulla kahdeksan ja yhdeksän välillä korjaamaan keittiön hanaa. Työ kestää noin puoli tuntia. Jos et ole silloin kotona, soita minulle, niin sovimme toisen ajan. Kiitos ja huomiseen.",
+    "12": "Meidän piti mennä tänään uimaan, mutta uimahalli on kiinni. Ajattelimme ensin mennä elokuviin. Liput olivat kuitenkin liian kalliita. Päätimme lopulta mennä ystävän kotiin ja tehdä ruokaa yhdessä. Menemme uimaan ensi viikolla.",
+    "A1": "Hei, tässä on Laura kampaamosta. Sinulla on aika hiustenleikkaukseen perjantaina kello kaksi. Valitettavasti olen silloin poissa. Voisitko tulla jo torstaina kello puoli neljä? Hiustenleikkaus kestää noin neljäkymmentä minuuttia. Jos torstai ei sovi, lähetä meille viesti, niin etsimme toisen ajan. Kiitos!",
+    "A2": "Olen töissä ruokakaupassa. Työ alkaa yleensä kello kuusi aamulla. Kesällä menen töihin pyörällä, mutta talvella käytän bussia. Keskiviikkoiltaisin käyn suomen kurssilla. Kurssi loppuu kahdeksalta. Pidän kurssista, koska harjoittelemme paljon tavallisia keskusteluja. Voin käyttää uusia sanoja heti työssä.",
+    "B1": "Hei! Tässä on viesti opiskelijapalveluista. Huomenna torstaina toimisto on avoinna vain kello yhdeksästä yhteentoista. Suljemme aikaisin henkilökunnan kokouksen vuoksi. Sähköpostia voi lähettää normaalisti koko päivän. Perjantaina toimisto on taas avoinna kello yhdeksästä kolmeen. Kiitos ymmärryksestä.",
+    "B2": "Hei, tässä on Jari kirjastosta. Löysimme repun lukusalista ikkunan vierestä. Reppu on tummansininen. Sen sisällä on vihko ja punainen pipo. Jos reppu on sinun, voit hakea sen tänään asiakaspalvelusta kello kahdentoista ja kuuden välillä. Ota henkilöllisyystodistus mukaan."
+  },
+  "mocks": [
+    {
+      "id": "A",
+      "title": "Mock Exam A",
+      "readingTexts": [
+        {
+          "name": "A1 • Opiskelijoiden retki",
+          "text": "Lähdemme perjantaina luontoretkelle. Bussi lähtee koulun pääovelta kello 8.45. Ole paikalla viimeistään 8.30. Ota mukaan eväät, vesipullo ja hyvät kengät. Retki on maksuton. Palaamme koululle noin kello 15. Ilmoita osallistumisesta opettajalle keskiviikkoon mennessä. Retki järjestetään myös sateella.",
+          "questionStart": 0,
+          "questionEnd": 5
+        },
+        {
+          "name": "A2 • Uusi asunto",
+          "text": "Hei! Löysin uuden asunnon. Se on pienempi kuin vanha, mutta vuokra on sata euroa halvempi. Muutan ensi lauantaina. Siskoni tulee auttamaan aamulla, mutta tarvitsemme vielä yhden ihmisen kantamaan sohvaa. Voisitko tulla kello yksitoista? Tarjoan muuton jälkeen ruokaa. Terveisin Eero",
+          "questionStart": 5,
+          "questionEnd": 10
+        }
+      ],
+      "reading": [
+        {
+          "t": "Mihin aikaan opiskelijan pitää viimeistään olla paikalla?",
+          "type": "open",
+          "options": [],
+          "answer": "8.30",
+          "aliases": [
+            "kello 8.30"
+          ],
+          "explain": ""
+        },
+        {
+          "t": "Mistä bussi lähtee?",
+          "type": "open",
+          "options": [],
+          "answer": "Koulun pääovelta",
+          "aliases": [],
+          "explain": ""
+        },
+        {
+          "t": "Mitä pitää ottaa mukaan? Mainitse kolme asiaa.",
+          "type": "open",
+          "options": [],
+          "answer": "Eväät, vesipullo ja hyvät kengät",
+          "aliases": [],
+          "explain": ""
+        },
+        {
+          "t": "Retki perutaan, jos sataa.",
+          "type": "tf",
+          "options": [],
+          "answer": "Väärin",
+          "aliases": [],
+          "explain": ""
+        },
+        {
+          "t": "Mihin mennessä pitää ilmoittautua?",
+          "type": "open",
+          "options": [],
+          "answer": "Keskiviikkoon mennessä",
+          "aliases": [
+            "keskiviikkona"
+          ],
+          "explain": ""
+        },
+        {
+          "t": "Onko uusi asunto suurempi kuin vanha?",
+          "type": "open",
+          "options": [],
+          "answer": "Ei",
+          "aliases": [],
+          "explain": ""
+        },
+        {
+          "t": "Mikä uudessa asunnossa on edullisempaa?",
+          "type": "open",
+          "options": [],
+          "answer": "Vuokra, sata euroa halvempi",
+          "aliases": [
+            "vuokra"
+          ],
+          "explain": ""
+        },
+        {
+          "t": "Milloin Eero muuttaa?",
+          "type": "open",
+          "options": [],
+          "answer": "Ensi lauantaina",
+          "aliases": [],
+          "explain": ""
+        },
+        {
+          "t": "Mihin Eero tarvitsee apua?",
+          "type": "open",
+          "options": [],
+          "answer": "Sohvan kantamiseen",
+          "aliases": [
+            "kantamaan sohvaa"
+          ],
+          "explain": ""
+        },
+        {
+          "t": "Mitä Eero tarjoaa avun jälkeen?",
+          "type": "open",
+          "options": [],
+          "answer": "Ruokaa",
+          "aliases": [],
+          "explain": ""
+        }
+      ],
+      "listening": [
+        {
+          "t": "Kuka soittaa?",
+          "type": "open",
+          "options": [],
+          "answer": "Laura kampaamosta",
+          "aliases": [
+            "laura"
+          ],
+          "explain": ""
+        },
+        {
+          "t": "Mikä alkuperäinen päivä oli?",
+          "type": "open",
+          "options": [],
+          "answer": "Perjantai",
+          "aliases": [],
+          "explain": ""
+        },
+        {
+          "t": "Mikä uusi päivä on?",
+          "type": "open",
+          "options": [],
+          "answer": "Torstai",
+          "aliases": [],
+          "explain": ""
+        },
+        {
+          "t": "Mihin aikaan uusi aika on?",
+          "type": "open",
+          "options": [],
+          "answer": "15.30",
+          "aliases": [
+            "puoli neljä"
+          ],
+          "explain": ""
+        },
+        {
+          "t": "Mitä pitää tehdä, jos aika ei sovi?",
+          "type": "open",
+          "options": [],
+          "answer": "Lähettää viesti",
+          "aliases": [
+            "lähetä viesti"
+          ],
+          "explain": ""
+        },
+        {
+          "t": "Missä puhuja työskentelee?",
+          "type": "open",
+          "options": [],
+          "answer": "Ruokakaupassa",
+          "aliases": [],
+          "explain": ""
+        },
+        {
+          "t": "Mihin aikaan hänen työnsä alkaa?",
+          "type": "open",
+          "options": [],
+          "answer": "Kello 6",
+          "aliases": [
+            "kuudelta"
+          ],
+          "explain": ""
+        },
+        {
+          "t": "Miten hän menee töihin talvella?",
+          "type": "open",
+          "options": [],
+          "answer": "Bussilla",
+          "aliases": [],
+          "explain": ""
+        },
+        {
+          "t": "Mitä hän tekee keskiviikkoiltaisin?",
+          "type": "open",
+          "options": [],
+          "answer": "Käy suomen kurssilla",
+          "aliases": [
+            "suomen kurssilla"
+          ],
+          "explain": ""
+        },
+        {
+          "t": "Miksi hän pitää kurssista?",
+          "type": "open",
+          "options": [],
+          "answer": "He harjoittelevat tavallisia keskusteluja",
+          "aliases": [
+            "tavallisia keskusteluja"
+          ],
+          "explain": ""
+        }
+      ],
+      "listenSections": [
+        {
+          "name": "A-L1 • Kampaamon viesti",
+          "script": "Hei, tässä on Laura kampaamosta. Sinulla on aika hiustenleikkaukseen perjantaina kello kaksi. Valitettavasti olen silloin poissa. Voisitko tulla jo torstaina kello puoli neljä? Hiustenleikkaus kestää noin neljäkymmentä minuuttia. Jos torstai ei sovi, lähetä meille viesti, niin etsimme toisen ajan. Kiitos!",
+          "start": 0,
+          "end": 5
+        },
+        {
+          "name": "A-L2 • Työ ja suomen kurssi",
+          "script": "Olen töissä ruokakaupassa. Työ alkaa yleensä kello kuusi aamulla. Kesällä menen töihin pyörällä, mutta talvella käytän bussia. Keskiviikkoiltaisin käyn suomen kurssilla. Kurssi loppuu kahdeksalta. Pidän kurssista, koska harjoittelemme paljon tavallisia keskusteluja. Voin käyttää uusia sanoja heti työssä.",
+          "start": 5,
+          "end": 10
+        }
+      ],
+      "writing": [
+        {
+          "prompt": "Kirjoita ystävälle. Olet myöhässä tapaamisesta. Kerro syy, uusi saapumisaika ja missä ystävä voi odottaa. Pyydä anteeksi.",
+          "model": "Moi Sami! Anteeksi, olen myöhässä. Bussini jäi ruuhkaan, joten en ehdi paikalle kello viisi. Tulen noin kello puoli kuusi. Voit odottaa minua kirjaston sisällä. Lähetän viestin, kun olen lähellä. Nähdään pian!"
+        },
+        {
+          "prompt": "Kirjoita palaute suomen kurssista. Kerro kaksi hyvää asiaa ja yksi vaikea asia. Ehdota parannusta.",
+          "model": "Pidän suomen kurssista, koska opettaja selittää asiat selkeästi ja saamme puhua pareittain. Kuuntelutehtävät ovat joskus vaikeita, sillä ihmiset puhuvat nopeasti. Toivon, että voimme kuunnella tehtävät uudelleen ja harjoitella lisää arkisia keskusteluja."
+        }
+      ],
+      "speaking": [
+        {
+          "prompt": "Kerro tavallisesta opiskelupäivästäsi. Mitä teet aamulla, päivällä ja illalla?",
+          "model": "Herään seitsemältä ja syön aamupalaa. Menen kouluun bussilla. Iltapäivällä teen ryhmätöitä. Illalla teen kotitehtävät ja lepään."
+        },
+        {
+          "prompt": "Olet kaupassa. Kysy takin kokoa ja hintaa. Kerro, että haluat sovittaa takkia.",
+          "model": "Hei! Onko tätä takkia koossa M? Kuinka paljon se maksaa? Haluaisin sovittaa sitä."
+        },
+        {
+          "prompt": "Kerro viime viikonlopusta. Missä olit, kenen kanssa ja mitä teit?",
+          "model": "Viime viikonloppuna olin kotona ja tapasin ystävän. Kävimme kahvilassa. Sunnuntaina opiskelin suomea."
+        },
+        {
+          "prompt": "Pidätkö enemmän opiskelusta kotona vai koulussa? Anna kaksi syytä.",
+          "model": "Pidän opiskelusta koulussa, koska siellä voin kysyä apua ja tehdä ryhmätöitä."
+        }
+      ]
+    },
+    {
+      "id": "B",
+      "title": "Mock Exam B",
+      "readingTexts": [
+        {
+          "name": "B1 • Harrastustapahtuma",
+          "text": "Liikuntapäivä järjestetään lauantaina kello 10–14 urheilukentällä. Voit kokeilla erilaisia liikuntalajeja maksutta. Uinti ei kuulu ohjelmaan. Alle 12-vuotiaat osallistuvat aikuisen kanssa. Paikalla on kahvio, jossa voi maksaa vain kortilla. Jos sataa kovasti, tapahtuma siirtyy koulun liikuntasaliin. Ilmoittautumista ei tarvita.",
+          "questionStart": 0,
+          "questionEnd": 5
+        },
+        {
+          "name": "B2 • Viesti ryhmälle",
+          "text": "Hei ryhmä! Emme tapaa huomenna kampuksella. Teemme projektia verkossa kello 13–15, koska yksi ryhmän jäsen on toisessa kaupungissa. Lue ohjeet ennen tapaamista. Lähetän kokouslinkin aamulla sähköpostilla. Jos linkki ei toimi, soita minulle. Tehtävän palautuspäivä ei muutu: se on edelleen perjantai.",
+          "questionStart": 5,
+          "questionEnd": 10
+        }
+      ],
+      "reading": [
+        {
+          "t": "Kuinka kauan tapahtuma kestää?",
+          "type": "open",
+          "options": [],
+          "answer": "Neljä tuntia",
+          "aliases": [
+            "4 tuntia"
+          ],
+          "explain": ""
+        },
+        {
+          "t": "Voiko tapahtumassa uida?",
+          "type": "open",
+          "options": [],
+          "answer": "Ei",
+          "aliases": [],
+          "explain": ""
+        },
+        {
+          "t": "Voiko 10-vuotias osallistua yksin?",
+          "type": "open",
+          "options": [],
+          "answer": "Ei",
+          "aliases": [],
+          "explain": ""
+        },
+        {
+          "t": "Miten kahviossa maksetaan?",
+          "type": "open",
+          "options": [],
+          "answer": "Vain kortilla",
+          "aliases": [
+            "kortilla"
+          ],
+          "explain": ""
+        },
+        {
+          "t": "Missä tapahtuma on kovalla sateella?",
+          "type": "open",
+          "options": [],
+          "answer": "Koulun liikuntasalissa",
+          "aliases": [
+            "liikuntasalissa"
+          ],
+          "explain": ""
+        },
+        {
+          "t": "Missä ryhmä työskentelee huomenna?",
+          "type": "open",
+          "options": [],
+          "answer": "Verkossa",
+          "aliases": [],
+          "explain": ""
+        },
+        {
+          "t": "Miksi tapaamispaikka muuttuu?",
+          "type": "open",
+          "options": [],
+          "answer": "Yksi jäsen on toisessa kaupungissa",
+          "aliases": [
+            "toisessa kaupungissa"
+          ],
+          "explain": ""
+        },
+        {
+          "t": "Mitä pitää tehdä ennen tapaamista?",
+          "type": "open",
+          "options": [],
+          "answer": "Lukea ohjeet",
+          "aliases": [
+            "lue ohjeet"
+          ],
+          "explain": ""
+        },
+        {
+          "t": "Mitä pitää tehdä, jos linkki ei toimi?",
+          "type": "open",
+          "options": [],
+          "answer": "Soittaa",
+          "aliases": [
+            "soita minulle"
+          ],
+          "explain": ""
+        },
+        {
+          "t": "Mikä on palautuspäivä?",
+          "type": "open",
+          "options": [],
+          "answer": "Perjantai",
+          "aliases": [],
+          "explain": ""
+        }
+      ],
+      "listening": [
+        {
+          "t": "Mistä toimisto ilmoittaa?",
+          "type": "open",
+          "options": [],
+          "answer": "Muuttuneista aukioloajoista",
+          "aliases": [
+            "aukioloajoista"
+          ],
+          "explain": ""
+        },
+        {
+          "t": "Mitkä aukioloajat ovat huomenna?",
+          "type": "open",
+          "options": [],
+          "answer": "9–11",
+          "aliases": [
+            "kello yhdeksästä yhteentoista"
+          ],
+          "explain": ""
+        },
+        {
+          "t": "Miksi toimisto sulkeutuu aikaisin?",
+          "type": "open",
+          "options": [],
+          "answer": "Henkilökunnan kokouksen vuoksi",
+          "aliases": [
+            "kokouksen vuoksi"
+          ],
+          "explain": ""
+        },
+        {
+          "t": "Voiko sähköpostia lähettää iltapäivällä?",
+          "type": "open",
+          "options": [],
+          "answer": "Kyllä",
+          "aliases": [],
+          "explain": ""
+        },
+        {
+          "t": "Milloin toimisto aukeaa seuraavan kerran?",
+          "type": "open",
+          "options": [],
+          "answer": "Perjantaina kello 9",
+          "aliases": [
+            "perjantaina"
+          ],
+          "explain": ""
+        },
+        {
+          "t": "Mikä on löytynyt?",
+          "type": "open",
+          "options": [],
+          "answer": "Reppu",
+          "aliases": [],
+          "explain": ""
+        },
+        {
+          "t": "Mistä se löytyi?",
+          "type": "open",
+          "options": [],
+          "answer": "Kirjaston lukusalista ikkunan vierestä",
+          "aliases": [
+            "lukusalista"
+          ],
+          "explain": ""
+        },
+        {
+          "t": "Minkä värinen se on?",
+          "type": "open",
+          "options": [],
+          "answer": "Tummansininen",
+          "aliases": [],
+          "explain": ""
+        },
+        {
+          "t": "Mitä sen sisällä on? Mainitse kaksi asiaa.",
+          "type": "open",
+          "options": [],
+          "answer": "Vihko ja punainen pipo",
+          "aliases": [],
+          "explain": ""
+        },
+        {
+          "t": "Mihin aikaan sen voi noutaa tänään?",
+          "type": "open",
+          "options": [],
+          "answer": "Kello 12–18",
+          "aliases": [
+            "12-18"
+          ],
+          "explain": ""
+        }
+      ],
+      "listenSections": [
+        {
+          "name": "B-L1 • Palvelutoimisto",
+          "script": "Hei! Tässä on viesti opiskelijapalveluista. Huomenna torstaina toimisto on avoinna vain kello yhdeksästä yhteentoista. Suljemme aikaisin henkilökunnan kokouksen vuoksi. Sähköpostia voi lähettää normaalisti koko päivän. Perjantaina toimisto on taas avoinna kello yhdeksästä kolmeen. Kiitos ymmärryksestä.",
+          "start": 0,
+          "end": 5
+        },
+        {
+          "name": "B-L2 • Löytötavara",
+          "script": "Hei, tässä on Jari kirjastosta. Löysimme repun lukusalista ikkunan vierestä. Reppu on tummansininen. Sen sisällä on vihko ja punainen pipo. Jos reppu on sinun, voit hakea sen tänään asiakaspalvelusta kello kahdentoista ja kuuden välillä. Ota henkilöllisyystodistus mukaan.",
+          "start": 5,
+          "end": 10
+        }
+      ],
+      "writing": [
+        {
+          "prompt": "Kirjoita naapurille. Pyydä apua kukkien kastelussa matkan aikana. Kerro milloin olet poissa, mitä pyydät ja miten naapuri saa avaimen.",
+          "model": "Moi! Olen matkalla perjantaista maanantaihin. Voisitko kastella kukkani lauantaina? Voin tuoda avaimen sinulle torstaina. Kiitos paljon avusta!"
+        },
+        {
+          "prompt": "Kerro uudelle opiskelijalle opinnoistasi. Mikä on helppoa ja mikä vaikeaa? Anna kaksi vinkkiä.",
+          "model": "Opiskelen tietotekniikkaa HAMKissa. Teemme paljon ryhmätöitä. Tietokoneen käyttäminen on helppoa, mutta pitkät ohjeet ovat joskus vaikeita. Kysy rohkeasti apua ja tee itsellesi viikkosuunnitelma."
+        }
+      ],
+      "speaking": [
+        {
+          "prompt": "Kuvaile kotiasi ja asuinaluettasi. Kerro yksi hyvä ja yksi huono asia.",
+          "model": "Asun pienessä kerrostaloasunnossa. Lähellä on kauppa ja kirjasto. Hyvä puoli on rauhallinen alue. Huono puoli on kallis vuokra."
+        },
+        {
+          "prompt": "Soita kirjastoon. Kysy tulostamisesta ja hinnasta.",
+          "model": "Hei! Voinko tulostaa kirjastossa? Kuinka paljon tulostaminen maksaa? Tarvitsenko kirjastokortin?"
+        },
+        {
+          "prompt": "Kerro ensi viikon suunnitelmista. Mainitse opiskelu, vapaa-aika ja tapaaminen.",
+          "model": "Ensi viikolla opiskelen joka päivä. Keskiviikkona tapaan ystävän. Viikonloppuna kävelen puistossa."
+        },
+        {
+          "prompt": "Onko kävely hyvä harrastus? Kerro mielipiteesi ja kaksi syytä.",
+          "model": "Kyllä, kävely on hyvä harrastus. Se ei maksa mitään, ja se auttaa rentoutumaan."
+        }
+      ]
+    }
+  ],
+  "source_note": "Study Pack (15 Sept 2026), 02_reading.pdf (17 Sept 2026), YKI examples and HAMK public rules (accessed 11 Oct 2026)."
+}</script>
+<script>
+'use strict';
+const DB=JSON.parse(document.getElementById('dataset').textContent);
+DB.reading.sort((a,b)=>{const k=x=>x.id.startsWith('U')?0:x.id.startsWith('R')?1:2;return k(a)-k(b)});
+const KEYS=[['home','⌂','Home'],['reading','▤','Reading'],['listening','◉','Listening'],['writing','✎','Writing'],['speaking','◎','Speaking'],['grammar','≡','Grammar'],['vocab','▣','Flashcards'],['mocks','◷','Mock exams'],['stats','▥','Progress']];
+const defaultState={section:'home',chosen:{reading:'U2A',listening:'L1',writing:'W1',speaking:'S1',grammar:0,mocks:'A'},answers:{},grades:{},completed:{'reading:U1A':{score:3,total:3,from:'Prior live chat'},'reading:U1B':{score:3,total:3,from:'Prior live chat'},'reading:U1C':{score:3,total:3,from:'Prior live chat'}},drafts:{},models:{},speechRead:{},known:{},vocabIndex:0,vocabRevealed:false,vocabGroup:'all',vocabQuery:'',mockRatings:{},mockStarted:{},mockResults:{},dark:false,grammarPage:0};
+let state=JSON.parse(JSON.stringify(defaultState));try{const previous=localStorage.getItem('suomia2_v4');if(previous){const p=JSON.parse(previous);state={...state,...p,chosen:{...state.chosen,...p.chosen}}}}catch(e){}
+let speakTimer=null,mockClock=null,recordStream=null,recorder=null,recordChunks=[],playUrl=null;
+function save(){try{localStorage.setItem('suomia2_v4',JSON.stringify(state))}catch(e){} }
+const esc=x=>String(x??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+function txt(x){return esc(x).replace(/\n/g,'<br>')}
+const norm=x=>String(x??'').toLocaleLowerCase('fi-FI').normalize('NFKC').replace(/[.,!?;:”“‘’]/g,' ').replace(/\s+/g,' ').trim();
+const words=x=>String(x||'').trim().split(/\s+/).filter(Boolean).length;
+const plural=(n,s)=>`${n} ${s}`;
+function toast(msg){const el=document.getElementById('toast');el.textContent=msg;el.classList.add('show');clearTimeout(toast.t);toast.t=setTimeout(()=>el.classList.remove('show'),2000)}
+function setSection(section){stopVoice();state.section=section;save();render();window.scrollTo({top:0,behavior:'smooth'})}
+function setChosen(kind,value){state.chosen[kind]=value;save();render()}
+function renderNav(){document.getElementById('tabs').innerHTML=KEYS.map(([k,i,v])=>`<button class="tab ${state.section===k?'active':''}" onclick="setSection('${k}')" aria-current="${state.section===k?'page':'false'}">${i} ${v}</button>`).join('')}
+function render(){document.body.classList.toggle('dark',!!state.dark);renderNav();const main=document.getElementById('main');const map={home,reading:renderReading,listening:renderListening,writing:renderWriting,speaking:renderSpeaking,grammar:renderGrammar,vocab:renderVocab,mocks:renderMocks,stats:renderStats}; main.innerHTML=map[state.section](); if(state.section==='mocks')updateClock();}
+const findItem=(kind)=>DB[kind].find(x=>x.id===state.chosen[kind])||DB[kind][0];
+const doneCount=kind=>Object.keys(state.completed).filter(k=>k.startsWith(kind+':')).length;
+function home(){const comps={reading:doneCount('reading'),listening:doneCount('listening'),writing:doneCount('writing'),speaking:doneCount('speaking')};const all=comps.reading+comps.listening+comps.writing+comps.speaking;return `
+<h2 class="heading">Your A2 learning dashboard</h2><p class="sub">Your latest live practice: <b>Reading Unit 1 — 9/9 correct.</b> Continue with Unit 2: advertisements.</p>
+<div class="fourcol"><div class="stat"><b>${comps.reading}/${DB.reading.length}</b><small>Reading lessons</small></div><div class="stat"><b>${comps.listening}/${DB.listening.length}</b><small>Listening lessons</small></div><div class="stat"><b>${comps.writing}/${DB.writing.length}</b><small>Writing tasks</small></div><div class="stat"><b>${comps.speaking}/${DB.speaking.length}</b><small>Speaking topics</small></div></div>
+<div class="card soft"><div class="eyebrow">Continue where you stopped</div><h2>Reading · Unit 2 — Mainokset</h2><p>Advertisements, price details, deadlines, hidden conditions, and three answer formats.</p><div class="actions"><button class="btn" onclick="setChosen('reading','U2A');setSection('reading')">Continue Lesson 2 →</button><button class="btn outline" onclick="setSection('mocks')">Open mock exams</button></div><div class="small">Lesson 1 was completed through chat; you can retake it at any time.</div></div>
+<div class="twocol"><div class="card"><div class="eyebrow">Today's 35-minute plan</div><ol class="studylist"><li><b>10 min reading:</b> finish U2A, U2B, U2C.</li><li><b>8 min listening:</b> listen twice, answer without transcript.</li><li><b>10 min writing:</b> respond to one real-life message.</li><li><b>7 min speaking:</b> answer, then give a reason using <i>koska</i>.</li></ol></div><div class="card"><div class="eyebrow">The test standard</div><h2>A2 practice, based on reliable patterns</h2><p>HAMK currently specifies a roughly one-hour, four-skill test: speaking, listening, reading and writing. The published pass requirement is <b>30/40 overall with at least 6/10 in every section.</b></p><p class="small">These tasks use recognized YKI basic-level question types, but HAMK does not publish the exact questions or item-by-item layout. Mock times and self-assessment are study simulations.</p></div></div>
+<div class="card"><h2>How to use this app on iPhone</h2><p>Open this HTML in Safari or an HTML-capable file viewer. Tap answers, check explanations, and return later to continue. Your answers are saved locally when browser storage is available. Finnish audio is produced by your phone's installed voice and might require a Finnish voice in iOS settings.</p><div class="actions"><button class="btn ghost" onclick="setSection('reading')">Start studying</button><button class="btn outline" onclick="setSection('vocab')">Review vocabulary</button></div></div>`}
+function keyFor(prefix,i){return prefix+':'+i}
+function getAnswer(prefix,i){return state.answers[keyFor(prefix,i)]??''}
+function getGrade(prefix,i){return state.grades[keyFor(prefix,i)]}
+function answerChange(prefix,i,val){state.answers[keyFor(prefix,i)]=val;delete state.grades[keyFor(prefix,i)];save()}
+function correct(q,v){const answer=norm(v),ref=norm(q.answer);if(!answer)return false;if(q.type==='tf')return (['o','oikein','true','kyllä'].includes(answer) && ['o','oikein'].includes(ref))||(['v','väärin','false','ei'].includes(answer)&&['v','väärin'].includes(ref));if(q.type==='mc')return answer===ref;return [q.answer,...(q.aliases||[])].some(a=>answer===norm(a));}
+function checkAnswer(prefix,i){const q=questionAt(prefix,i),v=getAnswer(prefix,i);if(!String(v).trim()){toast('Choose or type an answer first.');return}state.grades[keyFor(prefix,i)]=correct(q,v)?'yes':(q.type==='open'?'review':'no');save();render()}
+function markAnswer(prefix,i,correctNow){state.grades[keyFor(prefix,i)]=correctNow?'yes':'no';save();render()}
+function questionAt(prefix,i){let seg=prefix.split(':');if(seg[0]==='reading'||seg[0]==='listening'){let item=DB[seg[0]].find(v=>v.id===seg[1]);return item.questions[i]}if(seg[0]==='mock'){let m=DB.mocks.find(v=>v.id===seg[1]);return m[seg[2]][i]}if(seg[0]==='grammar')return {answer:DB.grammar[Number(seg[1])][1],aliases:[],type:'open'};return {answer:'',type:'open'}}
+function showFeedback(q,prefix,i){const grade=getGrade(prefix,i),ans=esc(q.answer),reason=q.explain?`<div class="small" style="margin-top:5px">${esc(q.explain)}</div>`:'';if(!grade)return '';const label=grade==='yes'?'✓ Correct':grade==='no'?'↻ Review this':'? Check your answer against the model';const cl=grade==='yes'?'good':grade==='no'?'bad':'review';return `<div class="feedback ${cl}"><b>${label}</b><div>Model answer: <b>${ans}</b></div>${reason}${grade==='review'?`<div class="actions"><button class="btn sm" onclick="markAnswer('${prefix}',${i},true)">My answer is also correct</button><button class="btn sm outline" onclick="markAnswer('${prefix}',${i},false)">Not correct yet</button></div><div class="small">Open answers can have multiple valid phrasings. Compare meaning manually; the app cannot reliably grade every Finnish phrase.</div>`:''}</div>`}
+function questionHTML(q,prefix,i){const val=getAnswer(prefix,i),grade=getGrade(prefix,i);let input='';if(q.type==='mc'){input=q.options.map((o,j)=>`<label class="choice"><input type="radio" name="${esc(prefix)}-q${i}" value="${'ABC'[j]}" ${val==='ABC'[j]?'checked':''} ${grade?'disabled':''} onchange="answerChange('${prefix}',${i},this.value)"><b>${'ABC'[j]}.</b> ${esc(o)}</label>`).join('')}else if(q.type==='tf'){input=['Oikein','Väärin'].map((o,j)=>`<label class="choice"><input type="radio" name="${esc(prefix)}-q${i}" value="${j?'V':'O'}" ${val===(j?'V':'O')?'checked':''} ${grade?'disabled':''} onchange="answerChange('${prefix}',${i},this.value)">${esc(o)}</label>`).join('')}else{input=`<textarea class="answer sm" ${grade?'readonly':''} placeholder="Kirjoita vastaus suomeksi…" aria-label="Answer question ${i+1}" oninput="answerChange('${prefix}',${i},this.value)">${esc(val)}</textarea>`}return `<section class="qcard"><h4><span class="counter">${i+1}</span> ${esc(q.t)}</h4>${input}${!grade?`<div class="actions"><button class="btn sm" onclick="checkAnswer('${prefix}',${i})">Check answer</button></div>`:`<div class="actions"><button class="btn sm outline" onclick="retryAnswer('${prefix}',${i})">Try again</button></div>`}${showFeedback(q,prefix,i)}</section>`}
+function retryAnswer(prefix,i){delete state.grades[keyFor(prefix,i)];save();render()}
+function quizSummary(prefix,questions){const grades=questions.map((_,i)=>getGrade(prefix,i));let cnt=grades.filter(x=>x==='yes').length,done=grades.filter(x=>x==='yes'||x==='no').length;return {cnt,done,n:questions.length}}
+function quizComplete(kind,id,n){const prefix=kind+':'+id,qs=DB[kind].find(x=>x.id===id).questions,z=quizSummary(prefix,qs);if(z.done!==z.n){toast(`Review all ${z.n} answers first.`);return}state.completed[prefix]={score:z.cnt,total:z.n,when:new Date().toISOString()};save();toast('Lesson saved to your progress!');render()}
+function lessonSelect(kind){const options=DB[kind].map(x=>`<option value="${esc(x.id)}" ${state.chosen[kind]===x.id?'selected':''}>${esc(x.id)} · ${esc(x.title)}${state.completed[kind+':'+x.id]?' ✓':''}</option>`).join('');return `<label class="selectlabel" for="pick_${kind}">Choose ${kind} lesson</label><select id="pick_${kind}" onchange="setChosen('${kind}',this.value)">${options}</select>`}
+function renderReading(){const x=findItem('reading'),p='reading:'+x.id,z=quizSummary(p,x.questions),progress=(z.done/x.questions.length)*100;return `<h2 class="heading">Luetun ymmärtäminen · Reading</h2><p class="sub">Read the entire text. Check negatives, changes, time, price and the action required. Original source exercises plus extra transfer practice.</p><div class="card">${lessonSelect('reading')}<div class="strip">${DB.reading.filter(y=>y.id.startsWith('U')).map(y=>`<button class="chip ${x.id===y.id?'on':''}" onclick="setChosen('reading','${y.id}')">${y.id}${state.completed['reading:'+y.id]?' ✓':''}</button>`).join('')}</div><div class="sectionHead"><h2>${esc(x.title)}</h2><span class="badge2">${z.done}/${z.n} checked</span></div><div class="meta"><span>${esc(x.unit)}</span><span>3 questions</span><span>3 formats: O/V · ABC · short answer</span></div><div class="progress"><i style="width:${progress}%"></i></div><div class="lesson" lang="fi">${txt(x.text)}</div>${x.questions.map((q,i)=>questionHTML(q,p,i)).join('')}<div class="actions"><button class="btn" onclick="quizComplete('reading','${x.id}')">Finish this reading lesson</button><button class="btn outline" onclick="nextLesson('reading')">Next passage →</button></div><div class="source">${esc(x.source)} • Independent practice, not a reproduction of an official HAMK exam.</div></div>`}
+function nextLesson(kind){const a=DB[kind],i=a.findIndex(x=>x.id===state.chosen[kind]);state.chosen[kind]=a[(i+1)%a.length].id;save();render();window.scrollTo({top:0,behavior:'smooth'})}
+function speakFinnish(textToRead,count=1){if(!('speechSynthesis' in window)){toast('Text-to-speech is not supported in this browser.');return}speechSynthesis.cancel();let voices=speechSynthesis.getVoices(),fi=voices.find(v=>v.lang.toLowerCase().startsWith('fi'));if(!fi)toast('Finnish voice not found. Check iPhone speech voice settings.');let done=0;function step(){if(done>=count)return;let utterance=new SpeechSynthesisUtterance(textToRead);utterance.lang='fi-FI';if(fi)utterance.voice=fi;utterance.rate=.82;utterance.pitch=1;utterance.onend=()=>{done++;step()};utterance.onerror=()=>toast('Could not play Finnish speech on this device.');speechSynthesis.speak(utterance)}step()}
+function stopVoice(){try{speechSynthesis.cancel()}catch(e){}}
+function reveal(section,id){const k=section+':'+id;state.models[k]=!state.models[k];save();render()}
+function renderListening(){let x=findItem('listening'),p='listening:'+x.id,z=quizSummary(p,x.questions);let exposed=!!state.models[p];return `<h2 class="heading">Puheen ymmärtäminen · Listening</h2><p class="sub">Read questions first → listen twice → answer → reveal transcript. Audio is device-generated Finnish, not a real exam recording.</p><div class="card">${lessonSelect('listening')}<div class="sectionHead"><h2>${esc(x.title)}</h2><span class="badge2">${z.done}/${z.n} checked</span></div><p class="small">Do not read the transcript before answering; otherwise it becomes a reading exercise.</p><div class="actions"><button class="btn" onclick="speakFinnish(DB.listening.find(x=>x.id==='${x.id}').script,2)">▶ Listen twice</button><button class="btn outline" onclick="speakFinnish(DB.listening.find(x=>x.id==='${x.id}').script,1)">▶ Play once</button><button class="btn outline" onclick="stopVoice()">■ Stop</button></div><div class="notice">Tip: On iPhone, check Settings → Accessibility → Spoken Content → Voices if the Finnish pronunciation sounds wrong. Voice availability varies by iOS installation.</div>${x.questions.map((q,i)=>questionHTML(q,p,i)).join('')}<div class="actions"><button class="btn" onclick="quizComplete('listening','${x.id}')">Finish listening lesson</button><button class="btn outline" onclick="reveal('listening','${x.id}')">${exposed?'Hide':'Reveal'} transcript</button><button class="btn outline" onclick="nextLesson('listening')">Next →</button></div>${exposed?`<div class="transcript" lang="fi"><b>Transcript</b><br>${txt(x.script)}</div>`:''}<div class="source">${esc(x.source)} • 3 questions</div></div>`}
+const rubricNames=['Completes requested details','Meaning is understandable','Ideas connected in a clear sequence','Useful words and forms','Independent, relevant response'];
+function draftChange(key,val){state.drafts[key]=val;save();const c=document.getElementById('words');if(c)c.textContent=words(val)+' words'}
+function rubricChange(key,i,v){state.mockRatings[key+':'+i]=Number(v);save();let s=document.getElementById('rubricScore');if(s)s.textContent=rubricTotal(key)+'/10'}
+function rubricTotal(key){return rubricNames.reduce((a,_,i)=>a+(state.mockRatings[key+':'+i]??0),0)}
+function rubricHTML(key){return `${rubricNames.map((n,i)=>`<div class="rubric"><span>${esc(n)}</span><select aria-label="${esc(n)}" onchange="rubricChange('${key}',${i},this.value)">${['0','1','2'].map(v=>`<option ${Number(v)===(state.mockRatings[key+':'+i]??0)?'selected':''} value="${v}">${v} / 2</option>`).join('')}</select></div>`).join('')}<p><b>Practice rubric: <span id="rubricScore">${rubricTotal(key)}/10</span></b></p><p class="tinyline">Self-review, not an automated assessor or official HAMK scoring criteria.</p>`}
+function markProductive(kind,id){const key=kind+':'+id;const source=state.drafts[key]||'';if(kind==='writing'&&words(source)<12){toast('Write a fuller response before marking complete.');return}state.completed[key]={score:rubricTotal(key),total:10,when:new Date().toISOString(),self:true};save();toast('Practice saved');render()}
+function renderWriting(){let x=findItem('writing'),key='writing:'+x.id,show=!!state.models[key],draft=state.drafts[key]||'';return `<h2 class="heading">Kirjoittaminen · Writing</h2><p class="sub">Complete every instruction. Send a message, explain a reason, ask a question, or give feedback. Compare with an A2 model only after writing.</p><div class="card">${lessonSelect('writing')}<div class="eyebrow">${x.id} · ${esc(x.title)}</div><div class="lesson" lang="fi">${txt(x.task)}</div><label class="selectlabel" for="writeText">Your answer in Finnish</label><textarea id="writeText" class="answer big" placeholder="Hei! …" oninput="draftChange('${key}',this.value)">${esc(draft)}</textarea><p class="textareasub small"><span id="words">${words(draft)} words</span> · Suggested practice length: 35–100 words depending on task. Not an official limit.</p><div class="actions"><button class="btn outline" onclick="reveal('writing','${x.id}')">${show?'Hide':'Compare with'} model answer</button><button class="btn ghost" onclick="speakFinnish(DB.writing.find(x=>x.id==='${x.id}').model,1)">▶ Hear model</button></div>${show?`<div class="model" lang="fi"><b>Model response</b><br>${txt(x.model)}</div><div class="notice" style="margin-top:8px">What to check: ${esc(x.check)}</div>`:''}<h3>Evaluate your response (0–2 per criterion)</h3>${rubricHTML(key)}<div class="actions"><button class="btn" onclick="markProductive('writing','${x.id}')">Save writing practice</button><button class="btn outline" onclick="nextLesson('writing')">Next writing task →</button></div></div>`}
+let speakingSeconds=60;
+function startSpeakTimer(sec=60){clearInterval(speakTimer);speakingSeconds=sec;let el=document.getElementById('speakTime');if(el)el.textContent=fmtTime(sec);speakTimer=setInterval(()=>{speakingSeconds=Math.max(0,speakingSeconds-1);const e=document.getElementById('speakTime');if(e)e.textContent=fmtTime(speakingSeconds);if(!speakingSeconds){clearInterval(speakTimer);toast('Speaking time finished. Compare your response.')}},1000)}
+function stopSpeakTimer(){clearInterval(speakTimer);speakingSeconds=60;const el=document.getElementById('speakTime');if(el)el.textContent='01:00'}
+function fmtTime(seconds){return [Math.floor(seconds/60),seconds%60].map(v=>String(v).padStart(2,'0')).join(':')}
+async function toggleRecord(){const b=document.getElementById('recordButton');if(recorder&&recorder.state==='recording'){recorder.stop();return}if(!navigator.mediaDevices?.getUserMedia||typeof MediaRecorder==='undefined'){toast('Recording unavailable here. Use iPhone Voice Memos.');return}try{recordStream=await navigator.mediaDevices.getUserMedia({audio:true});recordChunks=[];recorder=new MediaRecorder(recordStream);recorder.ondataavailable=e=>{if(e.data.size)recordChunks.push(e.data)};recorder.onstop=()=>{const blob=new Blob(recordChunks,{type:recorder.mimeType||'audio/webm'});if(playUrl)URL.revokeObjectURL(playUrl);playUrl=URL.createObjectURL(blob);const area=document.getElementById('recordPlayer');if(area)area.innerHTML='<p class="small">Temporary recording (not uploaded or saved):</p><audio controls style="width:100%" src="'+playUrl+'"></audio>';recordStream?.getTracks().forEach(t=>t.stop());if(b)b.textContent='● Record your voice'};recorder.start();if(b)b.textContent='■ Stop recording'}catch(e){toast('Microphone unavailable. Try Safari over HTTPS or Voice Memos.')}}
+function renderSpeaking(){const x=findItem('speaking'),key='speaking:'+x.id,show=!!state.models[key];return `<h2 class="heading">Puhuminen · Speaking</h2><p class="sub">Try the Finnish prompt without reading the model. Use a clear answer + detail + <i>koska</i> reason. Follow-ups help you respond independently.</p><div class="card">${lessonSelect('speaking')}<div class="eyebrow">${x.id} · ${esc(x.title)}</div><div class="lesson" lang="fi">${txt(x.prompt)}</div><div class="twocol"><div class="card soft"><div class="eyebrow">Speaking timer</div><div class="timer" id="speakTime">01:00</div><div class="actions"><button class="btn sm" onclick="startSpeakTimer(60)">▶ Start 60 sec</button><button class="btn sm outline" onclick="stopSpeakTimer()">Reset</button></div><div class="small">60 seconds is a training goal, not a published HAMK rule.</div></div><div class="card soft"><div class="eyebrow">Voice recording (optional)</div><p class="small">Practice out loud and play it back. Some offline iPhone viewers restrict microphone access.</p><button id="recordButton" class="btn outline sm" onclick="toggleRecord()">● Record your voice</button><div id="recordPlayer"></div></div></div><div class="actions"><button class="btn outline" onclick="reveal('speaking','${x.id}')">${show?'Hide':'Show'} model + follow-ups</button><button class="btn ghost" onclick="speakFinnish(DB.speaking.find(x=>x.id==='${x.id}').prompt.split('—')[0],1)">▶ Hear question</button></div>${show?`<div class="model" lang="fi"><b>Model answer</b><br>${txt(x.model)}<hr class="sep"><b>English meaning</b><br>${esc(x.meaning)}<hr class="sep"><b>Follow-up practice</b><br>${esc(x.followups)}</div>`:''}<h3>Evaluate your speaking (0–2 each)</h3>${rubricHTML(key)}<div class="actions"><button class="btn" onclick="markProductive('speaking','${x.id}')">Save speaking practice</button><button class="btn outline" onclick="nextLesson('speaking')">Next speaking topic →</button></div></div>`}
+function renderGrammar(){let p=Number(state.grammarPage)||0;return `<h2 class="heading">Kielioppi · Grammar laboratory</h2><p class="sub">Twelve core A2 patterns with explanations and 40 sentence drills from your study pack.</p><div class="card"><label class="selectlabel">Choose grammar focus</label><select onchange="grammarPick(this.value)">${DB.grammar_topics.map((x,i)=>`<option ${i===p?'selected':''} value="${i}">${i+1}. ${esc(x[0])}</option>`).join('')}</select><div class="eyebrow" style="margin-top:18px">Grammar ${p+1}/12</div><h2>${esc(DB.grammar_topics[p][0])}</h2><div class="lesson" lang="fi">${esc(DB.grammar_topics[p][1])}</div><p>${esc(DB.grammar_topics[p][2])}</p><div class="model" lang="fi"><b>${esc(DB.grammar_topics[p][3])}</b><br>${esc(DB.grammar_topics[p][4])}</div><div class="actions"><button class="btn outline" onclick="speakFinnish(DB.grammar_topics[${p}][3])">▶ Hear example</button><button class="btn" onclick="grammarPick(${(p+1)%12})">Next grammar point →</button></div></div><div class="card"><h2>Grammar exercises · 40 questions</h2><p class="small">Answer the blank or correct the full sentence. The app checks exact matches and lets you compare alternative valid sentences.</p>${DB.grammar.map((pair,i)=>questionHTML({t:pair[0],type:'open',answer:pair[1]},'grammar:'+i,0)).join('')}</div>`}
+function grammarPick(i){state.grammarPage=Number(i);save();render()}
+function filteredVocab(){let items=DB.vocabulary.filter(x=>(state.vocabGroup==='all'||x.group===state.vocabGroup)&&(!state.vocabQuery||(x.fi+' '+x.en).toLowerCase().includes(state.vocabQuery.toLowerCase())));return items}
+function setVocabGroup(v){state.vocabGroup=v;state.vocabIndex=0;state.vocabRevealed=false;save();render()}
+function searchVocab(v){state.vocabQuery=v;state.vocabIndex=0;state.vocabRevealed=false;save();render()}
+function nextVocab(dir=1){const len=filteredVocab().length;if(!len)return;state.vocabIndex=(state.vocabIndex+dir+len)%len;state.vocabRevealed=false;save();render()}
+function revealVocab(){state.vocabRevealed=!state.vocabRevealed;save();render()}
+function rateVocab(rate){const c=filteredVocab()[state.vocabIndex];if(!c)return;state.known[c.fi]=rate;save();nextVocab(1)}
+function speakCurrentCard(){const c=filteredVocab()[state.vocabIndex];if(c)speakFinnish(c.fi)}
+function renderVocab(){let all=filteredVocab(),c=all[state.vocabIndex]||all[0],known=Object.values(state.known).filter(x=>x==='known').length;return `<h2 class="heading">Sanasto · Vocabulary flashcards</h2><p class="sub">240 Finnish–English cards from your A2 workbook. Tap to reveal meaning; swipe left and right to move between cards.</p><div class="card"><label class="selectlabel">Topic</label><select onchange="setVocabGroup(this.value)"><option value="all">All 240 words</option>${[...new Set(DB.vocabulary.map(x=>x.group))].map(g=>`<option ${state.vocabGroup===g?'selected':''} value="${esc(g)}">${esc(g)}</option>`).join('')}</select><label class="selectlabel">Search a Finnish or English word</label><input class="answer" value="${esc(state.vocabQuery)}" placeholder="e.g. kirja or library" onchange="searchVocab(this.value)"><div class="meta" style="margin:12px 0"><span>${all.length} cards in filter</span><span>${known} known</span><span>${Math.min(state.vocabIndex+1,all.length)} / ${all.length}</span></div>${c?`<div class="floatbox" id="flashcard" ontouchstart="cardTouchStart(event)" ontouchend="cardTouchEnd(event)" onclick="revealVocab()" role="button" tabindex="0" onkeydown="if(event.key==='Enter')revealVocab()"><div class="mini">${esc(c.group)}</div><div class="fi" lang="fi">${esc(c.fi)}</div>${state.vocabRevealed?`<div class="en">${esc(c.en)}</div>`:`<div class="mini" style="margin-top:15px">Tap to show English translation</div>`}</div><div class="actions"><button class="btn outline" onclick="nextVocab(-1)">← Previous</button><button class="btn outline" onclick="nextVocab(1)">Next →</button><button class="btn ghost" onclick="speakCurrentCard()">▶ Hear</button></div><div class="twocol"><button class="btn warn wide" onclick="rateVocab('again')">↻ Review again</button><button class="btn wide" onclick="rateVocab('known')">✓ I know this word</button></div>`:`<div class="notice">No matching cards. Remove your search filter.</div>`}</div>`}
+let swipeStart=0;function cardTouchStart(e){swipeStart=e.changedTouches[0].screenX}function cardTouchEnd(e){let delta=e.changedTouches[0].screenX-swipeStart;if(Math.abs(delta)>50){e.preventDefault();e.stopPropagation();nextVocab(delta<0?1:-1)}}
+function readSectionMock(m,blk){return `<div class="card"><div class="eyebrow">${esc(blk.name)}</div><div class="lesson" lang="fi">${txt(blk.text)}</div>${m.reading.slice(blk.questionStart,blk.questionEnd).map((q,j)=>questionHTML(q,'mock:'+m.id+':reading',blk.questionStart+j)).join('')}</div>`}
+function listenSectionMock(m,blk,idx){const key='mock:'+m.id+':transcript:'+idx,show=state.models[key];return `<div class="card"><h3>${esc(blk.name)}</h3><div class="actions"><button class="btn" onclick="speakFinnish(DB.mocks.find(m=>m.id==='${m.id}').listenSections[${idx}].script,2)">▶ Listen twice</button><button class="btn outline" onclick="revealMockTranscript('${m.id}',${idx})">${show?'Hide':'Reveal'} transcript</button></div>${show?`<div class="transcript" lang="fi">${esc(blk.script)}</div>`:''}${m.listening.slice(blk.start,blk.end).map((q,j)=>questionHTML(q,'mock:'+m.id+':listening',blk.start+j)).join('')}</div>`}
+function revealMockTranscript(id,i){const key='mock:'+id+':transcript:'+i;state.models[key]=!state.models[key];save();render()}
+function mockDraft(id,kind,i,v){const key=`mock:${id}:${kind}:${i}`;state.drafts[key]=v;save();const el=document.getElementById('words-'+kind+i);if(el)el.textContent=words(v)+' words'}
+function mockRating(id,kind,i,v){state.mockRatings[`mock:${id}:${kind}:${i}`]=Number(v);save();updateMockPreview(id)}
+function mockRatingVal(id,kind,i){return state.mockRatings[`mock:${id}:${kind}:${i}`]}
+function mockProductive(m,kind){return m[kind].map((x,i)=>{const key=`mock:${m.id}:${kind}:${i}`,show=state.models[key];return `<div class="card"><div class="eyebrow">${kind.toUpperCase()} TASK ${i+1}</div><div class="lesson" lang="fi">${esc(x.prompt)}</div>${kind==='writing'?`<textarea class="answer big" placeholder="Your full Finnish response…" oninput="mockDraft('${m.id}','writing',${i},this.value)">${esc(state.drafts[key]||'')}</textarea><div id="words-writing${i}" class="small">${words(state.drafts[key]||'')} words</div>`:`<p class="notice">Speak your answer out loud. Use the iPhone Voice Memos app if you need a recording.</p><div class="actions"><button class="btn sm outline" onclick="startSpeakTimer(60)">▶ Start practice minute</button></div>`}<div class="actions"><button class="btn outline sm" onclick="toggleMockModel('${m.id}','${kind}',${i})">${show?'Hide':'Reveal'} model</button></div>${show?`<div class="model" lang="fi">${esc(x.model)}</div>`:''}<label class="selectlabel">Self-rate task (0–10, after completing)</label><select onchange="mockRating('${m.id}','${kind}',${i},this.value)"><option value="" ${mockRatingVal(m.id,kind,i)===undefined?'selected':''}>Not rated</option>${Array.from({length:11},(_,n)=>`<option value="${n}" ${mockRatingVal(m.id,kind,i)===n?'selected':''}>${n}/10</option>`).join('')}</select></div>`}).join('')}
+function toggleMockModel(id,kind,i){let k=`mock:${id}:${kind}:${i}`;state.models[k]=!state.models[k];save();render()}
+function mockScore(m){const r=quizSummary('mock:'+m.id+':reading',m.reading),l=quizSummary('mock:'+m.id+':listening',m.listening),wr=m.writing.map((_,i)=>mockRatingVal(m.id,'writing',i)),sp=m.speaking.map((_,i)=>mockRatingVal(m.id,'speaking',i));const ws=wr.every(x=>x!==undefined)?wr.reduce((a,b)=>a+b,0)/wr.length:null,ss=sp.every(x=>x!==undefined)?sp.reduce((a,b)=>a+b,0)/sp.length:null;return {r,l,wr,sp,ws,ss,total:r.cnt+l.cnt+(ws||0)+(ss||0)}}
+function mockPreview(m){const z=mockScore(m);return `<div class="fourcol"><div class="stat"><b>${z.r.cnt}/10</b><small>Reading · ${z.r.done} checked</small></div><div class="stat"><b>${z.l.cnt}/10</b><small>Listening · ${z.l.done} checked</small></div><div class="stat"><b>${z.ws===null?'—':z.ws.toFixed(1)}/10</b><small>Writing (self-rated)</small></div><div class="stat"><b>${z.ss===null?'—':z.ss.toFixed(1)}/10</b><small>Speaking (self-rated)</small></div></div>`}
+function updateMockPreview(id){const m=DB.mocks.find(x=>x.id===id);let el=document.getElementById('mockPreview');if(el)el.innerHTML=mockPreview(m)}
+function beginMock(id){state.mockStarted[id]=Date.now();save();updateClock();toast('60-minute practice timer started')}
+function updateClock(){if(state.section!=='mocks')return;let id=state.chosen.mocks,t=document.getElementById('mockClock');if(!t)return;if(!state.mockStarted[id]){t.textContent='60:00';return}const remaining=Math.max(0,3600-Math.floor((Date.now()-state.mockStarted[id])/1000));t.textContent=fmtTime(remaining);if(remaining===0)toast('Practice timer ended. Finish marking your test.')}
+function finishMock(id){const m=DB.mocks.find(x=>x.id===id),z=mockScore(m);if(z.r.done<10||z.l.done<10||z.ws===null||z.ss===null){toast('Mark 10 reading, 10 listening and rate all writing/speaking tasks.');return}const pass=z.total>=30&&Math.min(z.r.cnt,z.l.cnt,z.ws,z.ss)>=6;state.mockResults[id]={reading:z.r.cnt,listening:z.l.cnt,writing:z.ws,speaking:z.ss,total:z.total,pass,when:new Date().toISOString()};save();render();const el=document.getElementById('mockResult');if(el)el.scrollIntoView({behavior:'smooth',block:'center'})}
+function renderMocks(){let m=DB.mocks.find(x=>x.id===state.chosen.mocks)||DB.mocks[0],result=state.mockResults[m.id];return `<h2 class="heading">Kokonaisharjoitus · Mock exams</h2><p class="sub">Two full practice sets from your original workbook. <b>Official published HAMK threshold: 30/40 overall, ≥6/10 per section.</b> Productive sections here are self-rated for training only.</p><div class="card gold"><label class="selectlabel">Choose practice test</label><select onchange="setChosen('mocks',this.value)">${DB.mocks.map(x=>`<option value="${x.id}" ${x.id===m.id?'selected':''}>${esc(x.title)}</option>`).join('')}</select><div class="sectionHead" style="margin-top:15px"><h2>Practice timer</h2><div id="mockClock" class="timer" style="font-size:27px">60:00</div></div><div class="actions"><button class="btn" onclick="beginMock('${m.id}')">Start / restart timer</button><button class="btn outline" onclick="stopVoice()">Stop audio</button></div><div class="small">60 minutes for your whole mock is a preparation choice. It does not reproduce HAMK's undisclosed per-section timings.</div></div><div id="mockPreview">${mockPreview(m)}</div><div class="card"><h2>Part 1 · Reading — 10 points</h2><p class="small">Answers use short Finnish phrases or true/false. Check each answer after you try it.</p></div>${m.readingTexts.map(b=>readSectionMock(m,b)).join('')}<div class="card"><h2>Part 2 · Listening — 10 points</h2><p class="small">Audio is synthesized from original workbook scripts. Do not reveal the transcript before listening.</p></div>${m.listenSections.map((b,i)=>listenSectionMock(m,b,i)).join('')}<div class="card"><h2>Part 3 · Writing — 10 points total</h2><p class="small">Complete both tasks; self-score each 0–10, averaged for this practice section.</p></div>${mockProductive(m,'writing')}<div class="card"><h2>Part 4 · Speaking — 10 points total</h2><p class="small">Perform all four oral tasks; self-score each 0–10, averaged for this practice section.</p><div class="timer" id="speakTime" style="font-size:25px">01:00</div></div>${mockProductive(m,'speaking')}<div class="card"><h2>Finish this mock exam</h2><div class="actions"><button class="btn" onclick="finishMock('${m.id}')">Calculate practice result (40 points)</button></div><div id="mockResult">${result?`<div class="result ${result.pass?'good':'bad'}">${result.total.toFixed(1)} / 40 · ${result.pass?'Meets numerical practice threshold':'Below numerical practice threshold'}</div><p>Reading ${result.reading}/10 · Listening ${result.listening}/10 · Writing ${result.writing.toFixed(1)}/10 · Speaking ${result.speaking.toFixed(1)}/10</p><p class="small">This only checks the numeric rule using workbook answers and your own ratings. It is not an official proficiency judgement.</p>`:''}</div></div>`}
+function renderStats(){const groups=[['Reading','reading',DB.reading.length],['Listening','listening',DB.listening.length],['Writing','writing',DB.writing.length],['Speaking','speaking',DB.speaking.length]];let known=Object.values(state.known).filter(x=>x==='known').length;return `<h2 class="heading">Your study progress</h2><p class="sub">Stored locally on this device when browser storage is available. Export a backup before clearing Safari data or moving devices.</p><div class="card">${groups.map(([title,key,total])=>{let d=doneCount(key);return `<div style="margin:17px 0"><div class="sectionHead"><b>${title}</b><span>${d}/${total} completed</span></div><div class="progress"><i style="width:${(d/total)*100}%"></i></div></div>`}).join('')}<div class="twocol"><div class="stat"><b>${known}/${DB.vocabulary.length}</b><small>Vocabulary marked known</small></div><div class="stat"><b>${Object.keys(state.mockResults).length}/2</b><small>Completed mock exams</small></div></div></div><div class="card"><h2>Mock results</h2>${DB.mocks.map(m=>{let r=state.mockResults[m.id];return `<p><b>${m.title}:</b> ${r?`${r.total.toFixed(1)}/40 · ${r.pass?'meets numerical target':'below target'}`:'Not completed yet'}</p>`}).join('')}<div class="notice">The true HAMK assessment includes performance judgement. Workbook self-scores are for study guidance only.</div></div><div class="card"><h2>Backup and settings</h2><div class="actions"><button class="btn" onclick="exportProgress()">↓ Export progress JSON</button><label class="btn outline" style="cursor:pointer">↑ Import progress<input type="file" accept="application/json,.json" style="display:none" onchange="importProgress(this)"></label><button class="btn outline" onclick="state.dark=!state.dark;save();render()">${state.dark?'Light':'Dark'} mode</button></div><div class="actions"><button class="btn negative sm" onclick="resetProgress()">Reset all saved answers</button></div><p class="small">This app sends nothing to a server. Backups are plain JSON and can include your writing. Keep them private.</p></div><div class="card"><h2>Verified sources and limitations</h2><p>This self-contained app incorporates original practice material from your HAMK Finnish A2 Study Pack and selected exercises from 02_reading.pdf. It also adds new passages and transfer practice.</p><ul class="studylist"><li><a target="_blank" rel="noopener" href="https://www.hamk.fi/en/come-to-study/tuition-fees-and-scholarships/">HAMK A2 exam arrangements and pass rules</a></li><li><a target="_blank" rel="noopener" href="https://ykitesti.solki.jyu.fi/tutustu-testiin/testifin/">Official YKI basic-level sample exercise types</a></li><li><a target="_blank" rel="noopener" href="https://github.com/jahid-github/Suomen_Kielen_Kurssit">Your Finnish-language study repository</a></li></ul><p class="footnote">YKI basic test exercise formats are reference patterns; this app does not claim access to actual HAMK exam questions. Listening uses browser text-to-speech, not a human speaker. Writing, speaking, and variant open answers require honest human review.</p></div>`}
+function exportProgress(){const blob=new Blob([JSON.stringify({app:'suomia2_v4',savedAt:new Date().toISOString(),state},null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='Finnish_A2_Study_Progress.json';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),4000)}
+async function importProgress(input){let file=input.files?.[0];if(!file)return;try{const obj=JSON.parse(await file.text());if(!obj.state||!obj.state.answers)throw Error('Unknown backup format');if(!confirm('Replace your progress with the imported backup?'))return;state={...JSON.parse(JSON.stringify(defaultState)),...obj.state,chosen:{...defaultState.chosen,...obj.state.chosen}};save();render();toast('Study progress imported')}catch(e){toast('Could not read this backup file')}}
+function resetProgress(){if(confirm('Reset progress, drafts, scores, and marked vocabulary on this iPhone?')){state=JSON.parse(JSON.stringify(defaultState));save();render();toast('Progress reset')}}
+window.addEventListener('pagehide',()=>{save();stopVoice();clearInterval(speakTimer);recordStream?.getTracks().forEach(t=>t.stop())});
+setInterval(()=>{if(state.section==='mocks')updateClock()},1000);
+render();
+</script>
+</body></html>
